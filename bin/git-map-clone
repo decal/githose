@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
 
-set -x
- 
 # http://stackoverflow.com/questions/19576742/
-
 # ~/github your repos only
 # ~/gitmap shell scripts that map operations onto repositories
 # ~/contrib others' repos you're contributing to
 # ~/repos others' repos you're just clone'ingi
 
+# Uncomment this line to enable debugging
+# set -x
+
 readonly GITMAP_HOME_REPOS="~/repos" 
 readonly GITMAP_HOME_CONTRIB="~/contrib"
 readonly GITMAP_HOME_GITHUB="~/github"
+
+### DO NOT CHANGE ANYTHING BELOW HERE UNLESS YOU KNOW WHAT YOU'RE DOING! ###
 
 umask 0027
 
 if [ ! $1 ]
   then echo "usage: $0 USER"
 
-  exit -1
+  exit 1
 fi
 
 readonly declare gitUser="$1"
@@ -61,11 +63,18 @@ declare -xi numPage=0
 
 while true
   do numPage=$(( 1 + numPage ))
-  curl -sk "https://api.github.com/users/${gitUser}/repos?page=${numPage}&per_page=100" | \
-    grep -e 'git_url*' | cut -d \" -f4 | sed 's!^git://!https://!' | \
-    nice -n 8 xargs -L1 git clone --
-  [ ! $? ] && break
-  #[ "$(grep 'API rate limit' /tmp/out)" ] && echo 'API rate limit exceeded!' && exit -1
+  declare outputStr=`curl -sk "https://api.github.com/users/${gitUser}/repos?page=${numPage}&per_page=100" 2>&1` 
+
+  if [ "`echo $outputStr | grep 'rate limit exceeded'`" ]
+    then echo "$0: GitHub API key's rate limit exceeded (try again later)"
+
+    exit 2 
+  fi
+
+  echo $outputStr | grep -e 'git_url*' | cut -d \" -f4 | \ 
+    sed 's!^git://!https://!' | nice -n 8 xargs -L1 git clone --
+
+  [ $? -ne 0 ] && errx_show 'git' $?
 done
 
 exit 0
