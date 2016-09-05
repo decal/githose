@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+set -x
  
 # http://stackoverflow.com/questions/19576742/
 
@@ -19,29 +21,39 @@ if [ ! $1 ]
   exit -1
 fi
 
-declare -xr gitUser="$1"
+readonly declare gitUser="$1"
 
-function cant_mkdir() {
-  declare reposPath=$(realpath $1)
-  echo -n $reposPath
-  echo -n ' '
-  perror -v $0
+function errx_show() {
+  echo -n -- "$1: " 
+  perror -v -- $2
 
-  exit -2
+  return 0
+}
+
+function errx_exit() {
+  readonly declare reposPath=$(realpath $3)
+  echo -n -- "$1: " 
+  [ "$reposPath" ] && echo -n "${reposPath} "
+  perror -v -- $2
+
+  exit -- $2
 }
 
 if [ ! -d $GITALL_HOME_REPOS ] 
-  then mkdir $GITALL_HOME_REPOS
-  [ $? ] cant_mkdir $? $GITALL_HOME_REPOS
-  chmod 0750 $GITALL_HOME_REPOS
-  [ $? ] cant_mkdir $? $GITALL_HOME_REPOS
+  then mkdir -- $GITALL_HOME_REPOS
+  [ $? -ne 0 ] && errx_exit 'mkdir' $? $GITALL_HOME_REPOS
+  chmod 0750 -- $GITALL_HOME_REPOS 2>/dev/null
+  [ $? -ne 0 ] && errx_show 'chmod' $?
 fi
 
-cd $GITALL_HOME_REPOS
+cd -- ${GITALL_HOME_REPOS}
 
-mkdir -- ${gitUser}
-
-chmod 0750 -- ~/repos ${gitUser} 
+if [ ! -d $gitUser ]
+  then mkdir -- ${gitUser}
+  [ $? -ne 0 ] && errx_exit 'mkdir' $? ${gitUser}
+  chmod 0750 -- ${gitUser} 2>/dev/null
+  [ $? -ne 0 ] && errx_show 'chmod' $?
+fi
 
 cd -- ${gitUser}
 
@@ -49,9 +61,11 @@ declare -xi numPage=0
 
 while true
   do numPage=$(( 1 + numPage ))
-  curl -sk "https://api.github.com/users/${gitUser}/repos?page=${numPage}&per_page=100" \
-    | grep -e 'git_url*' | cut -d \" -f4 | nice -n 8 xargs -L1 git clone -- &
+  curl -sk "https://api.github.com/users/${gitUser}/repos?page=${numPage}&per_page=100" | \
+    grep -e 'git_url*' | cut -d \" -f4 | sed 's!^git://!https://!' | \
+    nice -n 8 xargs -L1 git clone --
   [ ! $? ] && break
+  #[ "$(grep 'API rate limit' /tmp/out)" ] && echo 'API rate limit exceeded!' && exit -1
 done
 
 exit 0
