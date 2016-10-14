@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+#   this is a 
+# GitHub client that performs Asynchronous/Anonymous operations
+#   coded by
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#   last updated
+# Fri Oct 14 14:54:28 EDT 2016
+#
+
+source -- gitaa-color
+
+if [ ! $1 ]
+  then echo -e "${yellowf}usage${boldon}${whitef}:${boldoff} ${cyanf}$0 ${purplef}<command>${reset}"
+
+  echo -e "${purplef}${boldon}clone${reset}  store all of user's repositories in a new directory named after them${reset}"
+  echo -e "${purplef}${boldon}pull${reset}   fetch changes for remote user's repositories into the local branches${reset}"
+
+  echo -e "${invon}ex.${invoff} ${greenf}${italicson}gitaa-clone decal${reset}"
+
+  exit -1
+fi
+
+[ $1 == 'clone' ] && ./gitaa-clone $2
+[ $1 == 'pull'  ] && ./gitaa-pull  $2
+
+echo -ne "${reset}"

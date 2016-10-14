@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+#
+# upd8 repo warez from git-map-clone
+#
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Thu Oct 13 15:40:05 EDT 2016
+#
+
+# it goes up in da attic
+declare -xr GITAA_PATH_CLONE="$HOME/github"
+# eye want these many
+declare -ir GITAA_JOBS_COUNT=8
+# keep yer 2hands2 urself creep
+declare -ir GITAA_MODE_UMASK=0077
+
+### <== (o) dONUT MOD STUFFZ UNDER HERe (o) ==> ###
+
+source -- gitaa-color
+
+umask -- $GITAA_MODE_UMASK
+
+if [ ! $0 ]
+  then echo "usage: $0 [USER]"
+
+  exit 1
+fi
+
+readonly gitUser="$1"
+
+# derp durp?
+function errx_show() {
+  echo -n -- "$1: " 
+
+  perror -v -- $2
+
+  return 0
+}
+
+# w00pz!
+function errx_exit() {
+  readonly reposPath=$(realpath $3)
+
+  echo -n -- "$1: " 
+
+  [ "$reposPath" ] && echo -n "${reposPath} "
+
+  perror -v -- $2
+
+  exit -- $2
+}
+
+# wtfark iz u d0in?
+if [ ! -d $GITAA_PATH_CLONE ] 
+  then echo "$0: ${GITAA_PATH_CLONE} does not exist!"
+  echo "$0: Are you sure you ran git-map-clone already?"
+
+  exit 1
+fi
+
+# current werk
+cd -- $GITAA_PATH_CLONE
+
+# roflcopterz tyme!@#
+for auser in `find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -iname '.*' -print`
+  do declare -i t00tsieRollPop=0
+
+  for arepo in `find "${GITAA_PATH_CLONE}/$(basename $auser)" -maxdepth 1 -type d -not -iname '.*' -print`
+    do cd -- $(realpath $arepo)
+
+    nice git pull &
+
+    t00tsieRollPop=$(( t00tsieRollPop + 1 ))
+  done
+
+  for lick in `seq 0 $t00tsieRollPop`
+    do wait $lick |&> /dev/null
+  done
+done
+
+# ♉ tw0 fingerz up, yup peas out  ♉#
+exit 0

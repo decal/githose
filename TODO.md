@@ -1,4 +1,5 @@
 Things To Do
 ============
 
-1. Create GNU parallel enabled version so downloads don't take so long..
+Write xaa script to handle both gitaa and gistaa
+Finish incorporating colors into all scripts
