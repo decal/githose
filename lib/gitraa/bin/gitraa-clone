@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Anononymously and asynchronously clone all user's pub repo warez in parallel with GitHub API 
+# Anononymously and asynchronously clone all user's pub repo warez in parallel
 #
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
@@ -21,8 +21,7 @@ declare -ir GITAA_MODE_CDIRS=0700
 
 ### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
 
-source -- gitaa-color
-
+source -- ../../include/gitaa-color
 umask -- $GITAA_MODE_UMASK
 
 if [ ! $1 ]

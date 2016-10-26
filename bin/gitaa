@@ -8,6 +8,11 @@
 # Fri Oct 14 14:54:28 EDT 2016
 #
 
+declare -xr GITAA_REPO_REGEX="^[rR][eE][pP][oO][a-zA-Z]*$"
+declare -xr GITAA_GITS_REGEX="^[gG][iI][tT][a-zA-Z]*$"
+declare -xr GITAA_GIST_REGEX="^[gG][iI][sS][tT][a-zA-Z]*$"
+declare -xr GITAA_CODE_REGEX="^[cC][oO][dD][eE][a-za-Z]*$"
+
 source -- gitaa-color
 
 if [ ! $1 ]
@@ -21,6 +26,18 @@ if [ ! $1 ]
   exit -1
 fi
 
+if [ [[ $1 =~ $GITAA_REPO_REGEX ]] || [[ $1 == $GITAA_GITS_REGEX ]] ]
+  then #
+  [ $2 == 'clone' ] && ../gitraa/bin/gitraa-clone $3
+  [ $2 == 'pull' ] && ../gitraa/bin/gitraa-clone $3
+fi
+
+if [ [[ $1 =~ $GITAA_GIST_REGEX ]] || [[ $1 =~ $GITAA_CODE_REGEX ]] ]
+  then #
+  [ $2 == 'clone' ] && ../gistaa/bin/gistaa-clone $3
+  [ $2 == 'pull' ] && ../gistaa/bin/gistaa-pull $3
+fi
+  
 [ $1 == 'clone' ] && ./gitaa-clone $2
 [ $1 == 'pull'  ] && ./gitaa-pull  $2
 
