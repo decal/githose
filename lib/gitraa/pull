@@ -16,8 +16,7 @@ declare -ir GITAA_MODE_UMASK=0077
 
 ### <== (o) dONUT MOD STUFFZ UNDER HERe (o) ==> ###
 
-source -- gitaa-color
-
+source -- ../inc/colors
 umask -- $GITAA_MODE_UMASK
 
 if [ ! $0 ]

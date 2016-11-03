@@ -21,7 +21,7 @@ declare -ir GITAA_MODE_CDIRS=0700
 
 ### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
 
-source -- ../../include/gitaa-color
+source -- inc/colors
 umask -- $GITAA_MODE_UMASK
 
 if [ ! $1 ]
