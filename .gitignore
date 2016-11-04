@@ -1,1 +1,17 @@
+*.[0-9]+
+*~
+*.out
+*.orig
+*.[bB][aA][cC]?[kK]
+*.[sS][aA][vV][eE]?
+.git
+.netrc
+.parallel
+.ssh
+.wgetrc
+.wget-hsts
+.viminfo
+.vimrc
+*.sw[pno]
+.DS_Store
 core

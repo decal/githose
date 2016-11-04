@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 #
-#   this is a 
-# GitHub client that performs Asynchronous/Anonymous operations
-#   coded by
+# Abstract GitHub API operations of other scripts
+#
 # Derek Callaway <decal {AT} sdf {D0T} org>
-#   last updated
+#
 # Fri Oct 14 14:54:28 EDT 2016
 #
 
@@ -30,17 +29,17 @@ fi
 
 if [[ $1 =~ $GITAA_REPO_REGEX || $1 =~ $GITAA_GITS_REGEX ]]
   then #
-  [ "$2" == 'clone' ] && lib/gitraa/clone $3
-  [ "$2" == 'pull' ] && lib/gitraa/clone $3
+  [ "$2" == 'clone' ] && lib/gitraa/clones -- $3
+  [ "$2" == 'pull' ] && lib/gitraa/clones -- $3
 fi
 
 if [[ $1 =~ $GITAA_GIST_REGEX || $1 =~ $GITAA_CODE_REGEX ]]
   then #
-  [ "$2" == 'clone' ] && lib/gistaa/clone $3
-  [ "$2" == 'pull' ] && lib/gistaa/pull $3
+  [ "$2" == 'copies' ] && lib/gistaa/copies -- $3
+  [ "$2" == 'pull' ] && lib/gistaa/pull -- $3
 fi
   
-[ "$1" == 'clone' ] && lib/gitraa/clone $2
-[ "$1" == 'pull'  ] && lib/gitraa/pull  $2
+[ "$1" == 'clones' ] && lib/gitraa/clones -- $2
+[ "$1" == 'pull'  ] && lib/gitraa/pull -- $2
 
 echo -ne "${reset}"

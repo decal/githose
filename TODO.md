@@ -1,10 +1,27 @@
-Things To Do
+**Things To Do**
 ============
 
-* Write *xaa* script to handle both *gitaa* and *gistaa*
+
+* Rename *gitaa* to *gitset* (Dipset Diplomats!)
+
+* Command-line arguments..
+  1. Pass global `getopt` flags to *gitset* 
+  2. Pass local `getopt` flags to *git* and *gist* bash
+
+* Write *xaa* script to handle both *gitaa* & *gistaa*
+
 * Finish incorporating colors into all scripts
+
 * Continue testing `git-map-pull`
-* Write scripts for other git commands
-* Make a Gist spider a.k.a. "spidigister"
+
+* Write scripts for other git commands such as:
+  - listing repos instead of clone'ing all of them
+  - listing gists instead of fork'ing all of them
+
+* Make a Gist spider a.k.a. __spidigister__
+
 * Turn `gitaa-color` into an _actual_ command
+
 * Put `lib/gistaa/clone` `wget` into its own `function`
+
+
