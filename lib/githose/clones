@@ -10,10 +10,12 @@
 # uncomment to enable born again debugging 
 #set -x
 
+source -- inc/setups
+
 # ware to stash da warezness
 declare -xr GITAA_PATH_CLONE="$HOME/github"
 # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
-declare -ir GITAA_JOBS_COUNT=8
+declare -ir GITAA_JOBS_COUNT=${setup_cpu_cores}
 # dont be readin my files fool
 declare -ir GITAA_MODE_UMASK=0077
 # somebody's bein nozey :^]
@@ -83,7 +85,7 @@ declare -xi waresDaWarez=0
 
 while true
   do waresDaWarez=$(( 1 + waresDaWarez ))
-  declare outputStr=`curl -sk "https://api.github.com/users/${gitUser}/repos?page=${numPage}&per_page=100" 2>&1` 
+  declare outputStr=$( curl -sk "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>&1 )
 
   if [ ! "$outputStr" ] 
     then echo "$0: No output received from GitHub API!"

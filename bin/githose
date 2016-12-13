@@ -22,24 +22,38 @@ if [ ! "$1" ]
   echo -e "${purplef}${boldon}clone${reset}  store all of user's repositories in a new directory named after them${reset}"
   echo -e "${purplef}${boldon}pull${reset}   fetch changes for remote user's repositories into the local branches${reset}"
 
-  echo -e "${invon}ex.${invoff} ${greenf}${italicson}gitaa-clone decal${reset}"
+  echo -e "${invon}ex.${invoff} ${greenf}${italicson}-githose-clone decal${reset}"
 
   exit -1
 fi
 
 if [[ $1 =~ $GITAA_REPO_REGEX || $1 =~ $GITAA_GITS_REGEX ]]
   then #
-  [ "$2" == 'clone' ] && lib/gitraa/clones -- $3
-  [ "$2" == 'pull' ] && lib/gitraa/clones -- $3
+  [ "$2" == 'clone' ] && lib/githose/clones $3
+  [ "$2" == 'pull' ] && lib/githose/clones $3
 fi
 
 if [[ $1 =~ $GITAA_GIST_REGEX || $1 =~ $GITAA_CODE_REGEX ]]
   then #
-  [ "$2" == 'copies' ] && lib/gistaa/copies -- $3
-  [ "$2" == 'pull' ] && lib/gistaa/pull -- $3
+  [ "$2" == 'copies' ] && lib/gisthose/copies -- $3
+  [ "$2" == 'pull' ] && lib/gisthose/pull -- $3
 fi
-  
-[ "$1" == 'clones' ] && lib/gitraa/clones -- $2
-[ "$1" == 'pull'  ] && lib/gitraa/pull -- $2
+
+declare -i k=0
+
+while [[ k -le ${#BASH_ARGV[*]} ]]
+  do declare auser="${BASH_ARGV[$k]}"
+  export k=$(( k + 1 ))
+
+  [[ "$auser" == 'clone' ]] || [[ "$auser" == 'pull' ]] && break
+
+  if [ "$1" == 'clone' ] 
+    then lib/githose/clones $auser
+  else
+    if [ "$1" == 'pull'  ] 
+      then lib/githose/pull -- $auser
+    fi
+  fi
+done
 
 echo -ne "${reset}"

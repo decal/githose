@@ -1,8 +1,9 @@
 **Things To Do**
 ============
 
-
 * Rename *gitaa* to *gitset* (Dipset Diplomats!)
+
+* Fix inc/setup to declare *setup_cpu_cores* properly..
 
 * Command-line arguments..
   1. Pass global `getopt` flags to *gitset* 
