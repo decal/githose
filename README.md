@@ -1,7 +1,7 @@
 **gitaa v0.8.4a**
 =============
 
-_`githose` and `gisthose` are commands that make archiving `git` repositories and `gist` entries from GitHub less tedious!_
+_`githose` and `gisthose` are commands to make archiving `git` repositories and `gist` entries from GitHub less tedious!_
 
 ### Features
 
