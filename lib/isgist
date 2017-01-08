@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#
+# Determine whether to fetch gists from GitHub over HTTPS
+#
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Sat Jan  7 16:31:19 EST 2017
+#
+
+# Uncomment this statement to enable debugging
+#set -x
+
+[ ! -d 'inc' ]  && [ -d '../inc' ] && cd ..
+
+source -- inc/inits
+source -- inc/regexes
+source -- inc/usages
+
+[ $1 ] && [ $2 ] && [ ! "$githosePath" ] && [[ $2 =~ GITAA_GIST_REGEX ]] && export githosePath="gisthose"
+
+if [[ $2 =~ ^clone ]] || [[ $2 =~ ^pull ]]
+  then lib/${githosePath}/${1} ${2}
+else
+  githoseUsage
+
+  exit -1
+fi
+
+exit 0

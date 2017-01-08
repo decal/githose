@@ -1,59 +1,32 @@
 #!/usr/bin/env bash
 #
-# Abstract GitHub API operations of other scripts
+# Stand-alone executable script 
 #
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
-# Fri Oct 14 14:54:28 EDT 2016
+# Sat Jan  7 15:44:55 EST 2017
 #
 
-declare -xr GITAA_REPO_REGEX="^[rR][eE][pP][oO][a-zA-Z]*$"
-declare -xr GITAA_GITS_REGEX="^[gG][iI][tT][a-zA-Z]*$"
-declare -xr GITAA_GIST_REGEX="^[gG][iI][sS][tT][a-zA-Z]*$"
-declare -xr GITAA_CODE_REGEX="^[cC][oO][dD][eE][a-za-Z]*$"
+# Uncomment this line for debugging
+#set -x
 
-[ ! -d 'inc' ]  && [ -d '../inc' ] && cd ..
+[ -d '../inc' ] && cd ..
+[ -d '../../inc' ] && cd ../..
 
 source -- inc/colors
+source -- inc/regexes
+source -- inc/usages
 
-if [ ! "$1" ]
-  then echo -e "${yellowf}usage${boldon}${whitef}:${boldoff} ${cyanf}$0 ${purplef}<command>${reset}"
-
-  echo -e "${purplef}${boldon}clone${reset}  store all of user's repositories in a new directory named after them${reset}"
-  echo -e "${purplef}${boldon}pull${reset}   fetch changes for remote user's repositories into the local branches${reset}"
-
-  echo -e "${invon}ex.${invoff} ${greenf}${italicson}-githose-clone decal${reset}"
+if ( [ ! "$BASH_ARGV[$#{BASH_ARGV[*]}]" ] && [ "${BASH_ARGV[${#BASH_ARGV[*]}]:0:5]}" != 'clone' ] && [ "${BASH_ARGV[${#BASH_ARGV[*]}:0:4]}" != 'pull' ] ) || [ ! "$2" ]
+  then githoseUsage 
 
   exit -1
 fi
 
-if [[ $1 =~ $GITAA_REPO_REGEX || $1 =~ $GITAA_GITS_REGEX ]]
-  then #
-  [ "$2" == 'clone' ] && lib/githose/clones $3
-  [ "$2" == 'pull' ] && lib/githose/clones $3
-fi
+[ $verboseFlag ] && echo -e "args: ${yellowb}$BASH_ARGV"
 
-if [[ $1 =~ $GITAA_GIST_REGEX || $1 =~ $GITAA_CODE_REGEX ]]
-  then #
-  [ "$2" == 'copies' ] && lib/gisthose/copies -- $3
-  [ "$2" == 'pull' ] && lib/gisthose/pull -- $3
-fi
+lib/driver $*
 
-declare -i k=0
+echo "$reset"
 
-while [[ k -le ${#BASH_ARGV[*]} ]]
-  do declare auser="${BASH_ARGV[$k]}"
-  export k=$(( k + 1 ))
-
-  [[ "$auser" == 'clone' ]] || [[ "$auser" == 'pull' ]] && break
-
-  if [ "$1" == 'clone' ] 
-    then lib/githose/clones $auser
-  else
-    if [ "$1" == 'pull'  ] 
-      then lib/githose/pull -- $auser
-    fi
-  fi
-done
-
-echo -ne "${reset}"
+exit 0

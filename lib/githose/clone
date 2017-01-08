@@ -1,0 +1,167 @@
+#!/usr/bin/env bash
+#
+# Anononymously and asynchronously perform a GIT clone operation on all of a 
+# GitHub user's public warez repositories in a parallelized fashion!
+#
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Wed Oct 12 07:12:00 EDT 2016
+#
+
+# uncomment to enable born again debugging 
+#set -x
+
+source -- inc/inits
+
+# ware to stash da warezness
+readonly GITAA_PATH_CLONE="${HOME}/github"
+readonly GITAA_PATH_REPOS="${HOME}/repos"
+# dont be readin my files fool
+readonly GITAA_MODE_UMASK='0077'
+# somebody's bein nozey :^]
+readonly GITAA_MODE_CDIRS='0700'
+
+### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
+
+source -- inc/colors
+umask -- $GITAA_MODE_UMASK
+
+declare -i singleRepo=0
+
+if [ ! $1 ]
+  then 
+  echo "${yellowf}usage${whitef}${boldon}:${boldoff} ${purplef}$0${reset} ${cyanf}${italicson}USER${reset}"
+  echo -e "  ${cyanf}USER  ${invon}case-sensitive string for GitHub user name${reset}\n"
+  echo "${bluef}ex. ${purplef}$0${reset} ${bluef}decal${reset}"
+
+  exit 1
+fi
+
+readonly gitUser="$1"
+
+( [[ $gitUser =~ .git$ ]] || [[ $gitUser =~ ^(http|git)[s]:[/]+ ]] ) && declare -i singleRepo=1
+
+function errx_show() {
+  echo -n "${yellowb}$1${whitef}${boldon}:${boldoff}${reset}${yellowb} " 
+
+  perror -v -- $2
+
+  echo "$reset"
+
+  return 0
+}
+
+function errx_exit() {
+  readonly reposPath=$(realpath $3)
+
+  echo -n "${redb}$1${whitef}${boldon}:${boldoff}${reset}${redb} " 
+
+  [ "$reposPath" ] && echo -n "$reposPath "
+
+  perror -v -- $2
+
+  echo "$reset"
+
+  exit -- $2
+}
+
+if [ $singleRepo -ne 0 ]
+  then cd -- $GITAA_PATH_REPOS
+
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Reference to Individual Git Repository Detected${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}" 
+
+  echo -n "${whitef}${italicson}"
+
+  git clone $gitUser
+
+  exit 0
+else
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching All GitHub Repositories for Username${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}"
+fi
+
+if [ ! -d $GITAA_PATH_CLONE ] 
+  then mkdir -- "$(realpath $GITAA_PATH_CLONE)" 2>/dev/null
+
+  [ $? -ne 0 ] && errx_show 'mkdir' $? $GITAA_PATH_CLONE
+fi
+
+chmod $GITAA_MODE_CDIRS $GITAA_PATH_CLONE 2>/dev/null
+
+[ $? -ne 0 ] && errx_show 'chmod' $?
+
+cd -- $GITAA_PATH_CLONE
+
+if [ ! -d $gitUser ]
+  then mkdir -- $gitUser
+
+  [ $? -ne 0 ] && errx_exit 'mkdir' $? $gitUser
+
+  chmod $GITAA_MODE_CDIRS $gitUser 2>/dev/null
+
+  [ $? -ne 0 ] && errx_show 'chmod' $?
+fi
+
+cd -- $gitUser
+
+declare -xi waresDaWarez=0
+
+while true
+  do waresDaWarez=$(( 1 + waresDaWarez ))
+  declare outputStr=$( curl -sk "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>&1 )
+
+  if [ ! "$outputStr" ] 
+    then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
+
+    exit 2
+  fi
+
+  if [ "`echo "$outputStr" | grep 'ate limit'`" ]
+    then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}GitHub API key's rate limit exceeded (try again later)${reset}"
+
+    exit 3 
+  fi
+
+  export GITHUB_REPO_URLS=$(echo -- "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g')
+
+  echo
+  echo "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}"
+  echo
+
+  [ $? -ne 0 ] && errx_show 'git' $?
+
+  if [ ! "$GITHUB_REPO_URLS" ] 
+    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Received output from GitHub API, but no repository references?${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure you entered the correct username?${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}There must be repositories at https://github.com/${gitUser}!${reset}"
+
+    exit 4
+  fi
+ 
+  which parallel |&> /dev/null 
+
+  if [ $? -eq 0 ]
+    then echo -n "${whitef}${italicson}" 
+    
+    parallel -j${GITAA_JOBS_COUNT} nice git clone {1} ::: $GITHUB_REPO_URLS
+  else
+    declare -i countChocula=0
+
+    echo -n "${whitef}${italicson}"
+
+    for one in $GITHUB_REPO_URLS
+      do countChocula=$(( $countChocula + 1 ))
+
+      git clone $one &
+    done
+
+    for two in `seq 1 $countChocula`
+      do wait $two
+    done
+  fi
+
+  break
+done
+
+echo "$reset"
+
+exit 0

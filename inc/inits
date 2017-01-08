@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# Initialize per-system setup variables
+# 
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Fri Nov 11 22:28:23 EST 2016
+#
+
+if [ ! $initLoaded ] 
+  # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
+  then readonly export GITAA_JOBS_COUNT=$( grep 'cpu cores' /proc/cpuinfo | cut -d ':' -f2 | head -1 | sed 's/[ ]*$//;s/^[ ]*//' )
+
+  readonly export initLoaded=1 verboseFlag=1
+
+  export githosePath="githose"
+fi

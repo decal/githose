@@ -16,7 +16,7 @@ declare -ir GITAA_MODE_UMASK=0077
 
 ### <== (o) dONUT MOD STUFFZ UNDER HERe (o) ==> ###
 
-source -- ../inc/colors
+source -- inc/colors
 umask -- $GITAA_MODE_UMASK
 
 if [ ! $0 ]
@@ -68,6 +68,8 @@ for auser in `find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -iname '.*'
     do cd -- $(realpath $arepo)
 
     nice git pull &
+
+    cd ..
 
     t00tsieRollPop=$(( t00tsieRollPop + 1 ))
   done

@@ -4,7 +4,7 @@
 # 
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
-# Fri Oct 14 14:57:49 EDT 2016
+# Sat Jan  7 16:24:24 EST 2017
 #
 
 #
@@ -17,9 +17,8 @@
 #    colors (f = foreground, b = background), and use the 'off'
 #    feature for anything you turn on.
 
-function initColor()
-{
-  readonly esc=""
+if [ ! $esc ] || [ ! $reset ]
+  then readonly esc=""
 
   readonly blackf="${esc}[30m"   redf="${esc}[31m"   greenf="${esc}[32m"
   readonly yellowf="${esc}[33m"  bluef="${esc}[34m"  purplef="${esc}[35m"
@@ -32,6 +31,4 @@ function initColor()
   readonly ulon="${esc}[4m"      uloff="${esc}[24m"
   readonly invon="${esc}[7m"     invoff="${esc}[27m"
   readonly reset="${esc}[0m"
-}
-
-! [ "${esc}" -a "${reset}" ] && initColor && echo -ne "${reset}"
+fi

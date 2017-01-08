@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+# bashargs: A shell script to test the behavior of command-line option parsing in the bash shell..
+#
+# Derek Callaway <decal [AT] sdf {D0T} org>
+#
+# Sat Jan  7 18:30:57 EST 2017
+#
+
+## $ BASHARGS_BEGIN=0 BASHARGS_END=2 tmp/bashargs 0 1 2
+
+# set -x
+
+echo "argc: $BASH_ARGC"
+echo "len(argv): ${#BASH_ARGV[*]}"
+echo "argv: $BASH_ARGV"
+echo "argv[0]: ${BASH_ARGV[0]}"
+echo -n "argv[1]: ${BASH_ARGV[1]} "
+echo -n "argv[2]: ${BASH_ARGV[2]} "
+echo -n "argv[3]: ${BASH_ARGV[3]} "
+
+[[ $BASH_ARGC -gt 3 ]] && echo '(more...)' || echo
+
+if [ $BASHARGS_BEGIN ]
+  then echo "\$BASHARGS_BEGIN: $BASHARGS_BEGIN"
+
+  if [ $BASHARGS_END ] 
+    then echo "\$BASHARGS_END: $BASHARGS_END"
+
+    echo "\${BASH_ARGV[@]:\$BASHARGS_BEGIN:\$BASHARGS_END}: ${BASH_ARGV[@]:$BASHARGS_BEGIN:$(( BASHARGS_END + 1 ))}"
+  else
+    echo "\${BASH_ARGV[@]:\$BASHARGS_BEGIN:\$BASHARGS_END}: ${BASH_ARGV[@]:${BASHARGS_BEGIN}:$(( ${#BASH_ARGV[*]} + 1 ))}"
+  fi
+fi
+
+env | grep 'BASH'
+
+exit 0

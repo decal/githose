@@ -1,7 +1,11 @@
-gitaa v0.8
-==========
+**gitaa v0.8.4a**
+=============
 
-Parallelize anonymous GitHub API commands against a user name
+_`githose` and `gisthose` are commands that make archiving `git` repositories and `gist` entries from GitHub less tedious!_
+
+### Features
+
+* Parallelize anonymous GitHub API commands 
 
 Coded by:     Derek Callaway <decal {AT} sdf {D0T} org>
 
