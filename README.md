@@ -5,7 +5,9 @@ _`githose` and `gisthose` are commands to make archiving `git` repositories and 
 
 ### Features
 
-* Parallelize anonymous GitHub API commands 
+* Parallelized and anonymous GitHub API commands 
+* Fetch all of a user's repositories
+* Fetch all of multiple users' repositories
 
 Coded by:     Derek Callaway <decal {AT} sdf {D0T} org>
 
