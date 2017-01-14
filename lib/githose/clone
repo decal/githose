@@ -121,11 +121,7 @@ while true
     exit 3 
   fi
 
-  export GITHUB_REPO_URLS=$(echo "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed -r 's![/]+!!gi' | tr '\012' ' ')
-
-  echo "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}"
-
-  [ $? -ne 0 ] && errx_show 'git' $?
+  export GITHUB_REPO_URLS=$(echo "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed -r 's![/]+!!gi' | tr '\012' ' ' | sed -r 's![ ]*$!!')
 
   if [ ! "$GITHUB_REPO_URLS" ] 
     then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Received output from GitHub API, but no repository references?${reset}"
@@ -133,6 +129,8 @@ while true
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}https://github.com/${gitUser}/repositories should be a non-empty list of repos!${reset}"
 
     exit 4
+  else
+    echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n"
   fi
 
   declare -i aflag=false
@@ -175,7 +173,3 @@ while true
 
   break
 done
-
-echo "$reset"
-
-exit 0

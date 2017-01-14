@@ -1,7 +1,7 @@
 **Things To Do**
 ============
 
-* Program in proper support for gists!
+* Parse updated_at JSON member from GitHub API to check for modified gists..
 
 * Type up `doc/USERS-GUIDE.md`
 

@@ -73,6 +73,3 @@ for auser in `find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -iname '.*'
     do wait $lick |&> /dev/null
   done
 done
-
-# ♉ tw0 fingerz up, yup peas out  ♉#
-exit 0

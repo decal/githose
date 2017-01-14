@@ -39,12 +39,11 @@ else
   fi
 fi
 
-[ $verboseFlag ] && echo -e "args: ${yellowb}$BASH_ARGV"
-
 export GITHOSE_ARGV0="$0"
 
 lib/driver $1 ${BASH_ARGV[@]:0:$(( ${#BASH_ARGV[*]} - 1 ))}
 
 echo "$reset"
 
+# ♉ tw0 fingerz up, yup peas out  ♉#
 exit 0

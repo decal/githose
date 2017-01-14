@@ -103,7 +103,7 @@ while true
  
   which parallel |&> /dev/null 
 
-  echo -n "${whitef}${italicson}" 
+  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching Text of All Gists for Username${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
 
   if [ $? -eq 0 ]
     then parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} {1} ::: ${gist_code_urls[*]}
@@ -123,7 +123,3 @@ while true
 
   break
 done
-
-echo "${reset}"
-
-exit 0

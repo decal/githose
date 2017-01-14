@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
 [[ $GITHOSE_DEBUG -ne 0 ]] && set -x
-
-exit 0
