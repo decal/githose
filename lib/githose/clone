@@ -6,20 +6,11 @@
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
 # Wed Oct 12 07:12:00 EDT 2016
-#
 
-# uncomment to enable born again debugging 
-#set -x
+[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
+source -- etc/githose.conf
 source -- inc/inits
-
-# ware to stash da warezness
-readonly GITAA_PATH_CLONE="${HOME}/github"
-readonly GITAA_PATH_REPOS="${HOME}/repos"
-# dont be readin my files fool
-readonly GITAA_MODE_UMASK='0077'
-# somebody's bein nozey :^]
-readonly GITAA_MODE_CDIRS='0700'
 
 ### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
 
@@ -37,7 +28,7 @@ if [ ! $1 ]
   exit 1
 fi
 
-readonly gitUser="$1"
+declare gitUser="$1"
 
 ( [[ $gitUser =~ .git$ ]] || [[ $gitUser =~ ^(http|git)[s]:[/]+ ]] ) && declare -i singleRepo=1
 
@@ -60,7 +51,7 @@ function errx_exit() {
 
   perror -v -- $2
 
-  echo "$reset"
+  echo -n "$reset"
 
   exit -- $2
 }
@@ -77,29 +68,38 @@ if [ $singleRepo -ne 0 ]
   exit 0
 else
   echo "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching All GitHub Repositories for Username${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}"
+  echo
 fi
 
 if [ ! -d $GITAA_PATH_CLONE ] 
   then mkdir -- "$(realpath $GITAA_PATH_CLONE)" 2>/dev/null
 
-  [ $? -ne 0 ] && errx_show 'mkdir' $? $GITAA_PATH_CLONE
+  [[ $? -ne 0 ]] && errx_show 'mkdir' $? $GITAA_PATH_CLONE
 fi
 
 chmod $GITAA_MODE_CDIRS $GITAA_PATH_CLONE 2>/dev/null
 
-[ $? -ne 0 ] && errx_show 'chmod' $?
+[[ $? -ne 0 ]] && errx_show 'chmod' $?
 
 cd -- $GITAA_PATH_CLONE
 
-if [ ! -d $gitUser ]
-  then mkdir -- $gitUser
+declare -i noUser=0
 
-  [ $? -ne 0 ] && errx_exit 'mkdir' $? $gitUser
+if [ ! -d $gitUser ]
+  then noUser=1 mkdir -- $gitUser 2>/dev/null
+
+  [[ $? -ne 0 ]] && errx_exit 'mkdir' $? $gitUser
 
   chmod $GITAA_MODE_CDIRS $gitUser 2>/dev/null
 
-  [ $? -ne 0 ] && errx_show 'chmod' $?
+  [[ $? -ne 0 ]] && errx_show 'chmod' $?
 fi
+
+#if [ -d $gitUser ]
+#  then declare -i dircnt=$(ls -a1 $gitUser | egrep -v '^[.]' | wc -l)
+#
+#  if [ ! $dircnt ] 
+#fi
 
 cd -- $gitUser
 
@@ -107,7 +107,7 @@ declare -xi waresDaWarez=0
 
 while true
   do waresDaWarez=$(( 1 + waresDaWarez ))
-  declare outputStr=$( curl -sk "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>&1 )
+  declare outputStr=$( curl -s "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>&1 )
 
   if [ ! "$outputStr" ] 
     then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
@@ -121,28 +121,42 @@ while true
     exit 3 
   fi
 
-  export GITHUB_REPO_URLS=$(echo -- "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g')
+  export GITHUB_REPO_URLS=$(echo "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed -r 's![/]+!!gi' | tr '\012' ' ')
 
-  echo
   echo "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}"
-  echo
 
   [ $? -ne 0 ] && errx_show 'git' $?
 
   if [ ! "$GITHUB_REPO_URLS" ] 
     then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Received output from GitHub API, but no repository references?${reset}"
-    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure you entered the correct username?${reset}"
-    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}There must be repositories at https://github.com/${gitUser}!${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure the correct username was entered?${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}https://github.com/${gitUser}/repositories should be a non-empty list of repos!${reset}"
 
     exit 4
   fi
- 
+
+  declare -i aflag=false
+
+  if [ ! $noUser ]
+    then for d in $GITHUB_REPO_URLS
+      do [ -d "$d" ] || aflag=true
+    done
+  
+    if [ ! $aflag ] 
+      then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
+      echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure clone was intended as opposed to pull?${reset}"
+      echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}If so, first remove local directories under path: $(pwd)${reset}"
+
+      exit 5
+    fi
+  fi
+
   which parallel |&> /dev/null 
 
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
-    
-    parallel -j${GITAA_JOBS_COUNT} nice git clone {1} ::: $GITHUB_REPO_URLS
+
+    parallel -j${GITAA_JOBS_COUNT} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
   else
     declare -i countChocula=0
 

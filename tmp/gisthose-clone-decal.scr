@@ -1,0 +1,55 @@
+Script started on Sat 14 Jan 2017 03:36:30 AM EST
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ bin/git[Ksthose
+
+[36m[7musage[27m[1m[37m:[22m [32mbin/gisthose [44m[30m[1mCOMMAND[0m [44m[30m[1mARGUMENTS[0m
+
+  [44m[30m[1mCOMMAND[0m  [33mone command strings explained below:[0m
+    [32mclone[0m  [33mstore all of user's gists in a new directory named after them[0m
+    [32mpull[0m   [33mfetch changes for remote user's gists into local replicas[0m
+    [32mhelp[0m   [33mshow more detailed help and command-line usage info specific to sub-commands[0m
+
+  [44m[30m[1mARGUMENTS[0m [33mcan be one or more of any one of the following:[0m
+    [32muser[0m  [33maccount user name on GitHub[0m
+
+[7mex.[27m [32mbin/gisthose clone juliangruber vagg imakewebthings[0m
+
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ bin/gisthose help
+
+[36m[7musage[27m[1m[37m:[22m [32mbin/gisthose [44m[30m[1mCOMMAND[0m [44m[30m[1mARGUMENTS[0m
+
+  [44m[30m[1mCOMMAND[0m  [33mone command strings explained below:[0m
+    [32mclone[0m  [33mstore all of user's gists in a new directory named after them[0m
+    [32mpull[0m   [33mfetch changes for remote user's gists into local replicas[0m
+    [32mhelp[0m   [33mshow more detailed help and command-line usage info specific to sub-commands[0m
+
+  [44m[30m[1mARGUMENTS[0m [33mcan be one or more of any one of the following:[0m
+    [32muser[0m  [33maccount user name on GitHub[0m
+
+[7mex.[27m [32mbin/gisthose clone juliangruber vagg imakewebthings[0m
+
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ bin/gisthose help clone
+
+[36m[7musage[27m[1m[37m:[22m [32mbin/gisthose [44m[30m[1mCOMMAND[0m [44m[30m[1mARGUMENTS[0m
+
+  [44m[30m[1mCOMMAND[0m  [33mone command strings explained below:[0m
+    [32mclone[0m  [33mstore all of user's gists in a new directory named after them[0m
+    [32mpull[0m   [33mfetch changes for remote user's gists into local replicas[0m
+    [32mhelp[0m   [33mshow more detailed help and command-line usage info specific to sub-commands[0m
+
+  [44m[30m[1mARGUMENTS[0m [33mcan be one or more of any one of the following:[0m
+    [32muser[0m  [33maccount user name on GitHub[0m
+
+[7mex.[27m [32mbin/gisthose clone juliangruber vagg imakewebthings[0m
+
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ bin/gisthose help clone[K[K[K[K[K[K[K[K[K[Kclone decal
+[37m[3m2017-01-14 03:36:55 URL:https://gist.githubusercontent.com/decal/be2ac5036f0ec96b27fb89c4a88f7a47/raw/413915b1f847cada69b65de3a84caa615f26131d/fastDNAml_mpi [10639/10639] -> "fastDNAml_mpi" [1]
+2017-01-14 03:36:55 URL:https://gist.githubusercontent.com/decal/a6d997583aee35a680a0/raw/1f82b7e66185fe24419471bb2df580672343c256/gistfile1.txt [292/292] -> "gistfile1.txt" [1]
+2017-01-14 03:36:55 URL:https://gist.githubusercontent.com/decal/3f5e327e08c43e0c17fd/raw/9155aa3fb97feee4adc27ac11260cedfaf93c9d6/NetBSD%20dirnames%20in%20CLI%20arg%20vectors [367/367] -> "NetBSD dirnames in CLI arg vectors" [1]
+2017-01-14 03:36:55 URL:https://gist.githubusercontent.com/decal/4c75f227fcfe31eea565/raw/4e6952cc90ba1da769667e59eb99de7973e87661/NT-ABI-Error-Verify.txt [9540/9540] -> "NT-ABI-Error-Verify.txt" [1]
+2017-01-14 03:36:55 URL:https://gist.githubusercontent.com/decal/a1fa40dd44933f672c2e26f73bd5cacc/raw/751667aac07169c9c84a8300313ba4d22feee3f2/SASL.md [19959/19959] -> "SASL.md" [1]
+[0m
+[0m
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ exit
+exit
+
+Script done on Sat 14 Jan 2017 03:37:02 AM EST

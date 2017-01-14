@@ -7,13 +7,6 @@
 # Thu Oct 13 15:40:05 EDT 2016
 #
 
-# it goes up in da attic
-declare -xr GITAA_PATH_CLONE="$HOME/github"
-# eye want these many
-declare -ir GITAA_JOBS_COUNT=8
-# keep yer 2hands2 urself creep
-declare -ir GITAA_MODE_UMASK=0077
-
 ### <== (o) dONUT MOD STUFFZ UNDER HERe (o) ==> ###
 
 source -- inc/colors
@@ -24,6 +17,8 @@ if [ ! $0 ]
 
   exit 1
 fi
+
+[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
 readonly gitUser="$1"
 

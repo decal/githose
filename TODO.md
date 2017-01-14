@@ -3,6 +3,12 @@
 
 * Program in proper support for gists!
 
+* Type up `doc/USERS-GUIDE.md`
+
+* Test FreeBSD for FAQ question #3
+
+* Write `man` page using `nroff`: `githose(1)`
+
 * Write a `parallel` command for fetching the text of gists 
 
 * Fix `inc/inits` to declare the `GITHOSE_CPU_CORES` environment variable properly..

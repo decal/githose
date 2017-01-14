@@ -7,10 +7,13 @@
 # Sat Jan  7 15:44:55 EST 2017
 #
 
-# Uncomment this statement to enable debugging
-#set -x
+[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
-[ ! -d 'inc' ]  && [ -d '../inc' ] && cd ..
+if [ ! -d 'inc' ]  
+  then if [ -d '../inc' ] 
+    then cd ..
+  fi
+fi
 
 source -- inc/colors
 source -- inc/regexes

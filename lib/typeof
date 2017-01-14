@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+#
+# Determine whether to fetch gists from GitHub over HTTPS
+#
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Sat Jan  7 16:31:19 EST 2017
+#
+
+[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+
+if [ ! -d 'inc' ] 
+  then if [ -d '../inc' ] 
+    then cd ..
+  fi
+fi
+
+source -- inc/inits
+source -- inc/regexes
+source -- inc/usages
+
+if ( ! [ $1 ] && [ $2 ] )
+  then [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage
+
+  exit -1
+fi
+
+[[ $GITHOSE_ARGV0 =~ gist ]] && export githosePath="gisthose"
+
+if [[ $1 =~ ^clone ]]
+  then lib/${githosePath}/clone $2 
+else 
+  if [[ $1 =~ ^pull ]]
+    then lib/${githosePath}/pull $2 
+  else
+    [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage
+
+    exit -1
+  fi
+fi

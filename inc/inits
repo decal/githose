@@ -9,9 +9,9 @@
 
 if [ ! $initLoaded ] 
   # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
-  then readonly export GITAA_JOBS_COUNT=$( grep 'cpu cores' /proc/cpuinfo | cut -d ':' -f2 | head -1 | sed 's/[ ]*$//;s/^[ ]*//' )
+  then export export GITAA_JOBS_COUNT=$( grep 'cpu cores' /proc/cpuinfo | cut -d ':' -f2 | head -1 | sed 's/[ ]*$//;s/^[ ]*//' )
 
-  readonly export initLoaded=1 verboseFlag=1
+  export export initLoaded=1 verboseFlag=1
 
   export githosePath="githose"
 fi

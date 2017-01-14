@@ -7,8 +7,11 @@
 # Sat Jan  7 22:48:36 EST 2017
 #
 
-# Uncomment this line for debugging
-#set -x
+if [[ $GITHOSE_DEBUG -ne 0 ]]
+  then set -x
+else
+  set +x
+fi
 
 [ -d '../inc' ] && cd ..
 [ -d '../../inc' ] && cd ../..
@@ -31,6 +34,24 @@ function githoseUsage() {
   echo "      ${greenf}${ulon}repo://username/reponame${uloff} ${italicoff}${boldon}or${boldoff}${italicon} ${ulon}githubrepo://username/reponame${reset}"
   echo "      ${greenf}${ulon}gist://username${uloff} ${italicoff}${boldon}or${boldoff}${italicon} ${ulon}gist:username${reset}"
   echo "      ${greenf}${ulon}user://username${uloff} ${italicoff}${boldon}or${boldoff}${italicon} ${ulon}user:username${uloff} ${italicoff}${boldon}or${boldoff}${italicon} ${ulon}githubuser://username${uloff} ${italicoff}${boldon}or${boldoff}${italicon} ${ulon}githubuser:username${reset}"
+  echo
+  echo "${invon}ex.${invoff} ${greenf}${italicon}${0} clone juliangruber vagg imakewebthings${reset}"
+  echo
+
+  return
+}
+
+function gisthoseUsage() {
+  echo
+  echo -e "${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}ARGUMENTS${reset}"
+  echo
+  echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
+  echo "    ${greenf}clone${reset}  ${italicon}${yellowf}store all of user's gists in a new directory named after them${reset}"
+  echo "    ${greenf}pull${reset}   ${italicon}${yellowf}fetch changes for remote user's gists into local replicas${reset}"
+  echo "    ${greenf}help${reset}   ${italicon}${yellowf}show more detailed help and command-line usage info specific to sub-commands${reset}"
+  echo
+  echo "  ${blueb}${blackf}${boldon}ARGUMENTS${reset} ${italicon}${yellowf}can be one or more of any one of the following:${reset}"
+  echo "    ${greenf}user${reset}  ${italicon}${yellowf}account user name on GitHub${reset}"
   echo
   echo "${invon}ex.${invoff} ${greenf}${italicon}${0} clone juliangruber vagg imakewebthings${reset}"
   echo

@@ -7,25 +7,43 @@
 # Sat Jan  7 15:44:55 EST 2017
 #
 
-# Uncomment this line for debugging
-#set -x
+[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
-[ -d '../inc' ] && cd ..
-[ -d '../../inc' ] && cd ../..
+if [ -d '../inc' ]
+  then cd ..
+else
+  if [ -d '../../inc' ] 
+    then cd ../..
+  fi
+fi
 
+# Load the configuration file first
+source -- etc/githose.conf
+
+# Load shared scripts
 source -- inc/colors
 source -- inc/regexes
 source -- inc/usages
 
-if ( [ ! "$BASH_ARGV[$#{BASH_ARGV[*]}]" ] && [ "${BASH_ARGV[${#BASH_ARGV[*]}]:0:5]}" != 'clone' ] && [ "${BASH_ARGV[${#BASH_ARGV[*]}:0:4]}" != 'pull' ] ) || [ ! "$2" ]
-  then githoseUsage 
+if [[ "$0" =~ gist ]]
+  then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+    then gisthoseUsage
 
-  exit -1
+    exit -1
+  fi
+else
+  if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+    then githoseUsage 
+
+    exit -1
+  fi
 fi
 
 [ $verboseFlag ] && echo -e "args: ${yellowb}$BASH_ARGV"
 
-lib/driver $*
+export GITHOSE_ARGV0="$0"
+
+lib/driver $1 ${BASH_ARGV[@]:0:$(( ${#BASH_ARGV[*]} - 1 ))}
 
 echo "$reset"
 

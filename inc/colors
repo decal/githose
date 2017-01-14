@@ -18,17 +18,17 @@
 #    feature for anything you turn on.
 
 if [ ! $esc ] || [ ! $reset ]
-  then readonly esc=""
+  then export esc=""
 
-  readonly blackf="${esc}[30m"   redf="${esc}[31m"   greenf="${esc}[32m"
-  readonly yellowf="${esc}[33m"  bluef="${esc}[34m"  purplef="${esc}[35m"
-  readonly cyanf="${esc}[36m"    whitef="${esc}[37m"
-  readonly blackb="${esc}[40m"   redb="${esc}[41m"   greenb="${esc}[42m"
-  readonly yellowb="${esc}[43m"  blueb="${esc}[44m"  purpleb="${esc}[45m"
-  readonly cyanb="${esc}[46m"    whiteb="${esc}[47m"
-  readonly boldon="${esc}[1m"    boldoff="${esc}[22m"
-  readonly italicson="${esc}[3m" italicsoff="${esc}[23m"
-  readonly ulon="${esc}[4m"      uloff="${esc}[24m"
-  readonly invon="${esc}[7m"     invoff="${esc}[27m"
-  readonly reset="${esc}[0m"
+  export blackf="${esc}[30m"   redf="${esc}[31m"   greenf="${esc}[32m"
+  export yellowf="${esc}[33m"  bluef="${esc}[34m"  purplef="${esc}[35m"
+  export cyanf="${esc}[36m"    whitef="${esc}[37m"
+  export blackb="${esc}[40m"   redb="${esc}[41m"   greenb="${esc}[42m"
+  export yellowb="${esc}[43m"  blueb="${esc}[44m"  purpleb="${esc}[45m"
+  export cyanb="${esc}[46m"    whiteb="${esc}[47m"
+  export boldon="${esc}[1m"    boldoff="${esc}[22m"
+  export italicson="${esc}[3m" italicsoff="${esc}[23m"
+  export ulon="${esc}[4m"      uloff="${esc}[24m"
+  export invon="${esc}[7m"     invoff="${esc}[27m"
+  export reset="${esc}[0m"
 fi
