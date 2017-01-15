@@ -130,7 +130,7 @@ while true
 
     exit 4
   else
-    echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n"
+    echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n" | sed -r "s! !${reset} ${greenf}${ulon}!g"
   fi
 
   declare -i aflag=false

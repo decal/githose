@@ -1,0 +1,34 @@
+**_D$MONEY'S CODE CREDIT LICENSE_**
+=============================
+
+Feel free to use, modify and redistribute my code for public or private 
+(i.e. commercial) purposes.  The files listed below must be included with 
+any related or derivative works (that includes plug-ins, extensions, agents, 
+auxiliary software, etc.)  A bibliography of any and all software authors must
+also be included with such works.  Other licenses may be appended to this file 
+given that they do not conflict with the terms of the verbiage written herein.
+
+If you need support such as an immediate bug quash or would like to request one
+or more features then use the contact information shown, but be prepared to 
+send currency via electronic fund transfer using the included link.  If you 
+would like complete control over this software's code in order to claim it as
+your own I am willing to sell the rights to it at the relisencing fee shown: 
+
+
+Requisite File Includes for Redistribution
+==========================================
+
+* `LICENSE.md`
+* `AUTHORS.md`
+
+
+Electronic Fund Transfer
+========================
+
+Relicensing (Total): [https://paypal.me/decal/1337.00](Send Money to Derek - $1,337.00 USD)
+Support (Minimum): [https://paypal.me/decal/13.37](Send Money to Derek - $13.37 USD)
+
+
+Additional Licensing Clauses (if any)
+=====================================
+

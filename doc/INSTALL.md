@@ -1,5 +1,5 @@
-githose v0.8.8a
-===============
+githose v0.8.82a
+================
 
 1. Install or update Bourne Again Shell
   * apt-get -y install bash || apt-get -y upgrade bash

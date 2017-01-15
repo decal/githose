@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+#
+
+export PATH="$PATH:$(echo $(realpath $(pwd)/..))"
+

@@ -41,13 +41,13 @@ function errx_exit() {
 
   perror -v -- $2
 
-  exit -- $2
+  exit $2
 }
 
 # wtfark iz u d0in?
 if [ ! -d $GITAA_PATH_CLONE ] 
-  then echo "$0: ${GITAA_PATH_CLONE} does not exist!"
-  echo "$0: Are you sure you ran git-map-clone already?"
+  then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}${GITAA_PATH_CLONE} does not exist!${reset}"
+  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure you ran git-map-clone already?${reset}\n"
 
   exit 1
 fi
@@ -56,10 +56,10 @@ fi
 cd -- $GITAA_PATH_CLONE
 
 # roflcopterz tyme!@#
-for auser in `find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -iname '.*' -print`
+for auser in $(find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -name '.*' -print)
   do declare -i t00tsieRollPop=0
 
-  for arepo in `find "${GITAA_PATH_CLONE}/$(basename $auser)" -maxdepth 1 -type d -not -iname '.*' -print`
+  for arepo in $(find "${GITAA_PATH_CLONE}/$(basename $auser)" -maxdepth 1 -type d -not -name '.*' -print)
     do cd -- $(realpath $arepo)
 
     nice git pull &
@@ -69,7 +69,7 @@ for auser in `find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -iname '.*'
     t00tsieRollPop=$(( t00tsieRollPop + 1 ))
   done
 
-  for lick in `seq 0 $t00tsieRollPop`
+  for lick in $(seq 0 $t00tsieRollPop)
     do wait $lick |&> /dev/null
   done
 done

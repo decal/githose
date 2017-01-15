@@ -49,3 +49,7 @@ Frequently Asked Questions
 8. What if I can't install the GNU Bourne Again Shell, i.e. `bash`?
 
   * Sorry, but in this case you're SOL!
+
+9. How come I'm seeing escape characters instead of ANSI colors?!
+
+  * Ensure that your TERM 

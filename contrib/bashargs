@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 #
-# bashargs: A shell script to test the behavior of command-line option parsing in the bash shell..
+# bashargs: Script written during githose development to test the behavior of 
+#           command-line argument handling in bash without the getopts builtin
 #
 # Derek Callaway <decal [AT] sdf {D0T} org>
 #
 # Sat Jan  7 18:30:57 EST 2017
 #
-
-## $ BASHARGS_BEGIN=0 BASHARGS_END=2 tmp/bashargs 0 1 2
-
-# set -x
+# Example Usage: $ BASHARGS_BEGIN=0 BASHARGS_END=2 tmp/bashargs 0 1 2
+#
 
 echo "argc: $BASH_ARGC"
 echo "len(argv): ${#BASH_ARGV[*]}"
@@ -34,5 +33,6 @@ if [ $BASHARGS_BEGIN ]
 fi
 
 env | grep 'BASH'
+env | egrep -i 'gi[s]thub'
 
 exit 0
