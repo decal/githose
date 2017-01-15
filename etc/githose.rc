@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 #
+# Global "run commands" (initialization) file for githose
+#
+# Derek Callaway [decal (AT) sdf {DOT} org]
+#
+# Sun Jan 15 18:49:46 EST 2017
 #
 
 export PATH="$PATH:$(echo $(realpath $(pwd)/..))"
