@@ -6,7 +6,7 @@ _`githose` and `gisthose` are commands to make archiving `git` repositories and 
 
 ### Documentation
 
-- Refer to the `doc` directory where the following files are available:
+* Refer to the `doc` directory which has the files/directories outlined below:
 
   1. `AUTHORS.md`
   2. `CHANGELOG.md`
@@ -15,6 +15,9 @@ _`githose` and `gisthose` are commands to make archiving `git` repositories and 
   5. `LICENSE.md`
   6. `USERS-GUIDE.md`
   7. `TODO.md`
+  8. `use-cases`
+    1. githose-clone.scr
+    2. gisthose-clone.scr
 
 
 ### Feature List
