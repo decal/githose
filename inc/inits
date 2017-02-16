@@ -9,9 +9,8 @@
 
 if [ ! $initLoaded ] 
   # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
-  then export export GITAA_JOBS_COUNT=$( grep 'cpu cores' /proc/cpuinfo | cut -d ':' -f2 | head -1 | sed 's/[ ]*$//;s/^[ ]*//' )
-
-  export export initLoaded=1 verboseFlag=1
-
-  export githosePath="githose"
+  then export GITHOSE_NUM_JOBS=$( grep 'cpu cores' /proc/cpuinfo | cut -d ':' -f2 | head -1 | sed 's/[ ]*$//;s/^[ ]*//' )
+  declare -i initLoaded=1 
+  declare -i verboseFlag=1 
+  declare githosePath='githose'
 fi

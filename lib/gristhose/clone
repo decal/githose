@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# Anononymously and asynchronously perform git clone operations on all of a 
+# GitHub user's public gist and repository warez in a parallelized manner!
+#
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Thu Feb  9 19:06:48 EST 2017
+#
+
+( [ "$GITHOSE_DEBUG" ] && [ $GITHOSE_DEBUG -ne 0 ] ) && set -x || set +x
+
+declare gristUsers="${BASH_ARGV[*]}"
+
+parallel -j${GIST_TASK_JOBS} ./githose  clone {1} ::: $gristUsers
+parallel -j${GIST_TASK_JOBS} ./gisthose clone {1} ::: $gristUsers 
+

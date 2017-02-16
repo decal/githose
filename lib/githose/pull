@@ -9,8 +9,9 @@
 
 ### <== (o) dONUT MOD STUFFZ UNDER HERe (o) ==> ###
 
-source -- inc/colors
-umask -- $GITAA_MODE_UMASK
+source inc/colors
+
+[ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK 
 
 if [ ! $0 ]
   then echo "usage: $0 [USER]"
@@ -73,3 +74,6 @@ for auser in $(find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -name '.*'
     do wait $lick |&> /dev/null
   done
 done
+
+exit 0
+

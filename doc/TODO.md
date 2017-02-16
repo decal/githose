@@ -1,9 +1,12 @@
 **Things To Do**
 ============
 
-* Parse updated_at JSON member from GitHub API to check for modified gists..
+* Parse updated_at JSON member from GitHub API to check for modified gists
+  - will be code for `lib/gisthose/pull`
 
-* Type up `doc/USERS-GUIDE.md`
+* Make `exit $BASH_LINENO` into `function codeError` or something..
+
+* Fix usage condition by replacing with function in `lib/githose/pull`
 
 * Test FreeBSD for FAQ question #3
 
@@ -23,7 +26,7 @@
  
 * Implement `githose conf_(ig)?_` for managing config variables in `etc/githose.conf`
 
-* Continue testing puller scripts
+* Continue testing `pull` scripts
 
 * Design new sub-command `githose list` to use the GitHub API in order to view a user's:
   - repositories
@@ -32,9 +35,10 @@
   - followers 
   - following
 
-* Make a Gist spider known as `spidigister`
-
 * Create `lib/wgetter` so all `wget` invocations share function code
+  - Try using `lynx` or `curl` if `wget` isn't available..
+
+* Performance-based profile tracing on all scripts to meet acceptable benchmarks
 
 
 ### Long-Term Goals..
@@ -46,4 +50,4 @@
 * Implement a _one-or-more_ `getopt` flag for verbosity: `-v` 
  - should also be used like: `-vv`
 
-* Invent more custom URL scheme handlers such as `repos://user?repo1&repo2` 
+* Make a Gist spider known as `spidigister` that checks a given user's followers gists as well

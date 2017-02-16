@@ -9,12 +9,11 @@
 
 [[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
-[ ! -d 'inc' ] && [ -d '../inc' ] && cd ..
+[ -d '../inc' ] && cd ..
 
-source -- inc/colors
-source -- inc/regexes
+source inc/colors && source inc/regexes
 
-export k=$(( ${#BASH_ARGV[*]} - 1 ))
+declare -i k=$(( ${#BASH_ARGV[*]} - 1 ))
 
 while [[ $k -ne 0 ]]
   do k=$(( k - 1 ))

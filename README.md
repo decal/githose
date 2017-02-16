@@ -1,40 +1,46 @@
-**githose v0.8.82a**
+**githose v0.8.94a**
 ================
 
-_`githose` and `gisthose` are commands to make archiving `git` repositories and `gist` entries from GitHub less tedious!_
-
+_`githose` concurrently archives GitHub users' code repositories and gist text!_
 
 ### Documentation
 
 * Refer to the `doc` directory which has the files/directories outlined below:
 
   1. `AUTHORS.md`
-  2. `CHANGELOG.md`
+  2. `NEWS.md`
   3. `FAQ.md`
   4. `INSTALL.md`
   5. `LICENSE.md`
-  6. `USERS-GUIDE.md`
+  6. `GUIDE.md`
   7. `TODO.md`
-  8. `use-cases`
-    1. githose-clone.scr
-    2. gisthose-clone.scr
-
+  8. `use-cases` 
+    1. gisthose-clone-decal.scr
+    2. githose-clone-decal.scr
+    3. gristhose-clone-klacke.scr
 
 ### Feature List
 
-* Anonymous [GitHub API v3](https://developer.github.com/v3/) commands parallelized with GNU `parallel`
-* Clone/pull all of a user's repositories and gists in one fell swoop
-* Clone/pull all of multiple users' repositories and gists using a single bash statement
-* Support for `ANSI.SYS` style color escapes a.k.a. SGR (Select Graphic Rendition)
+* Multi-Threaded Anonymous Access to [GitHub API v3](https://developer.github.com/v3/) 
+  - Git commands parallelized via GNU `parallel` if found in `PATH` by `which`
+  - Application-level anonymity due to lack of uniquely identifying API key
+  - Responsibility for transport layer anonymity falls squarely on the user 
+  - Low-level network function wrapper like `torify` needed to conceal source IP
 
+* Clone/pull all of a user's repositories and gists in one fell swoop
+  - `githose` handles code repositories
+  - `gisthose` handles gist entries
+  - `gristhose` handles both code repositories and gist entries
+
+* Support for [ANSI escape code colors](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
 
 ### DevOps Info
 
-Coded by:     Derek Callaway [<decal {AT} sdf {D0T} org>](mailto:decal@sdf.org)
-              @decalresponds on [Twitter](https://github.com/decalresponds)
+Coded by*:*    _Derek Callaway_ [<decal {AT} sdf {D0T} org>](mailto:decal@sdf.org)
+               `@decalresponds` on [Twitter](https://github.com/decalresponds)
 
-Tested on:    `Linux msi 4.8.0-kali2-amd64 #1 SMP Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux`
+Tested on*:*   `Linux Version 4.8.0-kali2-amd64, Compiled #1 SMP Debian 4.8.15-1kali1 (2016-12-23)`
+               `Eight 3.37GHz Intel i7 Processors, 128TB RAM, 39913 Bogomips Total`
 
-Release Date: _Fri Jan 13 22:06:14 EST 2017_
-
+Released at*:* `Thu Feb 16 02:01:31 EST 2017`
 

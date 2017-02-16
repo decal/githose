@@ -9,8 +9,9 @@
 
 ### [!] DONT EDIT ANYTHING BELOW HERE [!] ###
 
-source -- inc/colors
-umask -- $GIST_MODE_MASK
+source inc/colors 
+
+[ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
 if [ ! $1 ]
   then echo
@@ -23,16 +24,14 @@ if [ ! $1 ]
   exit 1
 fi
 
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x
+( [ "$GITHOSE_DEBUG" ] && [ $GITHOSE_DEBUG -ne 0 ] ) && set -x || set +x
 
-declare gitUser="$1"
+declare gistUser="$1"
 
 function errx_show() {
   echo -n -- "$1: " 
 
-  errno -- $2 | tail -n 1 
-
-  return 0
+  errno -- $2 
 }
 
 function errx_exit() {
@@ -42,84 +41,104 @@ function errx_exit() {
 
   [ "$reposPath" ] && echo -n "${reposPath} "
 
-  errno  -- $2 | tail -n 1
+  errno -- $2 
 
-  exit -- $2
+  exit $2
 }
 
 if [ ! -d $GIST_PATH_COPY ] 
   then mkdir -- "$(realpath $GIST_PATH_COPY)" 2>/dev/null
 
-  [[ $? -ne 0 ]] && errx_show 'mkdir' $? $GIST_PATH_COPY
+  [ $? -ne 0 ] && errx_show 'mkdir' "$?" $GIST_PATH_COPY
 fi
 
-chmod $GIST_MODE_DIRS -- $GIST_PATH_COPY 2>/dev/null
+chmod -- $GIST_MODE_DIRS $GIST_PATH_COPY |&> /dev/null
 
-[[ $? -ne 0 ]] && errx_show 'chmod' $?
+[ $? -ne 0 ] && errx_show 'chmod' "$?"
 
 cd -- ${GIST_PATH_COPY}
 
-if [ ! -d $gitUser ]
-  then mkdir -- $gitUser
+if [ ! -d $gistUser ]
+  then mkdir -- $gistUser
 
-  [[ $? -ne 0 ]] && errx_exit 'mkdir' $? $gitUser
+  [ $? -ne 0 ] && errx_exit 'mkdir' "$?" $gistUser
 
-  chmod $GIST_MODE_DIRS -- $gitUser 2>/dev/null
+  chmod $GIST_MODE_DIRS -- $gistUser |&> /dev/null
 
-  [[ $? -ne 0 ]] && errx_show 'chmod' $?
+  [ $? -ne 0 ] && errx_show 'chmod' "$?"
 fi
 
-cd -- $gitUser
+cd -- $gistUser
 
 declare -xi waresDaWarez=0
 
 while true
   do waresDaWarez=$(( 1 + waresDaWarez ))
-  declare outputStr=$( curl -s "https://api.github.com/users/${gitUser}/gists" 2>&1 )
+  declare outputStr="$( curl -s "https://api.github.com/users/${gistUser}/gists" 2>&1 )"
 
   if [ ! "$outputStr" ] 
-    then echo "$0: No output received from GitHub API!"
+    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
 
     exit 2
   fi
 
   if [ "`echo "$outputStr" | grep 'ate limit'`" ]
-    then echo "$0: GitHub API key's rate limit exceeded (try again later)"
+    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}GitHub API key's rate limit exceeded (${italicson}try again later${italicsoff})${reset}"
 
     exit 3 
   fi
 
-  declare -a gist_code_urls=$( echo "$outputStr" | grep '"raw_url": "' | grep "/${gitUser}/" | cut -d \" -f4 )
+  if [[ ${#outputStr} -eq 4 ]]
+    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${greenf}GitHub username ${invon}${gistUser}${invoff} doesn't have any ${italicon}publicized${italicoff} gists!${reset}"
 
-  [ $? -ne 0 ] && errx_show 'git' $?
+    exit 0
+  fi
+
+  declare -a gist_code_urls=$( echo "$outputStr" | grep '"raw_url": "' | grep "/${gistUser}/" | cut -d \" -f4 )
+
+  [ $? -ne 0 ] && errx_show 'git' "$?"
 
   if [ ! "${gist_code_urls}" ]
-    then echo "$0: Received output from GitHub API, but no raw gist URL's ?"
-    echo "$0: Are you sure you entered the correct username ?"
-    echo "$0: There must be gists at https://api.github.com/users/${gitUser}/gists !"
+    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${redf}Received output from GitHub API, but no raw gist URL's ${whitef}${boldon}?${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${redf}Are you sure you entered the correct username ${whitef}${boldon}?${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${redf}There must be gists at ${ulon}${cyanf}https://api.github.com/users/${gistUser}/gists${uloff} ${whitef}${boldon}!${reset}"
 
     exit 4
   fi
  
   which parallel |&> /dev/null 
 
-  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching Text of All Gists for Username${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
+  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching Text of All Gists for${whitef}${boldon}:${boldoff} ${reset}${invon}${gistUser}${reset}\n${whitef}${italicson}" 
+  echo -ne "${greenf}"
+  
+  for afile in ${gist_code_urls[*]}
+    do echo -n "${ulon}$(basename $afile)${uloff} "
+  done
+  
+  echo -e "\n$reset" 
 
-  if [ $? -eq 0 ]
-    then parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} {1} ::: ${gist_code_urls[*]}
+  # if [ $? -eq 0 ]
+  if [ $? -ne 0 ]
+    then parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} {1} ::: ${gist_code_urls[*]} |&> /dev/null
   else
     declare -i acnt=0
 
-    for one in $gist_code_urls
+    for one in ${gist_code_urls[*]}
       do acnt=$(( $acnt + 1 ))
 
-      wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} &
+      [ $DEBUG ] && echo -e "\n${whitef}DEBUG${boldon}:${reset} ${inverse}$(basename $one)${reset}\n"
+
+      wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} ${one} |&> /dev/null & 
     done
 
     for two in `seq 1 $acnt`
-      do wait $two
+      do wait $two |&> /dev/null
     done
   fi
 
   break
 done
+
+echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+
+exit 0

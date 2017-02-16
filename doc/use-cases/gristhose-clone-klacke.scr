@@ -1,0 +1,32 @@
+Script started on Wed 15 Feb 2017 10:30:11 PM EST
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ ./gristhose clone klacke
+[35mlib/githose/clone[37m[1m:[22m [34mFetching All GitHub Repositories for[37m[1m:[22m [0m[7mklacke[0m
+
+[32m[4motp[0m [32m[4mtc-shaper[0m [32m[4mxeno-canto-country-collector[0m [32m[4myaws[0m
+
+[37m[3m[0m[35mlib/githose/clone[37m[1m:[22m [42mFinished Cloning All Repositories From[37m[1m:[22m[0m [7mklacke[0m
+ [0mfatal: destination path 'otp' already exists and is not an empty directory.
+fatal: destination path 'tc-shaper' already exists and is not an empty directory.
+fatal: destination path 'xeno-canto-country-collector' already exists and is not an empty directory.
+fatal: destination path 'yaws' already exists and is not an empty directory.
+[35mlib/gisthose/clone[37m[1m:[22m [32mGitHub username [7mklacke[27m doesn't have any publicized gists![0m
+ [0m [0m]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ rm -fr ~/github/klacke
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ rm -fr ~/github/klacke./gristhose clone klacke
+[35mlib/githose/clone[37m[1m:[22m [34mFetching All GitHub Repositories for[37m[1m:[22m [0m[7mklacke[0m
+
+[32m[4motp[0m [32m[4mtc-shaper[0m [32m[4mxeno-canto-country-collector[0m [32m[4myaws[0m
+
+[37m[3m[0m[35mlib/githose/clone[37m[1m:[22m [42mFinished Cloning All Repositories From[37m[1m:[22m[0m [7mklacke[0m
+ [0mCloning into 'tc-shaper'...
+POST git-upload-pack (153 bytes)
+Cloning into 'xeno-canto-country-collector'...
+POST git-upload-pack (153 bytes)
+Cloning into 'yaws'...
+POST git-upload-pack (gzip 1853 to 982 bytes)
+Cloning into 'otp'...
+POST git-upload-pack (453 bytes)
+[35mlib/gisthose/clone[37m[1m:[22m [32mGitHub username [7mklacke[27m doesn't have any publicized gists![0m
+ [0m [0m]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ exit
+exit
+
+Script done on Wed 15 Feb 2017 10:30:45 PM EST

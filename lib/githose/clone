@@ -7,15 +7,13 @@
 #
 # Wed Oct 12 07:12:00 EDT 2016
 
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+( [ "$GITHOSE_DEBUG" ] && [ $GITHOSE_DEBUG -ne 0 ] ) && set -x || set +x
 
-source -- etc/githose.conf
-source -- inc/inits
+(source etc/githose.conf && source inc/inits && source inc/colors) || exit -- $BASH_LINENO
 
 ### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
 
-source -- inc/colors
-umask -- $GITAA_MODE_UMASK
+[ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
 declare -i singleRepo=0
 
@@ -59,27 +57,34 @@ function errx_exit() {
 if [ $singleRepo -ne 0 ]
   then cd -- $GITAA_PATH_REPOS
 
-  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Reference to Individual Git Repository Detected${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}" 
-
-  echo -n "${whitef}${italicson}"
+  echo -ne "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Handling URI Style Input as Single Git Repository${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
 
   git clone $gitUser
 
-  exit 0
+  if [ $? ]
+    then readonly declare -i errCode=$? 
+    
+    echo -e "\a\n${reset}"
+
+    exit -- $errCode
+  else
+    echo -e "\a\n${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Done Cloning Given Git Repository${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
+
+    exit 0
+  fi
 else
-  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching All GitHub Repositories for Username${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}"
-  echo
+  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching All GitHub Repositories for${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n"
 fi
 
 if [ ! -d $GITAA_PATH_CLONE ] 
   then mkdir -- "$(realpath $GITAA_PATH_CLONE)" 2>/dev/null
 
-  [[ $? -ne 0 ]] && errx_show 'mkdir' $? $GITAA_PATH_CLONE
+  [ $? -ne 0 ] && errx_show 'mkdir' "$?" $GITAA_PATH_CLONE
 fi
 
-chmod $GITAA_MODE_CDIRS $GITAA_PATH_CLONE 2>/dev/null
+chmod $GITAA_MODE_CDIRS $GITAA_PATH_CLONE |&> /dev/null
 
-[[ $? -ne 0 ]] && errx_show 'chmod' $?
+[ $? -ne 0 ] && errx_show 'chmod' "$?"
 
 cd -- $GITAA_PATH_CLONE
 
@@ -88,11 +93,11 @@ declare -i noUser=0
 if [ ! -d $gitUser ]
   then noUser=1 mkdir -- $gitUser 2>/dev/null
 
-  [[ $? -ne 0 ]] && errx_exit 'mkdir' $? $gitUser
+  [ $? -ne 0 ] && errx_exit 'mkdir' $? $gitUser
 
-  chmod $GITAA_MODE_CDIRS $gitUser 2>/dev/null
+  chmod $GITAA_MODE_CDIRS $gitUser |&> /dev/null
 
-  [[ $? -ne 0 ]] && errx_show 'chmod' $?
+  [ $? -ne 0 ] && errx_show 'chmod' "$?"
 fi
 
 #if [ -d $gitUser ]
@@ -133,16 +138,16 @@ while true
     echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n" | sed -r "s! !${reset} ${greenf}${ulon}!g"
   fi
 
-  declare -i aflag=false
+  declare -i aflag=$false
 
   if [ ! $noUser ]
     then for d in $GITHUB_REPO_URLS
-      do [ -d "$d" ] || aflag=true
+      do [ -d "$d" ] || aflag=$true
     done
   
-    if [ ! $aflag ] 
+    if [ $aflag -eq 0 ] 
       then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
-      echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure clone was intended as opposed to pull?${reset}"
+      echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure ${italicon}clone${italicoff} was intended as opposed to ${italicon}pull${italicoff}?${reset}"
       echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}If so, first remove local directories under path: $(pwd)${reset}"
 
       exit 5
@@ -154,7 +159,7 @@ while true
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
 
-    parallel -j${GITAA_JOBS_COUNT} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
+    parallel -j${GITHOSE_NUM_JOBS} nice git clone -vj2 "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
   else
     declare -i countChocula=0
 
@@ -163,7 +168,7 @@ while true
     for one in $GITHUB_REPO_URLS
       do countChocula=$(( $countChocula + 1 ))
 
-      git clone $one &
+      nice git clone -vj2 $one &
     done
 
     for two in `seq 1 $countChocula`
@@ -173,3 +178,7 @@ while true
 
   break
 done
+
+echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+
+exit 0

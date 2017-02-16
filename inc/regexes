@@ -1,15 +1,20 @@
 #!/usr/bin/env bash
 #
 # Initialize regular expression strings for command-line argument analysis
+# Only initialize everything else when regex for GitHub repositories is unset
 #
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
-# Sat Jan  7 16:34:22 EST 2017
+# Wed Feb  8 21:01:06 EST 2017
 #
 
-export GITAA_REPO_REGEX="^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$"
-export GITAA_USER_REGEX="^([gG][tT][hH][uU][bB]|[uU][sS][eE][rR]|[gG][iI][tT][hH][uU][bB][sS][eE][rR])[:]+[/]*.*$"
-export GITAA_USRS_REGEX="^([gG][iI][tT][hH][uU][bB])?[uU][sS][eE][rR][sS][:]+[/]+[?][a-zA-Z0-9_-]+([&]?([a-zA-Z0-9_-]+))*$"
-export GITAA_GITS_REGEX="^[gG][iI][tT][sS]?[:]+[/]+.*$"
-export GITAA_GIST_REGEX="[gG][iI][sS][tT][.:][/]*"
-export GITAA_LINK_REGEX="^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$"
+if [ ! "$GITAA_REPO_REGEX" ]
+  then 
+  export GITAA_REPO_REGEX="^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$"
+  export GITAA_USER_REGEX="^([gG][tT][hH][uU][bB]|[uU][sS][eE][rR]|[gG][iI][tT][hH][uU][bB][sS][eE][rR])[:]+[/]*.*$"
+  export GITAA_USRS_REGEX="^([gG][iI][tT][hH][uU][bB])?[uU][sS][eE][rR][sS][:]+[/]+[?][a-zA-Z0-9_-]+([&]?([a-zA-Z0-9_-]+))*$"
+  export GITAA_GITS_REGEX="^[gG][iI][tT][sS]?[:]+[/]+.*$"
+  export GITAA_GIST_REGEX="[gG][iI][sS][tT][.:][/]*"
+  export GITAA_LINK_REGEX="^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$"
+fi
+

@@ -7,16 +7,17 @@ Frequently Asked Questions
     1. "git" "hose" 
     2. "git" "those"
 
-  * both pronounciations are acceptable and very self-explanatory as well..
-  * whenever you want to 'get those' repositories without having to manually type out `git clone` for each one just use `githose`..
-  * metaphorically speaking, `githose` acts as a 'hose' by spraying the repositories or gists on a [GitHub](https://github.com/) user's account..
+  * both pronounciations are acceptable and very self-explanatory as well
+  * whenever you want to 'get those' repositories from a user without manually typing `git clone` for each just use `githose`
+  * metaphorically speaking, `githose` acts as a "hose" by spraying the repositories/gists via [GitHub API](https://api.github.com/)
   * `gisthose` is pronounced exactly as it reads: "jist" "hoes"
+  * `gristhose` also has a straightforward pronunciation: "g-wrist" "ho's"
 
 2. What type of computing environment was `githose` developed in?
 
   * `githose` was developed in the [Kali](https://kali.org/) Linux distribution which is a fork of [Debian](https://debian.org/)
   * MSI GT72 2QE Dominator Pro laptop with an Intel Core i7 running at ~5K BogoMIPS
-  * GNU bash, version 4.4.5(1)-release (x86_64-pc-linux-gnu)
+  * GNU bash, version 4.4.11(1)-release (x86_64-pc-linux-gnu)
   * GNU parallel 20161222
 
 3. Which platforms should `githose` properly operate under?
@@ -43,7 +44,7 @@ Frequently Asked Questions
 
 7. What if I can't install GNU `parallel`?
 
-  * No problem--`githose` and `gisthose` will both still run just fine.
+  * No problem--`githose`, `gisthose` and `gristhose` will all still run just fine.
   * Without access to GNU `parallel` the scripts execute sequentially which makes multiple downloads slower.
 
 8. What if I can't install the GNU Bourne Again Shell, i.e. `bash`?
@@ -52,4 +53,12 @@ Frequently Asked Questions
 
 9. How come I'm seeing escape characters instead of ANSI colors?!
 
-  * Ensure that your TERM 
+  * This can be caused by one or more software/configuration issues..
+    - Ensure that your `TERM` environment variable is set correctly
+    - For example: `export TERM=xterm-256color`
+    - Add setting to: `~/.bashrc` or `~/.bash_profile` or `/etc/bash.bashrc`
+
+10. Why am I getting Perl-related errors from [GNU parallel](https://www.gnu.org/software/parallel/)
+
+  * Check for bad permissions or uninstalled [CPAN](http://www.cpan.org) modules
+  * Don't forget `parallel` isn't a required dependency, so try uninstalling it

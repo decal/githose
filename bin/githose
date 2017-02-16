@@ -9,41 +9,60 @@
 
 [[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
-if [ -d '../inc' ]
-  then cd ..
-else
-  if [ -d '../../inc' ] 
-    then cd ../..
-  fi
-fi
+[ -d '../inc' ] && cd ..
+[ -d '../../inc' ] && cd ../..
 
-# Load the configuration file first
-source -- etc/githose.conf
+function configError {
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}There was a syntax error in the configuration file${boldon}!${reset}"
+
+  return
+}
 
 # Load shared scripts
-source -- inc/colors
-source -- inc/regexes
-source -- inc/usages
+source inc/colors && source inc/regexes && source inc/usages
 
-if [[ "$0" =~ gist ]]
+# Load the configuration file
+source etc/githose.conf 
+
+if [[ $? -ne 0 ]]
+  then configError 
+  
+  exit $?
+fi
+
+if [[ "$0" =~ grist ]]
   then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
-    then gisthoseUsage
+    then gristhoseUsage
 
-    exit -1
+  exit -1
   fi
 else
-  if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
-    then githoseUsage 
+  if [[ "$0" =~ gist ]]
+    then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+      then gisthoseUsage
 
-    exit -1
+      exit -1
+    fi
+  else
+    if [[ "$0" =~ git ]]
+      then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+        then githoseUsage 
+
+        exit -1
+      fi
+    else
+      genericUsage
+
+      exit -1
+    fi
   fi
 fi
 
-export GITHOSE_ARGV0="$0"
+export GITHOSE_ARGV0="`basename $0`"
 
 lib/driver $1 ${BASH_ARGV[@]:0:$(( ${#BASH_ARGV[*]} - 1 ))}
 
-echo "$reset"
+echo -n " ${reset}"
 
 # ♉ tw0 fingerz up, yup peas out  ♉#
 exit 0

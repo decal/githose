@@ -9,15 +9,9 @@
 
 [[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
-if [ ! -d 'inc' ] 
-  then if [ -d '../inc' ] 
-    then cd ..
-  fi
-fi
+[ -d '../inc' ] && cd ..
 
-source -- inc/inits
-source -- inc/regexes
-source -- inc/usages
+source inc/inits && source inc/regexes && source inc/usages
 
 if ( ! [ $1 ] && [ $2 ] )
   then [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage
@@ -25,16 +19,56 @@ if ( ! [ $1 ] && [ $2 ] )
   exit -1
 fi
 
-[[ $GITHOSE_ARGV0 =~ gist ]] && export githosePath="gisthose"
+if [[ $1 =~ ^help ]] 
+  then genericUsage 
 
-if [[ $1 =~ ^clone ]]
-  then lib/${githosePath}/clone $2 
-else 
-  if [[ $1 =~ ^pull ]]
-    then lib/${githosePath}/pull $2 
-  else
-    [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage
+  exit -1
+else
+  if [[ $1 =~ ^set ]] 
+    then setUsage
 
     exit -1
+  else
+    lib/misc/set "$2" "$3"
+  fi
+fi
+
+if [[ $GITHOSE_ARGV0 =~ gist ]] 
+  then export githosePath='gisthose'
+else 
+  if [[ $GITHOSE_ARGV0 =~ git ]]
+    then export githosePath='githose'
+  else 
+    [[ $GITHOSE_ARGV0 =~ grist ]] && export githosePath='gristhose'
+  fi
+fi
+
+[ ! "$githosePath" ] && export githosePath='githose'
+
+if [[ $1 =~ ^clone ]]
+  then if [[ $2 =~ ^help ]] 
+    then [[ $GITHOSE_ARGV0 =~ grist ]] && gristhoseCloneUsage
+
+    exit -1
+  else
+    lib/${githosePath}/clone $2
+  fi    
+else
+  if [[ $1 =~ ^clone ]]
+    then if [[ $2 =~ ^help ]] 
+      then [[ $GITHOSE_ARGV0 =~ git ]] && githoseCloneUsage || gisthoseCloneUsage
+
+      exit -1
+    else 
+      lib/${githosePath}/clone $2 
+    fi
+  else 
+    if [[ $1 =~ ^pull ]]
+      then lib/${githosePath}/pull $2 
+    else
+      [[ $GITHOSE_ARGV0 =~ gist ]] && gisthoseUsage || gisthoseUsage
+
+      exit -1
+    fi
   fi
 fi

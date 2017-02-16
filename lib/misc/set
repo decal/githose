@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+
+readonly settingField="$1" settingValue="$2"
+
+source inc/colors

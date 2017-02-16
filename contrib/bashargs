@@ -13,7 +13,7 @@
 echo "argc: $BASH_ARGC"
 echo "len(argv): ${#BASH_ARGV[*]}"
 echo "argv: $BASH_ARGV"
-echo "argv[0]: ${BASH_ARGV[0]}"
+echo -n "argv[0]: ${BASH_ARGV[0]} "
 echo -n "argv[1]: ${BASH_ARGV[1]} "
 echo -n "argv[2]: ${BASH_ARGV[2]} "
 echo -n "argv[3]: ${BASH_ARGV[3]} "

@@ -1,0 +1,10 @@
+Script started on Thu 16 Feb 2017 02:27:35 AM EST
+]0;super@msi: ~/GIT/decal/githose/doc[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose/doc[00m$ cd ..
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ bin/gisthose clone dcal[K[K[Kecal[C[C[C[1P[1P[1P[1@.
+[35mlib/gisthose/clone[37m[1m:[22m [34mFetching Text of All Gists for[37m[1m:[22m [0m[7mdecal[0m
+[37m[3m
+[0m[35mlib/gisthose/clone[37m[1m:[22m [42mFinished Cloning All Gists From[37m[1m:[0m [7mdecal[0m
+ [0m]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ exit
+exit
+
+Script done on Thu 16 Feb 2017 02:27:57 AM EST
