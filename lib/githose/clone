@@ -159,7 +159,7 @@ while true
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
 
-    parallel -j${GITHOSE_NUM_JOBS} nice git clone -vj2 "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
+    parallel -j${GITHOSE_NUM_JOBS} nice git clone -j2 "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
   else
     declare -i countChocula=0
 
@@ -168,7 +168,7 @@ while true
     for one in $GITHUB_REPO_URLS
       do countChocula=$(( $countChocula + 1 ))
 
-      nice git clone -vj2 $one &
+      nice git clone -j2 $one &
     done
 
     for two in `seq 1 $countChocula`

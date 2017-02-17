@@ -13,7 +13,7 @@
 source -- inc/colors
 
 function gristhoseUsage() {
-  echo
+  cat etc/gristhose.motd
   echo -e "${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}ARGUMENTS${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
@@ -30,7 +30,7 @@ function gristhoseUsage() {
 }
 
 function gisthoseUsage() {
-  echo
+  cat etc/gisthose.motd
   echo -e "${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
@@ -48,7 +48,7 @@ function gisthoseUsage() {
 }
 
 function githoseUsage() {
-  echo 
+  cat etc/githose.motd
   echo -e "${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
@@ -65,7 +65,7 @@ function githoseUsage() {
 }
 
 function genericUsage() {
-  echo
+  cat etc/githose.motd
   echo -e "${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}ARGUMENTS${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"

@@ -1,0 +1,958 @@
+Script started on Thu 16 Feb 2017 08:12:41 AM EST
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ ./githose
+   [0;1;33;93mm[0;1;32;92mmm[0m    [0;1;35;95m"[0m      [0;1;32;92mm[0m    [0;1;35;95mm[0m    [0;1;33;93mm[0m                     
+ [0;1;33;93mm[0;1;32;92m"[0m   [0;1;34;94m"[0m [0;1;35;95mmm[0;1;31;91mm[0m    [0;1;32;92mm[0;1;36;96mm#[0;1;34;94mmm[0m  [0;1;31;91m#[0m    [0;1;32;92m#[0m  [0;1;34;94mmm[0;1;35;95mm[0m    [0;1;33;93mm[0;1;32;92mmm[0m    [0;1;35;95mmm[0;1;31;91mm[0m  
+ [0;1;32;92m#[0m   [0;1;34;94mm[0;1;35;95mm[0m   [0;1;33;93m#[0m      [0;1;34;94m#[0m    [0;1;33;93m#m[0;1;32;92mmm[0;1;36;96mm#[0m [0;1;34;94m#[0;1;35;95m"[0m [0;1;31;91m"#[0m  [0;1;32;92m#[0m   [0;1;34;94m"[0m  [0;1;35;95m#[0;1;31;91m"[0m  [0;1;33;93m#[0m 
+ [0;1;36;96m#[0m    [0;1;31;91m#[0m   [0;1;32;92m#[0m      [0;1;35;95m#[0m    [0;1;32;92m#[0m    [0;1;34;94m#[0m [0;1;35;95m#[0m   [0;1;33;93m#[0m   [0;1;36;96m"[0;1;34;94m""[0;1;35;95mm[0m  [0;1;31;91m#[0;1;33;93m""[0;1;32;92m""[0m 
+  [0;1;35;95m"m[0;1;31;91mmm[0;1;33;93m"[0m [0;1;32;92mmm[0;1;36;96m#m[0;1;34;94mm[0m    [0;1;31;91m"[0;1;33;93mmm[0m  [0;1;36;96m#[0m    [0;1;35;95m#[0m [0;1;31;91m"[0;1;33;93m#m[0;1;32;92m#"[0m  [0;1;34;94m"m[0;1;35;95mmm[0;1;31;91m"[0m  [0;1;33;93m"[0;1;32;92m#m[0;1;36;96mm"[0m 
+                                                 
+[36m[7musage[27m[1m[37m:[22m [32m./githose [44m[30m[1mCOMMAND[0m [44m[30m[1mUSERNAME[0m
+
+  [44m[30m[1mCOMMAND[0m  [33mone command strings explained below:[0m
+    [32mclone[0m  [33mdownload all user's code repositories under $HOME [0m
+    [32mpull[0m   [33mfetch changes to user's code repositories[0m
+
+  [44m[30m[1mUSERNAME[0m [33mcan be one or more of any one of the following:[0m
+    [32muser[0m  [33maccount user name on GitHub[0m
+
+[7mex.[27m [32m./githose clone juliangruber vagg[0m
+
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ ./githose clone misterch0c
+[35mlib/githose/clone[37m[1m:[22m [34mFetching All GitHub Repositories for[37m[1m:[22m [0m[7mmisterch0c[0m
+
+[32m[4mAwesome-Hacking[0m [32m[4mbaudrate[0m [32m[4mConsoleZ-Color-Themes[0m [32m[4mcve-search[0m [32m[4mDVNA[0m [32m[4mextractor[0m [32m[4mfirmadyne[0m [32m[4mfirmflaws[0m [32m[4mfirminator.io[0m [32m[4mfirminator_backend[0m [32m[4mfirmwalker[0m [32m[4mfishextract[0m [32m[4mfuzzdb[0m [32m[4mgenerator-angular[0m [32m[4mHypeMachine-Extension[0m [32m[4mlinkbase-scraper[0m [32m[4mmalSploitBase[0m [32m[4mMaterial-Seed-Angular[0m [32m[4mmisterch0c.github.io[0m [32m[4mnm-applet-soundify[0m [32m[4mPayPal-node-SDK[0m [32m[4mplugin-tab[0m [32m[4mscraper[0m [32m[4mSecLinksBot[0m [32m[4mSL-backend[0m [32m[4mSL-frontend[0m [32m[4mThe-Shell[0m [32m[4mtwitterBFTD[0m [32m[4mTwo-Tier-Enterprise-App-and-API-Development-with-Angular-and-Sails[0m [32m[4musbdriveby[0m [32m[4mwaterline-docs[0m [32m[4mwebpage-preview[0m [32m[4mwriteups[0m
+
+[37m[3mCloning into 'ConsoleZ-Color-Themes'...
+POST git-upload-pack (153 bytes)
+Cloning into 'Awesome-Hacking'...
+POST git-upload-pack (153 bytes)
+Cloning into 'baudrate'...
+POST git-upload-pack (203 bytes)
+Cloning into 'extractor'...
+POST git-upload-pack (153 bytes)
+Cloning into 'cve-search'...
+POST git-upload-pack (353 bytes)
+Cloning into 'firmadyne'...
+POST git-upload-pack (153 bytes)
+Cloning into 'firmflaws'...
+POST git-upload-pack (153 bytes)
+Cloning into 'DVNA'...
+POST git-upload-pack (153 bytes)
+Cloning into 'fishextract'...
+POST git-upload-pack (153 bytes)
+Cloning into 'firmwalker'...
+POST git-upload-pack (153 bytes)
+Cloning into 'firminator.io'...
+POST git-upload-pack (153 bytes)
+Cloning into 'generator-angular'...
+POST git-upload-pack (gzip 1903 to 1009 bytes)
+Cloning into 'fuzzdb'...
+POST git-upload-pack (203 bytes)
+Cloning into 'HypeMachine-Extension'...
+POST git-upload-pack (203 bytes)
+Cloning into 'linkbase-scraper'...
+POST git-upload-pack (153 bytes)
+Cloning into 'Material-Seed-Angular'...
+POST git-upload-pack (153 bytes)
+Cloning into 'malSploitBase'...
+POST git-upload-pack (153 bytes)
+Cloning into 'firminator_backend'...
+POST git-upload-pack (153 bytes)
+Cloning into 'plugin-tab'...
+POST git-upload-pack (203 bytes)
+Cloning into 'misterch0c.github.io'...
+POST git-upload-pack (153 bytes)
+Cloning into 'SecLinksBot'...
+POST git-upload-pack (153 bytes)
+Cloning into 'nm-applet-soundify'...
+POST git-upload-pack (153 bytes)
+Cloning into 'scraper'...
+POST git-upload-pack (153 bytes)
+Cloning into 'PayPal-node-SDK'...
+POST git-upload-pack (gzip 1603 to 861 bytes)
+Cloning into 'twitterBFTD'...
+POST git-upload-pack (153 bytes)
+Cloning into 'The-Shell'...
+POST git-upload-pack (253 bytes)
+Cloning into 'SL-frontend'...
+POST git-upload-pack (153 bytes)
+Cloning into 'usbdriveby'...
+POST git-upload-pack (153 bytes)
+Cloning into 'webpage-preview'...
+POST git-upload-pack (153 bytes)
+Cloning into 'waterline-docs'...
+POST git-upload-pack (153 bytes)
+Cloning into 'writeups'...
+POST git-upload-pack (153 bytes)
+Cloning into 'Two-Tier-Enterprise-App-and-API-Development-with-Angular-and-Sails'...
+POST git-upload-pack (153 bytes)
+Cloning into 'SL-backend'...
+POST git-upload-pack (203 bytes)
+[0m[35mlib/githose/clone[37m[1m:[22m [42mFinished Cloning All Repositories From[37m[1m:[22m[0m [7mmisterch0c[0m
+ [0m]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ les[Kabi
+abicheck                abi-dump                abi-load                abi-tracker             
+abi-compliance-checker  abi-dumper              abi-monitor             abiview                 
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi
+abicheck                abi-dump                abi-load                abi-tracker             
+abi-compliance-checker  abi-dumper              abi-monitor             abiview                 
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi
+abicheck                abi-dump                abi-load                abi-tracker             
+abi-compliance-checker  abi-dumper              abi-monitor             abiview                 
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi-dump
+a
+Usage:
+  abi-dump [options] <path> [<path>...]
+  abi-dump [options] <accession>
+
+Use option --help for more information
+
+abi-dump : 2.8.1
+
+ ]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abichekc
+bash: abichekc: command not found
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abicheck
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi-[Kview
+Display the trace in an ABI sequencer file
+ABI sequencing trace file: ^C
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi-dumper
+ABI Dumper 0.99.16
+Dump ABI of an ELF object containing DWARF debug info
+Copyright (C) 2016 Andrey Ponomarenko's ABI Laboratory
+License: GNU LGPL or GNU GPL
+
+Usage: abi-dumper [options] [object]
+Example:
+  abi-dumper libTest.so -o ABI.dump
+  abi-dumper Module.ko.debug -o ABI.dump
+
+More info: abi-dumper --help
+
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi-moniter
+bash: abi-moniter: command not found
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abi-moniter[K[Kor
+ABI Monitor 1.10
+A tool to monitor new versions of a software library
+Copyright (C) 2016 Andrey Ponomarenko's ABI Laboratory
+License: GPL or LGPL
+
+Usage: abi-monitor [options] [profile]
+Example:
+  abi-monitor -get -build profile.json
+
+More info: abi-monitor --help
+
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ man - [Kk ABI
+rabin2 (1)           - Binary program info extractor
+abi-compliance-checker (1) - tool to compare ABI compatibility of shared C/C++ library versions
+abi-dumper (1)       - a tool to dump ABI of an ELF object containing DWARF debug info
+abi-monitor (1)      - monitor new versions of a software library and try to build them
+abi-tracker (1)      - visualize ABI changes timeline of a C/C++ software library.
+abicheck (1)         - check application binaries for calls to private or evolving symbols in libraries and for static linking of some system libraries.
+abiview (1e)         - Display the trace in an ABI sequencer file
+Bio::SeqIO::abi (3pm) - abi trace sequence input/output stream
+cabextract (1)       - program to extract files from Microsoft cabinet (.cab) archives
+capabilities (7)     - overview of Linux capabilities
+capability.conf (5)  - configuration file for the pam_cap module
+capget (2)           - set/get capabilities of thread(s)
+capng_apply (3)      - apply the stored capabilities settings
+capng_capability_to_name (3) - convert capability integer to text
+capng_change_id (3)  - change the credentials retaining capabilities
+capng_clear (3)      - clear chosen capabilities set
+capng_fill (3)       - fill chosen capabilities set
+capng_get_caps_fd (3) - read file-based capabilities from extended attributes
+capng_get_caps_process (3) - get the capabilities from a process
+capng_have_capabilities (3) - general check for capabilities
+capng_have_capability (3) - check for specific capability
+capng_lock (3)       - lock the current process capabilities settings
+capng_name_to_capability (3) - convert capability text to integer
+capng_print_caps_numeric (3) - print numeric values for capabilities set
+capng_print_caps_text (3) - print names of values for capabilities set
+capng_set_caps_fd (3) - write file-based capabilities to extended attributes
+capng_update (3)     - update the stored capabilities settings
+capng_updatev (3)    - update the stored capabilities settings
+capset (2)           - set/get capabilities of thread(s)
+capsh (1)            - capability shell wrapper
+captest (8)          - a program to demonstrate capabilities
+Class::MOP::Class::Immutable::Trait (3pm) - Implements immutability for metaclass objects
+debconf-escape (1)   - helper when working with debconf's escape capability
+Devel::Hide (3pm)    - Forces the unavailability of specified Perl modules (for testing)
+Devel::PPPort (3perl) - Perl/Pollution/Portability
+DPMSCapable (3)      - returns the DPMS capability of the X server
+DPMSQueryExtension (3) - queries the X server to determine the availability of the DPMS Extension
+filecap (8)          - a program to see capabilities
+fitgcp (1)           - fit mixtures of probability distributions to genome coverage profiles
+getcap (8)           - examine file capabilities
+getpcaps (1)         - List Process Capabilities
+ha_logd (8)          - Logging Daemon for High-Availability Linux
+heartleech (8)       - Exploits OpenSSL heartbleed vulnerability
+last-map-probs (1)   - Add extra column with mapping probabilities
+Locale::RecodeData::MACARABIC (3pm) - Conversion routines for MACARABIC
+mailcap (5)          - metamail capabilities file
+mhap (1)             - probabilistic sequence overlapping
+Module::Pluggable (3pm) - automatically give your module the ability to have plugins
+Module::Pluggable::Object (3pm) - automatically give your module the ability to have plugins
+Moose::Meta::Class::Immutable::Trait (3pm) - Implements immutability for metaclass objects
+Munin::Node::SNMPConfig (3pm) - Subroutines providing munin-node-configure's SNMP scanning capabilities.
+Net::Ping (3perl)    - check a remote host for reachability
+netcap (8)           - a program to see capabilities
+nikto (1)            - Scan web server for known vulnerabilities
+ntfs-3g.probe (8)    - Probe an NTFS volume mountability
+ocf_heartbeat_LVM (7) - Controls the availability of an LVM Volume Group
+openvassd (8)        - The Scanner of the Open Vulnerability Assessment System (OpenVAS)
+pam_cap (8)          - PAM module to set inheritable capabilities
+POE::Component::IRC::Plugin::ISupport (3pm) - A PoCo-IRC plugin that handles server capabilities
+pompem (1)           - Exploit and Vulnerability Finder
+prank (1)            - Computes probabilistic multiple sequence alignments
+proalign (1)         - a probabilistic multiple alignment program
+pscap (8)            - a program to see capabilities
+pthread_cleanup_pop_restore_np (3) - push and pop thread cancellation clean-up handlers while saving cancelability type
+pthread_cleanup_push_defer_np (3) - push and pop thread cancellation clean-up handlers while saving cancelability type
+pthread_setcancelstate (3) - set cancelability state and type
+pthread_setcanceltype (3) - set cancelability state and type
+qemu-ppc64abi32 (1)  - QEMU User Emulator
+qemu-ppc64abi32-static (1) - QEMU User Emulator (static version)
+r (1)                - Provides hash-bang (#!) capability for R (www.r-project.org)
+reportlog.cgi (1)    - CGI program to report service availability log
+sd_journal_has_persistent_files (3) - Query availability of runtime or persistent journal files.
+sd_journal_has_runtime_files (3) - Query availability of runtime or persistent journal files.
+SDL_WM_GrabInput (3) - Grabs mouse and keyboard input.
+setcap (8)           - set file capabilities
+slabinfo (5)         - kernel slab allocator statistics
+slaptest (8)         - Check the suitability of the OpenLDAP slapd configuration
+tabify (3tcl)        - Procedures to (un)tabify strings
+tabix (1)            - Generic indexer for TAB-delimited genome position files
+task-sync (5)        - A discussion and tutorial for the various task(1) data synchronization capabilities.
+termcap (5)          - terminal capability database
+terminfo (5)         - terminal capability data base
+tigr-glimmer3 (1)    - Find/Score potential genes in genome-file using the probability model in icm-file
+tigr-long-orfs (1)   - Find/Score potential genes in genome-file using the probability model in icm-file
+Tk::HistEntry (3pm)  - Entry widget with history capability
+vcf-compare (1)      - compare bgzipped and tabix indexed VCF files
+vcf-isec (1)         - create intersections, unions, complements on bgzipped and tabix indexed VCF or tab-delimited files
+vcf-merge (1)        - merge the bgzipped and tabix indexed VCF files
+vcf-to-tab (1)       - convert to tabix
+vfs_fruit (8)        - Enhanced OS X and Netatalk interoperability
+vlna (1)             - adds tilde after each non-syllabic preposition
+VM::EC2::AvailabilityZone (3pm) - Object describing an Amazon availability zone
+VM::EC2::DB::AvailabilityZone (3pm) - An RDS Database Availability Zone
+VM::EC2::REST::zone (3pm) - Fetch information on EC2 regions and availability zones"
+wait-for-it (8)      - script to test and wait on the availability of a TCP host and port
+wapiti (1)           - A web application vulnerability scanner in Python.
+wobble (1e)          - Plot third base position variability in a nucleotide sequence
+wvAbw (1)            - convert msword documents to Abiword's format
+XkbGetDeviceInfo (3) - Determine whether the X server allows Xkb access to particular capabilities of input devices other than the core X keyboard, or to d...
+Canary::Stability (3pm) - canary to check perl compatibility for schmorp's modules
+Devel::PPPort (3pm)  - Perl/Pollution/Portability
+ExtUtils::Helpers (3pm) - Various portability utilities for module builders
+Math::CDF (3pm)      - Generate probabilities and quantiles from several statistical probability functions
+MCE (3pm)            - Many-Core Engine for Perl providing parallel processing capabilities
+MCE::Relay (3pm)     - Extends Many-Core Engine with relay capabilities
+Net::Ping (3pm)      - check a remote host for reachability
+String::Format (3pm) - sprintf-like string formatting capabilities with arbitrary format definitions
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ man abicheck
+[?1049h[?1h=abicheck(1)                                                       General Commands Manual                                                      abicheck(1)[m
+[m
+[1mNAME[0m[m
+       abicheck - check application binaries for calls to private or evolving symbols in libraries and for static linking of some system libraries.[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mabicheck[0m  [-h]  [-k]  [-a]  [-I]  [-v]  [-f  [4mlistfile][24m  [-o [4moutfile][24m [-p [4mpattern][24m [-e [4mpattern][24m [-j [4mnjobs][24m [-l [4mlibrary][24m [-L [4mldpath][24m [(-s|-S) [4mdbfile][24m[m
+       [(-d|-D) [4mdbfile][24m [-O [4mdbfile][24m [-A [4mlistfile][24m [4mfiles[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1mabicheck[0m is run on application binaries and issues warnings whenever any of the following three conditions are detected:[m
+[m
+       · [4mPrivate[24m [4msymbol[24m [4musage.[24m  Private symbols are functions or data variables in a library package that are internal to that package. They are  used  by[m
+       the libraries in the package for internal communication and are not part of the API/ABI that application developers should use.[m
+[m
+       ·  [4mEvolving[24m  [4msymbol[24m  [4musage.[24m  Evolving symbols are functions or data variables in a library package that are intended for developer consumption, but[m
+       have been marked as "evolving" or "unstable" in the sense that they may become incompatible or disappear on a later release of the library package.[m
+[m
+       · [4mStatic[24m [4mlinking.[24m  Static linking of system libraries (for example, libc.a) into an application is generally not a good  idea  because  the  system[m
+       library  code  it "locks" into the application binary may become incompatible with later releases of the system. abicheck attempts to detect static[m
+[7m Manual page abicheck(1) line 1 (press h for help or q to quit)[27m[K[K       linking of a few system libraries.[m
+[m
+       The default behavior is, for each binary object checked, to examine direct calls from that binary object only. The [1m-l[0m option allows  the  libraries[m
+       the binary object brings in to have their calls checked as well.[m
+[m
+[1mOPTIONS[0m[m
+       The following options are supported:[m
+[m
+       [1m-k[0m     Keep  on  checking  binaries  even  if  there  are  serious  errors  (dynamic linker reports unresolved symbols, [1mldd[0m(1) failures, no symbols[m
+              detected).[m
+[m
+       [1m-h[0m     Print out long form of help.[m
+[m
+       [1m-v[0m     Verbose.  Print out additional information.[m
+[m
+       [1m-f[0m [4mlistfile[24m[m
+              The [4mlistfile[24m is a file containing a list of binary objects to check, one per line. This list is appended to any files provided as  arguments[m
+              on the command line.  If [4mlistfile[24m is "-", then stdin is used.[m
+[m
+       [1m-o[0m [4moutfile[24m[m
+[7m Manual page abicheck(1) line 21 (press h for help or q to quit)[27m[K[K[?1l>[?1049l]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ abicheck /bin/sh
+/bin/sh: NO_BINDINGS (run ldd -r on binary for more info)
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ ldd -r /bin/sh
+	linux-vdso.so.1 (0x00007ffc251cf000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0aa4c74000)
+	/lib64/ld-linux-x86-64.so.2 (0x000055efe7602000)
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ grep 64 /proc/cpuinfo
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+cpu MHz		: 2570.648
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+clflush size	: 64
+cache_alignment	: 64
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ jobs
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ pwd
+/home/super/GIT/decal/githose
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ clear
+[3J[H[2J]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ fg
+bash: fg: current: no such job
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ [K]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ [K]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ jobs
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ clearl
+bash: clearl: command not found
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ s
+bash: s: command not found
+]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ clear
+[3J[H[2J]0;super@msi: ~/GIT/decal/githose[01;31msuper@msi[00m:[01;34m~/GIT/decal/githose[00m$ cd
+]0;super@msi: ~[01;31msuper@msi[00m:[01;34m~[00m$ cd work
+]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ clear
+[3J[H[2J]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ ls
+[0m[01;34m33C3[0m                            [01;34mhacktivity[0m                                  ltrace.out                              [01;34mstarbucks[0m
+a.ps1                           [01;34mharvest[0m                                     [01;34mLW[0m                                      starbucks-news-attack.html
+[01;32mapt-update-full[0m                 [01;34mHC[0m                                          magento-domains.txt                     starbucks-news-attack.html.old
+[01;34mATT[0m                             [01;34mHILTON[0m                                      [01;34mmirrors[0m                                 star-domains.txt
+a.txt                           [01;36mhost[0m                                        mod-rpaf-headers.txt                    strace.out
+[01;32mbase64-starbucks-news[0m           [01;36mhosts[0m                                       [01;34mMOVINK[0m                                  [01;32mstrip-ansi-color[0m
+[01;34mBB[0m                              [01;32mhttp-crlf-enum-domains[0m                      [01;34mMS[0m                                      [01;36msublister[0m
+[01;34mBD[0m                              [01;32mhttp-open-redir-star-domains[0m                [01;34mNC[0m                                      [01;34mtesla[0m
+[01;34mBHI[0m                             [01;31mhttp-open-redir-star-domains.scr.xz[0m         [01;32mnmap-scan-web-ports[0m                     [01;32mtest-auths[0m
+[01;34mBI[0m                              [01;32mhttps-crlf-enum-domains[0m                     notjet.net.dmi.txt                      [01;32mtest-auths-notjet[0m
+[01;34mblackphone[0m                      [01;31mhttps-crlf-enum-domains.scr.xz[0m              [01;34mON[0m                                      TEST-URLS
+[01;34mBLOGGER[0m                         [01;32mhttp-semicolon-jsessionid[0m                   [01;34monelogin.com[0m                            TODO
+bounty-domains.txt              [01;31mhttp-semicolon-jsessionid.scr.xz[0m            out.txt                                 [01;32mtopbrains[0m
+bounty-new.txt                  [01;32mhttps-indexjsp-semicolon-jsessionid[0m         [01;32mpaypal-cgi-webscr[0m                       [01;34mTV[0m
+[01;32mcookie-test[0m                     [01;31mhttps-indexjsp-semicolon-jsessionid.scr.xz[0m  [01;34mPI[0m                                      [01;34mUB[0m
+core                            [01;32mhttps-open-redir[0m                            [01;31mpinterest.com.cookie.scr.xz[0m             uber-domains.txt
+[01;32mcurl-php[0m                        [01;32mhttps-open-redir-gogoinflight[0m               [01;34mPP[0m                                      [01;34mubnt[0m
+[01;32mcurl-reqs[0m                       [01;31mhttps-open-redir-gogoinflight.scr.xz[0m        [01;36mQA[0m                                      [01;36mUBNT[0m
+[01;36mCY[0m                              [01;32mhttps-open-redir-notjet[0m                     query-variable-names.txt                [01;34mUD[0m
+[01;34mcylance[0m                         [01;31mhttps-open-redir-notjet.scr.xz[0m              [01;34mquora[0m                                   uploader.swf
+[01;32mdirbs-map-admin[0m                 https-open-redir.scr.orig                   [01;32mrenice-procs[0m                            [01;31mu.scr.xz[0m
+[01;32mdirbs-map-private[0m               [01;32mhttps-open-redir-star-domains[0m               [01;32mresolve-enum-domains[0m                    u.sh
+[01;36mdirb.txt[0m                        [01;31mhttps-open-redir-star-domains.scr.xz[0m        [01;31mresolve-enum-domains.scr.xz[0m             u.txt
+[01;34mdns[0m                             [01;32mhttps-query-redir[0m                           [01;36mRH[0m                                      [01;34mvimeopro.com[0m
+[01;32mdomains2hosts[0m                   [01;31mhttps-query-redir.scr.xz[0m                    [01;34mrobinhood[0m                               [01;34mWA[0m
+domains-all.txt                 [01;31mhttps-query-redir-test.scr.xz[0m               [01;34mROBOT[0m                                   [01;32mwayback-archive[0m
+[01;34mDR[0m                              [01;32mhttps-question-jsessionid[0m                   [01;36mSB[0m                                      [01;32mwayback-archive-file[0m
+[01;32menum-domains-http[0m               [01;31mhttps-question-jsessionid.scr.xz[0m            [01;31mscan.scr.xz[0m                             [01;36mwayback-archive-host[0m
+enum-domains-http-all.txt       [01;32mhttps-semicolon-jsessionid[0m                  schedule.indeed.com.dirbs               [01;32mwayback-ls[0m
+[01;32menum-domains-https[0m              [01;31mhttps-semicolon-jsessionid.scr.xz[0m           schedule.indeed.com-private.dirbs       [01;36mwayback-ls-spec[0m
+enum-domains-https.txt          [01;32mhttp-ssrf-enum-domains[0m                      SELECT                                  [01;32mwayback-ls-special[0m
+enum-domains-https.txt.orig     https-ssrf-check-google.scr                 [01;32mservefor.rb[0m                             [01;32mwayback-machine[0m
+enum-domains-http.txt           [01;32mhttps-ssrf-enum-domains[0m                     [01;32msession-fixation-enumdoms-http[0m          [01;32mwayback-wget[0m
+enum-domains-http.txt.orig      [01;31mhttps-ssrf-enum-domains.scr.xz[0m              [01;32msession-fixation-enumdoms-https[0m         [01;36mwebsites[0m
+enum-domains.txt                [01;32mhttps-ssrf-star-domains[0m                     [01;31msession-fixation-enumdoms-https.scr.xz[0m  [01;36mwerdlists[0m
+enum-domains.txt.orig           https-ssrf-star-domains.scr                 [01;36mSI[0m                                      [01;34mwesternunion[0m
+[01;32menum-hosts-sublister[0m            [01;31mhttps-ssrf-star-domains.scr.xz[0m              [01;34msimple[0m                                  [01;34mwfuzz[0m
+[01;32mexifedit[0m                        [01;34mHULI[0m                                        [01;34mskipfish[0m                                [01;34mwhatsapp[0m
+[01;34mFB[0m                              [01;36mHV[0m                                          [01;34msmartsheet[0m                              [01;36mWU[0m
+[01;32mfilter-valid-hosts[0m              [01;34mIB[0m                                          [01;34mSQ[0m                                      www.kurp7.com.dirbs
+[01;32mfind-enum-private-addrs[0m         [01;36mIN[0m                                          [01;34mssrf[0m                                    [01;36mYA[0m
+[01;31mfind-enum-private-addrs.scr.xz[0m  [01;34mindeed[0m                                      [01;32mssrf-check-google[0m                       [01;34myahoo[0m
+[01;32mfind-wayback-special-files2[0m     [01;34mjetty[0m                                       [01;32mssrf-check-google-http[0m                  [01;34myelp[0m
+[01;36mFL[0m                              json.txt                                    [01;32mssrf-check-google-https[0m                 [01;36mYL[0m
+[01;34mgreenhouse[0m                      [01;34mkennasecurity[0m                               ssrf-scan-hosts-http.scr                [01;34myouporn[0m
+grep-location-https-ssrf.txt    [01;36mKS[0m                                          [01;32mssrf-test-host-1rand-head[0m               [01;36mYP[0m
+]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ ls -alt | head
+total 196196
+drwxr-x--x 132 super staff    12288 Feb 16 09:13 ..
+-rw-r--r--   1 super super     3033 Feb 16 06:24 a.ps1
+drwxrwx---  55 super staff    12288 Feb 16 06:24 .
+-rwxr-x---   1 super super      316 Feb 16 06:23 topbrains
+-rwxr-x---   1 super super      101 Feb 16 03:18 strip-ansi-color
+-rw-------   1 super super   253952 Feb 15 21:54 core
+drwxr-xr-x   5 super super     4096 Feb 15 17:42 yelp
+drwxr-xr-x   2 super super     4096 Feb 15 17:42 yahoo
+drwxr-xr-x   2 super super     4096 Feb 15 17:27 dns
+]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ rm a.ps1
+]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ cat topbrains
+#!/usr/bin/env bash
+
+declare astr=''
+
+for i in $(seq 1 100)
+  do 
+  declare base64=$(dig +short @8.8.4.4 IN TXT l.${i}.ns.topbrains.it.)
+  declare astr64=$(echo $base64 | sed -r 's!(^["@]+|[@"]+$)!!g')
+
+  [ "$base64" == "" ] && break
+
+  astr="${astr}$(echo $astr64 | base64 -d)"
+
+  continue
+done
+
+echo $astr
+
+exit 0
+]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ rm to[Kclear
+[3J[H[2J]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ ls
+[0m[01;34m33C3[0m                            [01;34mharvest[0m                                     [01;34mLW[0m                                      starbucks-news-attack.html
+[01;32mapt-update-full[0m                 [01;34mHC[0m                                          magento-domains.txt                     starbucks-news-attack.html.old
+[01;34mATT[0m                             [01;34mHILTON[0m                                      [01;34mmirrors[0m                                 star-domains.txt
+a.txt                           [01;36mhost[0m                                        mod-rpaf-headers.txt                    strace.out
+[01;32mbase64-starbucks-news[0m           [01;36mhosts[0m                                       [01;34mMOVINK[0m                                  [01;32mstrip-ansi-color[0m
+[01;34mBB[0m                              [01;32mhttp-crlf-enum-domains[0m                      [01;34mMS[0m                                      [01;36msublister[0m
+[01;34mBD[0m                              [01;32mhttp-open-redir-star-domains[0m                [01;34mNC[0m                                      [01;34mtesla[0m
+[01;34mBHI[0m                             [01;31mhttp-open-redir-star-domains.scr.xz[0m         [01;32mnmap-scan-web-ports[0m                     [01;32mtest-auths[0m
+[01;34mBI[0m                              [01;32mhttps-crlf-enum-domains[0m                     notjet.net.dmi.txt                      [01;32mtest-auths-notjet[0m
+[01;34mblackphone[0m                      [01;31mhttps-crlf-enum-domains.scr.xz[0m              [01;34mON[0m                                      TEST-URLS
+[01;34mBLOGGER[0m                         [01;32mhttp-semicolon-jsessionid[0m                   [01;34monelogin.com[0m                            TODO
+bounty-domains.txt              [01;31mhttp-semicolon-jsessionid.scr.xz[0m            out.txt                                 [01;32mtopbrains[0m
+bounty-new.txt                  [01;32mhttps-indexjsp-semicolon-jsessionid[0m         [01;32mpaypal-cgi-webscr[0m                       [01;34mTV[0m
+[01;32mcookie-test[0m                     [01;31mhttps-indexjsp-semicolon-jsessionid.scr.xz[0m  [01;34mPI[0m                                      [01;34mUB[0m
+core                            [01;32mhttps-open-redir[0m                            [01;31mpinterest.com.cookie.scr.xz[0m             uber-domains.txt
+[01;32mcurl-php[0m                        [01;32mhttps-open-redir-gogoinflight[0m               [01;34mPP[0m                                      [01;34mubnt[0m
+[01;32mcurl-reqs[0m                       [01;31mhttps-open-redir-gogoinflight.scr.xz[0m        [01;36mQA[0m                                      [01;36mUBNT[0m
+[01;36mCY[0m                              [01;32mhttps-open-redir-notjet[0m                     query-variable-names.txt                [01;34mUD[0m
+[01;34mcylance[0m                         [01;31mhttps-open-redir-notjet.scr.xz[0m              [01;34mquora[0m                                   uploader.swf
+[01;32mdirbs-map-admin[0m                 https-open-redir.scr.orig                   [01;32mrenice-procs[0m                            [01;31mu.scr.xz[0m
+[01;32mdirbs-map-private[0m               [01;32mhttps-open-redir-star-domains[0m               [01;32mresolve-enum-domains[0m                    u.sh
+[01;36mdirb.txt[0m                        [01;31mhttps-open-redir-star-domains.scr.xz[0m        [01;31mresolve-enum-domains.scr.xz[0m             u.txt
+[01;34mdns[0m                             [01;32mhttps-query-redir[0m                           [01;36mRH[0m                                      [01;34mvimeopro.com[0m
+[01;32mdomains2hosts[0m                   [01;31mhttps-query-redir.scr.xz[0m                    [01;34mrobinhood[0m                               [01;34mWA[0m
+domains-all.txt                 [01;31mhttps-query-redir-test.scr.xz[0m               [01;34mROBOT[0m                                   [01;32mwayback-archive[0m
+[01;34mDR[0m                              [01;32mhttps-question-jsessionid[0m                   [01;36mSB[0m                                      [01;32mwayback-archive-file[0m
+[01;32menum-domains-http[0m               [01;31mhttps-question-jsessionid.scr.xz[0m            [01;31mscan.scr.xz[0m                             [01;36mwayback-archive-host[0m
+enum-domains-http-all.txt       [01;32mhttps-semicolon-jsessionid[0m                  schedule.indeed.com.dirbs               [01;32mwayback-ls[0m
+[01;32menum-domains-https[0m              [01;31mhttps-semicolon-jsessionid.scr.xz[0m           schedule.indeed.com-private.dirbs       [01;36mwayback-ls-spec[0m
+enum-domains-https.txt          [01;32mhttp-ssrf-enum-domains[0m                      SELECT                                  [01;32mwayback-ls-special[0m
+enum-domains-https.txt.orig     https-ssrf-check-google.scr                 [01;32mservefor.rb[0m                             [01;32mwayback-machine[0m
+enum-domains-http.txt           [01;32mhttps-ssrf-enum-domains[0m                     [01;32msession-fixation-enumdoms-http[0m          [01;32mwayback-wget[0m
+enum-domains-http.txt.orig      [01;31mhttps-ssrf-enum-domains.scr.xz[0m              [01;32msession-fixation-enumdoms-https[0m         [01;36mwebsites[0m
+enum-domains.txt                [01;32mhttps-ssrf-star-domains[0m                     [01;31msession-fixation-enumdoms-https.scr.xz[0m  [01;36mwerdlists[0m
+enum-domains.txt.orig           https-ssrf-star-domains.scr                 [01;36mSI[0m                                      [01;34mwesternunion[0m
+[01;32menum-hosts-sublister[0m            [01;31mhttps-ssrf-star-domains.scr.xz[0m              [01;34msimple[0m                                  [01;34mwfuzz[0m
+[01;32mexifedit[0m                        [01;34mHULI[0m                                        [01;34mskipfish[0m                                [01;34mwhatsapp[0m
+[01;34mFB[0m                              [01;36mHV[0m                                          [01;34msmartsheet[0m                              [01;36mWU[0m
+[01;32mfilter-valid-hosts[0m              [01;34mIB[0m                                          [01;34mSQ[0m                                      www.kurp7.com.dirbs
+[01;32mfind-enum-private-addrs[0m         [01;36mIN[0m                                          [01;34mssrf[0m                                    [01;36mYA[0m
+[01;31mfind-enum-private-addrs.scr.xz[0m  [01;34mindeed[0m                                      [01;32mssrf-check-google[0m                       [01;34myahoo[0m
+[01;32mfind-wayback-special-files2[0m     [01;34mjetty[0m                                       [01;32mssrf-check-google-http[0m                  [01;34myelp[0m
+[01;36mFL[0m                              json.txt                                    [01;32mssrf-check-google-https[0m                 [01;36mYL[0m
+[01;34mgreenhouse[0m                      [01;34mkennasecurity[0m                               ssrf-scan-hosts-http.scr                [01;34myouporn[0m
+grep-location-https-ssrf.txt    [01;36mKS[0m                                          [01;32mssrf-test-host-1rand-head[0m               [01;36mYP[0m
+[01;34mhacktivity[0m                      ltrace.out                                  [01;34mstarbucks[0m
+]0;super@msi: ~/work[01;31msuper@msi[00m:[01;34m~/work[00m$ cd ~/gitub[K[Khub
+]0;super@msi: ~/github[01;31msuper@msi[00m:[01;34m~/github[00m$ ls -alt | head
+total 660
+drwxr-x--x 132 super staff 12288 Feb 16 09:13 ..
+drwx------  35 super super  4096 Feb 16 08:13 misterch0c
+drwx------ 162 super staff  4096 Feb 16 08:12 .
+drwx------  33 super super  4096 Feb 16 03:48 mandatoryprogrammer
+drwx------   2 super super  4096 Feb 16 03:22 mandatorycoder
+drwx------  39 super super  4096 Feb 16 02:28 decal
+drwx------   6 super super  4096 Feb 15 22:30 klacke
+drwx------   6 super super  4096 Feb 15 19:22 nahamsec
+drwxr-xr-x   8 super super  4096 Jan 25 16:40 infobyte
+]0;super@msi: ~/github[01;31msuper@msi[00m:[01;34m~/github[00m$ cd mandatory[Kcd misterch0c/
+]0;super@msi: ~/github/misterch0c[01;31msuper@msi[00m:[01;34m~/github/misterch0c[00m$ ls
+[0m[01;34mAwesome-Hacking[0m        [01;34mfirmflaws[0m           [01;34mHypeMachine-Extension[0m  [01;34mplugin-tab[0m   [01;34mTwo-Tier-Enterprise-App-and-API-Development-with-Angular-and-Sails[0m
+[01;34mbaudrate[0m               [01;34mfirminator_backend[0m  [01;34mlinkbase-scraper[0m       [01;34mscraper[0m      [01;34musbdriveby[0m
+[01;34mConsoleZ-Color-Themes[0m  [01;34mfirminator.io[0m       [01;34mmalSploitBase[0m          [01;34mSecLinksBot[0m  [01;34mwaterline-docs[0m
+[01;34mcve-search[0m             [01;34mfirmwalker[0m          [01;34mMaterial-Seed-Angular[0m  [01;34mSL-backend[0m   [01;34mwebpage-preview[0m
+[01;34mDVNA[0m                   [01;34mfishextract[0m         [01;34mmisterch0c.github.io[0m   [01;34mSL-frontend[0m  [01;34mwriteups[0m
+[01;34mextractor[0m              [01;34mfuzzdb[0m              [01;34mnm-applet-soundify[0m     [01;34mThe-Shell[0m
+[01;34mfirmadyne[0m              [01;34mgenerator-angular[0m   [01;34mPayPal-node-SDK[0m        [01;34mtwitterBFTD[0m
+]0;super@msi: ~/github/misterch0c[01;31msuper@msi[00m:[01;34m~/github/misterch0c[00m$ [K]0;super@msi: ~/github/misterch0c[01;31msuper@msi[00m:[01;34m~/github/misterch0c[00m$ [K]0;super@msi: ~/github/misterch0c[01;31msuper@msi[00m:[01;34m~/github/misterch0c[00m$ ls
+[0m[01;34mAwesome-Hacking[0m        [01;34mfirmflaws[0m           [01;34mHypeMachine-Extension[0m  [01;34mplugin-tab[0m   [01;34mTwo-Tier-Enterprise-App-and-API-Development-with-Angular-and-Sails[0m
+[01;34mbaudrate[0m               [01;34mfirminator_backend[0m  [01;34mlinkbase-scraper[0m       [01;34mscraper[0m      [01;34musbdriveby[0m
+[01;34mConsoleZ-Color-Themes[0m  [01;34mfirminator.io[0m       [01;34mmalSploitBase[0m          [01;34mSecLinksBot[0m  [01;34mwaterline-docs[0m
+[01;34mcve-search[0m             [01;34mfirmwalker[0m          [01;34mMaterial-Seed-Angular[0m  [01;34mSL-backend[0m   [01;34mwebpage-preview[0m
+[01;34mDVNA[0m                   [01;34mfishextract[0m         [01;34mmisterch0c.github.io[0m   [01;34mSL-frontend[0m  [01;34mwriteups[0m
+[01;34mextractor[0m              [01;34mfuzzdb[0m              [01;34mnm-applet-soundify[0m     [01;34mThe-Shell[0m
+[01;34mfirmadyne[0m              [01;34mgenerator-angular[0m   [01;34mPayPal-node-SDK[0m        [01;34mtwitterBFTD[0m
+]0;super@msi: ~/github/misterch0c[01;31msuper@msi[00m:[01;34m~/github/misterch0c[00m$ cd cve-search
+]0;super@msi: ~/github/misterch0c/cve-search[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search[00m$ clear
+[3J[H[2J]0;super@msi: ~/github/misterch0c/cve-search[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search[00m$ ls
+[0m[01;34mbin[0m  [01;34mdoc[0m  [01;34metc[0m  [01;34mlib[0m  README.md  requirements.txt  [01;34msbin[0m  [01;34mtest[0m  [01;34mweb[0m
+]0;super@msi: ~/github/misterch0c/cve-search[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search[00m$ ./cve[Kls sbin
+[0m[01;32mdb_blacklist.py[0m    [01;32mdb_mgmt_capec.py[0m                 [01;32mdb_mgmt_cwe.py[0m        [01;32mdb_mgmt.py[0m                   [01;32mdb_notification.py[0m
+[01;32mdb_cpe_browser.py[0m  [01;32mdb_mgmt_cpe_dictionary.py[0m        [01;32mdb_mgmt_d2sec.py[0m      [01;32mdb_mgmt_ref.py[0m               [01;32mdb_ranking.py[0m
+[01;32mdb_fulltext.py[0m     [01;32mdb_mgmt_cpe_other_dictionary.py[0m  [01;32mdb_mgmt_exploitdb.py[0m  [01;32mdb_mgmt_vendorstatements.py[0m  [01;32mdb_updater.py[0m
+[01;32mdb_mgmt_admin.py[0m   [01;32mdb_mgmt_create_index.py[0m          [01;32mdb_mgmt_ms.py[0m         [01;32mdb_mgmt_vfeed.py[0m             [01;32mdb_whitelist.py[0m
+]0;super@msi: ~/github/misterch0c/cve-search[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search[00m$ cd[Kls bin
+[0m[01;32mcve_doc.py[0m  [01;32mdb_dump.py[0m  [01;32mdump_last.py[0m  [01;32msearch_cpe.py[0m  [01;32msearch_fulltext.py[0m  [01;32msearch_irc.py[0m  [01;32msearch.py[0m  [01;32msearch_xmpp.py[0m
+]0;super@msi: ~/github/misterch0c/cve-search[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search[00m$ cd bin
+]0;super@msi: ~/github/misterch0c/cve-search/bin[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search/bin[00m$ ./cve[K./search.py
+Traceback (most recent call last):
+  File "./search.py", line 22, in <module>
+    from bson import json_util
+ImportError: No module named 'bson'
+]0;super@msi: ~/github/misterch0c/cve-search/bin[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search/bin[00m$ apt-cache search bson
+cain - simulations of chemical reactions
+cain-examples - examples for cain
+cain-solvers - solvers for cain
+clementine - modern music player and library organizer
+gnu-smalltalk - GNU Smalltalk interpreter and image
+libbson-1.0-0 - Library to parse and generate BSON documents - runtime files
+libbson-dev - Library to parse and generate BSON documents - dev files
+libbson-doc - Library to parse and generate BSON documents - documentation
+libsonic-dev - Header file for linking to libsonic
+libsonic-java - Simple library to speed up or slow down speech - Java bindings
+libsonic0 - Simple library to speed up or slow down speech
+mongo-tools - collection of tools for administering MongoDB servers
+pchar - Characterize the bandwidth, latency and loss on network links
+python-bson - Python implementation of BSON for MongoDB
+python-bson-ext - C-coded extension to the python-bson package
+python3-bson - Python3 implementation of BSON for MongoDB
+python3-bson-ext - C-coded extension to the python3-bson package
+ruby-bson - Ruby implementation of BSON
+ruby-bson-ext - transitional dummy package
+ruby-rabl - Ruby templating library with JSON, BSON, XML and MessagePack support
+ruby-rabl-rails - fast Rails 3+ templating system with JSON and XML support
+xfoil - program for the design and analysis of subsonic airfoils
+]0;super@msi: ~/github/misterch0c/cve-search/bin[01;31msuper@msi[00m:[01;34m~/github/misterch0c/cve-search/bin[00m$ sudo bash
+[sudo] password for super: 
+]0;root@msi: /home/super/github/misterch0c/cve-search/bin[01;31mroot@msi[00m:[01;34m/home/super/github/misterch0c/cve-search/bin[00m# apt-get -y install python-bson python-bson-ext python-3[K[K3-bson python32[K=[K-bson-ext
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem. 
+]0;root@msi: /home/super/github/misterch0c/cve-search/bin[01;31mroot@msi[00m:[01;34m/home/super/github/misterch0c/cve-search/bin[00m# su[Kdpkg --configure -a
+Setting up vim-gui-common (2:8.0.0197-2) ...
+Setting up libgit-version-compare-perl (1.004-1) ...
+Setting up powerline (2.5-1.1) ...
+Setting up python-isort (4.2.5+ds1-2) ...
+Setting up libx86emu1:amd64 (1.11-2) ...
+[1mdpkg:[0m dependency problems prevent configuration of texlive-extra-utils:
+ texlive-extra-utils depends on texlive-latex-base (>= 2016.20170123-2); however:
+  Package texlive-latex-base is not installed.
+
+[1mdpkg:[0m error processing package texlive-extra-utils (--configure):
+ dependency problems - leaving unconfigured
+Setting up r-cran-highr (0.6-1) ...
+Processing triggers for tex-common (6.06) ...
+^[[A^[[ARunning mktexlsr. This may take some time...         done.
+texlive-base is not ready, delaying updmap-sys call
+update-language: texlive-base not installed and configured, doing nothing!
+texlive-base is not ready, skipping fmtutil --all call
+Setting up mariadb-server-core-10.1 (10.1.21-5) ...
+Processing triggers for mime-support (3.60) ...
+Setting up fonts-arphic-gbsn00lp (2.11-15) ...
+Setting up xxd (2:8.0.0197-2) ...
+Processing triggers for desktop-file-utils (0.23-1) ...
+Setting up fonts-arphic-gkai00mp (2.11-15) ...
+Setting up fonts-unfonts-core (1.0.2-080608-13) ...
+Processing triggers for install-info (6.3.0.dfsg.1-1+b1) ...
+install-info: warning: no info dir entry in `/usr/share/info/jargon.info.gz'
+install-info: warning: no info dir entry in `/usr/share/info/knot.info.gz'
+Setting up python-backports.functools-lru-cache (1.3-1) ...
+Setting up mariadb-client-core-10.1 (10.1.21-5) ...
+Setting up python-pbgenomicconsensus (2.1.0-1) ...
+Setting up r-cran-base64enc (0.1-3-1) ...
+Setting up libzscanner1 (2.4.0-3) ...
+Processing triggers for menu (2.1.47) ...
+Setting up linux-headers-4.9.0-kali1-common (4.9.6-3kali2) ...
+Setting up libsystem-command-perl (1.118-1) ...
+Setting up python3-isort (4.2.5+ds1-2) ...
+Setting up lshw (02.18-0.1) ...
+Setting up ttf-liberation (1:1.07.4-2) ...
+Setting up linux-compiler-gcc-6-x86 (4.9.6-3kali2) ...
+Setting up r-cran-markdown (0.7.7-1) ...
+Setting up libmbedtls-dev:amd64 (2.4.0-1) ...
+Setting up python3-powerline (2.5-1.1) ...
+Setting up libbio-coordinate-perl (1.7.1-1) ...
+Setting up fonts-sil-padauk (2.80-2) ...
+Setting up linux-kbuild-4.9 (4.9.6-3kali2) ...
+Processing triggers for libc-bin (2.24-9) ...
+Setting up galera-3 (25.3.19-2) ...
+Setting up fonts-noto-hinted (20161116-1) ...
+Setting up fonts-unfonts-extra (1.0.2-080608+dfsg-6) ...
+Processing triggers for systemd (232-15) ...
+Setting up fonts-croscore (20161116-1) ...
+Setting up vim-common (2:8.0.0197-2) ...
+Setting up texlive-base (2016.20170123-2) ...
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXLIVEDIST... 
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXMFMAIN... 
+mktexlsr: Updating /var/lib/texmf/ls-R... 
+mktexlsr: Done.
+/usr/bin/tl-paper: setting paper size for dvips to a4.
+/usr/bin/tl-paper: setting paper size for dvipdfmx to a4.
+/usr/bin/tl-paper: setting paper size for xdvi to a4.
+/usr/bin/tl-paper: setting paper size for pdftex to a4.
+Setting up fonts-arphic-bsmi00lp (2.10-17) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Setting up vim-runtime (2:8.0.0197-2) ...
+Processing /usr/share/vim/addons/doc
+Setting up libhd21:amd64 (21.38-1) ...
+Setting up python3-ply (3.9-1) ...
+Processing triggers for gnome-menus (3.13.3-8) ...
+Setting up libdnssec2 (2.4.0-3) ...
+[1mdpkg:[0m dependency problems prevent configuration of texlive:
+ texlive depends on texlive-fonts-recommended (>= 2016.20170123-2); however:
+  Package texlive-fonts-recommended is not installed.
+ texlive depends on texlive-latex-recommended (>= 2016.20170123-2); however:
+  Package texlive-latex-recommended is not installed.
+ texlive depends on texlive-latex-base (>= 2016.20170123-2); however:
+  Package texlive-latex-base is not installed.
+
+[1mdpkg:[0m error processing package texlive (--configure):
+ dependency problems - leaving unconfigured
+Processing triggers for hicolor-icon-theme (0.15-1) ...
+Setting up pirs (2.0.2+dfsg-5.1) ...
+Setting up fonts-baekmuk (2.2-11) ...
+Setting up fonts-arphic-bkai00mp (2.10-15) ...
+Setting up linux-headers-4.9.0-kali1-amd64 (4.9.6-3kali2) ...
+Processing triggers for fontconfig (2.11.0-6.7) ...
+Setting up linux-image-4.9.0-kali1-amd64 (4.9.6-3kali2) ...
+I: /vmlinuz.old is now a symlink to boot/vmlinuz-4.8.0-kali2-amd64
+I: /initrd.img.old is now a symlink to boot/initrd.img-4.8.0-kali2-amd64
+I: /vmlinuz is now a symlink to boot/vmlinuz-4.9.0-kali1-amd64
+I: /initrd.img is now a symlink to boot/initrd.img-4.9.0-kali1-amd64
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-4.9.0-kali1-amd64
+WARNING: Setting CRYPTSETUP in /etc/initramfs-tools/initramfs.conf is deprecated and will stop working in the future. Use /etc/cryptsetup-initramfs/conf-hook instead.
+W: mdadm: /etc/mdadm/mdadm.conf defines no arrays.
+/etc/kernel/postinst.d/zz-update-grub:
+Generating grub configuration file ...
+Found background image: /usr/share/images/desktop-base/desktop-grub.png
+Found linux image: /boot/vmlinuz-4.9.0-kali1-amd64
+Found initrd image: /boot/initrd.img-4.9.0-kali1-amd64
+Found linux image: /boot/vmlinuz-4.8.0-kali2-amd64
+Found initrd image: /boot/initrd.img-4.8.0-kali2-amd64
+Found linux image: /boot/vmlinuz-4.8.0-kali1-amd64
+Found initrd image: /boot/initrd.img-4.8.0-kali1-amd64
+done
+Setting up vim-tiny (2:8.0.0197-2) ...
+Setting up linux-headers-amd64 (4.9+78+kali1) ...
+Setting up pbgenomicconsensus (2.1.0-1) ...
+Setting up mariadb-client-10.1 (10.1.21-5) ...
+Setting up vim-gtk (2:8.0.0197-2) ...
+Setting up pylint (1.6.5-1) ...
+Install pylint for emacs24
+install/pylint: Handling install for emacsen flavor emacs24
+Wrote /usr/share/emacs24/site-lisp/pylint/pylint.elc
+Install pylint for xemacs21
+install/pylint: Handling install for emacsen flavor xemacs21
+Compiling /usr/share/xemacs21/site-lisp/pylint/pylint.el...
+Loading password...
+Wrote /usr/share/xemacs21/site-lisp/pylint/pylint.elc
+Done
+Setting up vim (2:8.0.0197-2) ...
+Setting up python3-astropy (1.3-8) ...
+Setting up hwinfo (21.38-1) ...
+Setting up pylint3 (1.6.5-1) ...
+Setting up libgit-repository-perl (1.320-1) ...
+Setting up gbrowse (2.56+dfsg-2) ...
+Installing new version of config file /etc/default/gbrowse-slave ...
+Installing new version of config file /etc/gbrowse/GBrowse.conf ...
+Installing new version of config file /etc/gbrowse/languages/POSIX.pm ...
+Installing new version of config file /etc/gbrowse/plugins/Blat.pm ...
+Installing new version of config file /etc/gbrowse/plugins/FilterTest.pm ...
+Installing new version of config file /etc/gbrowse/plugins/PrimerDesigner.pm ...
+Installing new version of config file /etc/gbrowse/plugins/RestrictionAnnotator.pm ...
+Installing new version of config file /etc/gbrowse/plugins/Submitter.pm ...
+Installing new version of config file /etc/gbrowse/renderfarm.conf ...
+Installing new version of config file /etc/gbrowse/slave_preload.conf ...
+Installing new version of config file /etc/gbrowse/synteny/rice_synteny.conf ...
+Installing new version of config file /etc/gbrowse/synteny/wild_rice_synteny.conf ...
+Installing new version of config file /etc/gbrowse/yeast_chr1+2.conf ...
+Installing new version of config file /etc/init.d/gbrowse-slave ...
+insserv: warning: script 'K02GlassFish_domain1' missing LSB tags and overrides
+insserv: warning: script 'GlassFish_domain1' missing LSB tags and overrides
+update-rc.d: We have no instructions for the gbrowse-aws-balancer init script.
+update-rc.d: It looks like a non-network service, we enable it.
+insserv: warning: script 'K02GlassFish_domain1' missing LSB tags and overrides
+insserv: warning: script 'GlassFish_domain1' missing LSB tags and overrides
+apache2_invoke gbrowse: already enabled
+apache2.service is not active, cannot reload.
+invoke-rc.d: initscript apache2, action "reload" failed.
+Setting up r-cran-knitr (1.15.1-1) ...
+Setting up libkdf5-2 (2.8.1+dfsg-1) ...
+Setting up r-cran-viridis (0.3.4-1) ...
+Setting up sra-toolkit (2.8.1-2+dfsg-1) ...
+Setting up libgit-repository-plugin-log-perl (1.314-1) ...
+Setting up linux-image-amd64 (4.9+78+kali1) ...
+Setting up forensics-extra (1.5) ...
+Setting up libknot5 (2.4.0-3) ...
+Setting up mariadb-server-10.1 (10.1.21-5) ...
+Installing new version of config file /etc/apparmor.d/usr.sbin.mysqld ...
+Installing new version of config file /etc/init.d/mysql ...
+Installing new version of config file /etc/logrotate.d/mysql-server ...
+Installing new version of config file /etc/mysql/debian-start ...
+insserv: warning: script 'K02GlassFish_domain1' missing LSB tags and overrides
+insserv: warning: current start runlevel(s) (empty) of script `mysql' overrides LSB defaults (2 3 4 5).
+insserv: warning: current stop runlevel(s) (0 1 2 3 4 5 6) of script `mysql' overrides LSB defaults (0 1 6).
+insserv: warning: script 'GlassFish_domain1' missing LSB tags and overrides
+Setting up r-cran-htmltable (1.7-2) ...
+Setting up knot-resolver (1.2.0-1) ...
+insserv: warning: script 'K02GlassFish_domain1' missing LSB tags and overrides
+insserv: warning: script 'GlassFish_domain1' missing LSB tags and overrides
+Setting up default-mysql-server (1.0.2) ...
+Setting up astropy-utils (1.3-8) ...
+Setting up libknot-dev (2.4.0-3) ...
+Setting up kali-linux (2017.1.2) ...
+Setting up r-cran-hmisc (4.0-2-1) ...
+Processing triggers for tex-common (6.06) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up texlive-pictures-doc (2016.20170123-2) ...
+Setting up texlive-pstricks-doc (2016.20170123-2) ...
+Setting up texlive-font-utils (2016.20170123-2) ...
+Setting up texlive-latex-extra-doc (2016.20170123-2) ...
+Setting up texlive-latex-recommended-doc (2016.20170123-2) ...
+Setting up texlive-fonts-recommended-doc (2016.20170123-2) ...
+Setting up texlive-latex-base-doc (2016.20170123-2) ...
+Setting up texlive-science-doc (2016.20170123-2) ...
+Setting up texlive-fonts-extra-doc (2016.20170123-2) ...
+Processing triggers for libc-bin (2.24-9) ...
+Processing triggers for menu (2.1.47) ...
+Processing triggers for systemd (232-15) ...
+Errors were encountered while processing:
+ texlive-extra-utils
+ texlive
+]0;root@msi: /home/super/github/misterch0c/cve-search/bin[01;31mroot@msi[00m:[01;34m/home/super/github/misterch0c/cve-search/bin[00m# apt-getdpkg --configure -aapt-get -y install python-bson python-bson-ext python3-bson python3-bson-ext
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 1%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 96%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+python-bson is already the newest version (3.4.0-1).
+python-bson set to manually installed.
+python-bson-ext is already the newest version (3.4.0-1).
+python-bson-ext set to manually installed.
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ cm-super-minimal : Depends: texlive-latex-recommended but it is not going to be installed
+ dblatex : Depends: texlive-bibtex-extra but it is not going to be installed
+           Depends: texlive-latex-extra but it is not going to be installed
+           Depends: texlive-math-extra
+ doxygen-latex : Depends: texlive-latex-extra but it is not going to be installed
+                 Depends: latex-xcolor
+                 Depends: texlive-fonts-recommended but it is not going to be installed
+ jadetex : Depends: texlive-htmlxml but it is not going to be installed
+ latex-cjk-common : Depends: texlive-latex-base but it is not going to be installed
+ latex-cjk-thai : Depends: texlive-latex-base but it is not going to be installed
+                  Depends: texlive-lang-other (>= 2013.20130523-1) but it is not going to be installed
+ prosper : Depends: texlive-latex-base but it is not going to be installed
+           Depends: texlive-pstricks but it is not going to be installed
+           Depends: texlive-latex-recommended but it is not going to be installed
+ ptex-jtex : Depends: texlive-lang-japanese (>= 2014.20140528-1) but it is not going to be installed
+ python3-gleetex : Depends: texlive-latex-base but it is not going to be installed
+ texlive : Depends: texlive-fonts-recommended (>= 2016.20170123-2) but it is not going to be installed
+           Depends: texlive-latex-recommended (>= 2016.20170123-2) but it is not going to be installed
+           Depends: texlive-latex-base (>= 2016.20170123-2) but it is not going to be installed
+ texlive-extra-utils : Depends: texlive-latex-base (>= 2016.20170123-2) but it is not going to be installed
+                       Recommends: texlive-latex-recommended but it is not going to be installed
+ tipa : Depends: texlive-latex-base but it is not going to be installed
+ tomboy-latex : Depends: texlive-latex-base but it is not going to be installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+]0;root@msi: /home/super/github/misterch0c/cve-search/bin[01;31mroot@msi[00m:[01;34m/home/super/github/misterch0c/cve-search/bin[00m# apt --fix-brokein[K[Kn install
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+Correcting dependencies... Done
+The following packages were automatically installed and are no longer required:
+  libgit-repository-perl libgit-repository-plugin-log-perl libgit-version-compare-perl libknot4 libsystem-command-perl linux-headers-4.8.0-kali1-amd64
+  linux-headers-4.8.0-kali1-common linux-image-4.8.0-kali1-amd64
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-generic-extra texlive-generic-recommended texlive-htmlxml texlive-lang-chinese
+  texlive-lang-cjk texlive-lang-japanese texlive-lang-korean texlive-lang-other texlive-latex-base texlive-latex-extra texlive-latex-recommended
+  texlive-pictures texlive-pstricks texlive-science
+Suggested packages:
+  cm-super prerex dot2tex ruby-tcltk | libtcltk-ruby
+The following NEW packages will be installed:
+  texlive-bibtex-extra texlive-fonts-recommended texlive-generic-extra texlive-generic-recommended texlive-htmlxml texlive-lang-chinese texlive-lang-cjk
+  texlive-lang-japanese texlive-lang-korean texlive-lang-other texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-pictures
+  texlive-pstricks texlive-science
+The following packages will be upgraded:
+  texlive-fonts-extra
+1 upgraded, 16 newly installed, 0 to remove and 3 not upgraded.
+3 not fully installed or removed.
+Need to get 0 B/494 MB of archives.
+After this operation, 774 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Reading changelogs... 5%Reading changelogs... 11%Reading changelogs... 17%Reading changelogs... 23%Reading changelogs... 29%Reading changelogs... 35%Reading changelogs... 41%Reading changelogs... 47%Reading changelogs... 52%Reading changelogs... 58%Reading changelogs... 64%Reading changelogs... 70%Reading changelogs... 76%Reading changelogs... 82%Reading changelogs... 88%Reading changelogs... 94%Reading changelogs... 100%                          Reading changelogs... Done
+WARNING: Unknown distro but dpkg found, assuming Debian
+
+7[0;20r8[1ASelecting previously unselected package texlive-fonts-recommended.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 923794 files and directories currently installed.)
+Preparing to unpack .../00-texlive-fonts-recommended_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [  0%][49m[39m [........................................................................................................................................] 87[21;0f[42m[30mProgress: [  1%][49m[39m [#.......................................................................................................................................] 8Unpacking texlive-fonts-recommended (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [  2%][49m[39m [##......................................................................................................................................] 87[21;0f[42m[30mProgress: [  3%][49m[39m [####....................................................................................................................................] 8Selecting previously unselected package texlive-latex-base.
+Preparing to unpack .../01-texlive-latex-base_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [  4%][49m[39m [#####...................................................................................................................................] 8Unpacking texlive-latex-base (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [  5%][49m[39m [#######.................................................................................................................................] 87[21;0f[42m[30mProgress: [  6%][49m[39m [########................................................................................................................................] 8Selecting previously unselected package texlive-latex-recommended.
+Preparing to unpack .../02-texlive-latex-recommended_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [  7%][49m[39m [##########..............................................................................................................................] 8Unpacking texlive-latex-recommended (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [  8%][49m[39m [###########.............................................................................................................................] 87[21;0f[42m[30mProgress: [  9%][49m[39m [#############...........................................................................................................................] 8Preparing to unpack .../03-texlive-fonts-extra_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 10%][49m[39m [##############..........................................................................................................................] 8Unpacking texlive-fonts-extra (2016.20170123-2) over (2016.20161130-1) ...
+7[21;0f[42m[30mProgress: [ 11%][49m[39m [################........................................................................................................................] 87[21;0f[42m[30mProgress: [ 13%][49m[39m [#################.......................................................................................................................] 8Selecting previously unselected package texlive-bibtex-extra.
+Preparing to unpack .../04-texlive-bibtex-extra_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 14%][49m[39m [###################.....................................................................................................................] 8Unpacking texlive-bibtex-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 15%][49m[39m [####################....................................................................................................................] 87[21;0f[42m[30mProgress: [ 16%][49m[39m [######################..................................................................................................................] 8Selecting previously unselected package texlive-generic-extra.
+Preparing to unpack .../05-texlive-generic-extra_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 17%][49m[39m [#######################.................................................................................................................] 8Unpacking texlive-generic-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 18%][49m[39m [#########################...............................................................................................................] 87[21;0f[42m[30mProgress: [ 19%][49m[39m [##########################..............................................................................................................] 8Selecting previously unselected package texlive-generic-recommended.
+Preparing to unpack .../06-texlive-generic-recommended_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 20%][49m[39m [############################............................................................................................................] 8Unpacking texlive-generic-recommended (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 21%][49m[39m [#############################...........................................................................................................] 87[21;0f[42m[30mProgress: [ 22%][49m[39m [###############################.........................................................................................................] 8Selecting previously unselected package texlive-htmlxml.
+Preparing to unpack .../07-texlive-htmlxml_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 23%][49m[39m [################################........................................................................................................] 8Unpacking texlive-htmlxml (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 25%][49m[39m [##################################......................................................................................................] 87[21;0f[42m[30mProgress: [ 26%][49m[39m [###################################.....................................................................................................] 8Selecting previously unselected package texlive-lang-cjk.
+Preparing to unpack .../08-texlive-lang-cjk_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 27%][49m[39m [####################################....................................................................................................] 8Unpacking texlive-lang-cjk (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 28%][49m[39m [######################################..................................................................................................] 87[21;0f[42m[30mProgress: [ 29%][49m[39m [#######################################.................................................................................................] 8Selecting previously unselected package texlive-lang-chinese.
+Preparing to unpack .../09-texlive-lang-chinese_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 30%][49m[39m [#########################################...............................................................................................] 8Unpacking texlive-lang-chinese (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 31%][49m[39m [##########################################..............................................................................................] 87[21;0f[42m[30mProgress: [ 32%][49m[39m [############################################............................................................................................] 8Selecting previously unselected package texlive-lang-japanese.
+Preparing to unpack .../10-texlive-lang-japanese_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 33%][49m[39m [#############################################...........................................................................................] 8Unpacking texlive-lang-japanese (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 34%][49m[39m [###############################################.........................................................................................] 87[21;0f[42m[30mProgress: [ 35%][49m[39m [################################################........................................................................................] 8Selecting previously unselected package texlive-lang-korean.
+Preparing to unpack .../11-texlive-lang-korean_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 36%][49m[39m [##################################################......................................................................................] 8Unpacking texlive-lang-korean (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 38%][49m[39m [###################################################.....................................................................................] 87[21;0f[42m[30mProgress: [ 39%][49m[39m [#####################################################...................................................................................] 8Selecting previously unselected package texlive-lang-other.
+Preparing to unpack .../12-texlive-lang-other_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 40%][49m[39m [######################################################..................................................................................] 8Unpacking texlive-lang-other (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 41%][49m[39m [########################################################................................................................................] 87[21;0f[42m[30mProgress: [ 42%][49m[39m [#########################################################...............................................................................] 8Selecting previously unselected package texlive-pictures.
+Preparing to unpack .../13-texlive-pictures_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 43%][49m[39m [###########################################################.............................................................................] 8Unpacking texlive-pictures (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 44%][49m[39m [############################################################............................................................................] 87[21;0f[42m[30mProgress: [ 45%][49m[39m [##############################################################..........................................................................] 8Selecting previously unselected package texlive-latex-extra.
+Preparing to unpack .../14-texlive-latex-extra_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 46%][49m[39m [###############################################################.........................................................................] 8Unpacking texlive-latex-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 47%][49m[39m [#################################################################.......................................................................] 87[21;0f[42m[30mProgress: [ 48%][49m[39m [##################################################################......................................................................] 8Selecting previously unselected package texlive-pstricks.
+Preparing to unpack .../15-texlive-pstricks_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 50%][49m[39m [####################################################################....................................................................] 8Unpacking texlive-pstricks (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 51%][49m[39m [#####################################################################...................................................................] 87[21;0f[42m[30mProgress: [ 52%][49m[39m [######################################################################..................................................................] 8Selecting previously unselected package texlive-science.
+Preparing to unpack .../16-texlive-science_2016.20170123-2_all.deb ...
+7[21;0f[42m[30mProgress: [ 53%][49m[39m [########################################################################................................................................] 8Unpacking texlive-science (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 54%][49m[39m [#########################################################################...............................................................] 87[21;0f[42m[30mProgress: [ 55%][49m[39m [###########################################################################.............................................................] 8Setting up texlive-fonts-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 56%][49m[39m [############################################################################............................................................] 8Processing triggers for tex-common (6.06) ...
+7[21;0f[42m[30mProgress: [ 57%][49m[39m [##############################################################################..........................................................] 8Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Processing triggers for install-info (6.3.0.dfsg.1-1+b1) ...
+install-info: warning: no info dir entry in `/usr/share/info/jargon.info.gz'
+install-info: warning: no info dir entry in `/usr/share/info/knot.info.gz'
+Setting up texlive-generic-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 58%][49m[39m [###############################################################################.........................................................] 87[21;0f[42m[30mProgress: [ 59%][49m[39m [#################################################################################.......................................................] 8Processing triggers for man-db (2.7.6.1-2) ...
+Setting up texlive-lang-other (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 60%][49m[39m [##################################################################################......................................................] 87[21;0f[42m[30mProgress: [ 61%][49m[39m [####################################################################################....................................................] 8Setting up texlive-fonts-recommended (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 63%][49m[39m [#####################################################################################...................................................] 87[21;0f[42m[30mProgress: [ 64%][49m[39m [#######################################################################################.................................................] 8Setting up texlive-generic-recommended (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 65%][49m[39m [########################################################################################................................................] 87[21;0f[42m[30mProgress: [ 66%][49m[39m [##########################################################################################..............................................] 8Setting up texlive-latex-base (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 67%][49m[39m [###########################################################################################.............................................] 87[21;0f[42m[30mProgress: [ 68%][49m[39m [#############################################################################################...........................................] 8Processing triggers for fontconfig (2.11.0-6.7) ...
+Processing triggers for tex-common (6.06) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up texlive-latex-recommended (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 69%][49m[39m [##############################################################################################..........................................] 87[21;0f[42m[30mProgress: [ 70%][49m[39m [################################################################################################........................................] 8Setting up texlive-extra-utils (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 71%][49m[39m [#################################################################################################.......................................] 87[21;0f[42m[30mProgress: [ 72%][49m[39m [###################################################################################################.....................................] 87[21;0f[42m[30mProgress: [ 73%][49m[39m [####################################################################################################....................................] 8Setting up texlive-lang-cjk (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 75%][49m[39m [######################################################################################################..................................] 87[21;0f[42m[30mProgress: [ 76%][49m[39m [#######################################################################################################.................................] 8Setting up texlive-htmlxml (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 77%][49m[39m [########################################################################################################................................] 87[21;0f[42m[30mProgress: [ 78%][49m[39m [##########################################################################################################..............................] 8Setting up texlive-science (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 79%][49m[39m [###########################################################################################################.............................] 87[21;0f[42m[30mProgress: [ 80%][49m[39m [#############################################################################################################...........................] 8Setting up texlive-pictures (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 81%][49m[39m [##############################################################################################################..........................] 87[21;0f[42m[30mProgress: [ 82%][49m[39m [################################################################################################################........................] 8Setting up texlive-bibtex-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 83%][49m[39m [#################################################################################################################.......................] 87[21;0f[42m[30mProgress: [ 84%][49m[39m [###################################################################################################################.....................] 8Setting up texlive (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 85%][49m[39m [####################################################################################################################....................] 87[21;0f[42m[30mProgress: [ 86%][49m[39m [######################################################################################################################..................] 87[21;0f[42m[30mProgress: [ 88%][49m[39m [#######################################################################################################################.................] 8Processing triggers for tex-common (6.06) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up texlive-pstricks (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 89%][49m[39m [#########################################################################################################################...............] 87[21;0f[42m[30mProgress: [ 90%][49m[39m [##########################################################################################################################..............] 8Setting up texlive-lang-korean (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 91%][49m[39m [############################################################################################################################............] 87[21;0f[42m[30mProgress: [ 92%][49m[39m [#############################################################################################################################...........] 8Setting up texlive-latex-extra (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 93%][49m[39m [###############################################################################################################################.........] 87[21;0f[42m[30mProgress: [ 94%][49m[39m [################################################################################################################################........] 8Setting up texlive-lang-japanese (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 95%][49m[39m [##################################################################################################################################......] 87[21;0f[42m[30mProgress: [ 96%][49m[39m [###################################################################################################################################.....] 8Setting up texlive-lang-chinese (2016.20170123-2) ...
+7[21;0f[42m[30mProgress: [ 97%][49m[39m [#####################################################################################################################################...] 87[21;0f[42m[30mProgress: [ 98%][49m[39m [######################################################################################################################################..] 8Processing triggers for tex-common (6.06) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+
+7[0;21r8[1A[Jneedrestart is being skipped since dpkg has failed
+]0;root@msi: /home/super/github/misterch0c/cve-search/bin[01;31mroot@msi[00m:[01;34m/home/super/github/misterch0c/cve-search/bin[00m# apt --fix-broken install-get -y install python-bson python-bson-ext python3-bson python3-bson-ext[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdpkg --configure -a[Kapt-get -y install python-bson python-bson-ext python3-bson python3-bson-ext
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+python-bson is already the newest version (3.4.0-1).
+python-bson set to manually installed.
+python-bson-ext is already the newest version (3.4.0-1).
+python-bson-ext set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libgit-repository-perl libgit-repository-plugin-log-perl libgit-version-compare-perl libknot4 libsystem-command-perl linux-headers-4.8.0-kali1-amd64
+  linux-headers-4.8.0-kali1-common linux-image-4.8.0-kali1-amd64
+Use 'apt autoremove' to remove them.
+The following NEW packages will be installed:
+  python3-bson python3-bson-ext
+0 upgraded, 2 newly installed, 0 to remove and 3 not upgraded.
+Need to get 97.2 kB of archives.
+After this operation, 262 kB of additional disk space will be used.
+0% [Working]0% [Waiting for headers]0% [Waiting for headers]0% [Waiting for headers]                        0% [Working]0% [Waiting for headers]                        Get:1 http://archive-5.kali.org/kali kali-rolling/main amd64 python3-bson amd64 3.4.0-1 [52.2 kB]
+7% [Connecting to archive-8.kali.org (192.99.200.113)] [1 python3-bson 8,433 B/52.2 kB 16%]                                                                                           53% [Waiting for headers]                         Get:2 http://archive-8.kali.org/kali kali-rolling/main amd64 python3-bson-ext amd64 3.4.0-1 [45.0 kB]
+65% [2 python3-bson-ext 14.2 kB/45.0 kB 32%]                                            100% [Working]              Fetched 97.2 kB in 2s (47.3 kB/s)
+WARNING: Unknown distro but dpkg found, assuming Debian
+Selecting previously unselected package python3-bson.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 1008698 files and directories currently installed.)
+Preparing to unpack .../python3-bson_3.4.0-1_amd64.deb ...
+Unpacking python3-bson (3.4.0-1) ...
+Selecting previously unselected package python3-bson-ext.
+Preparing to unpack .../python3-bson-ext_3.4.0-1_amd64.deb ...
+Unpacking python3-bson-ext (3.4.0-1) ...
+Setting up python3-bson (3.4.0-1) ...
+Setting up python3-bson-ext (3.4.0-1) ...
+Scanning processes... [                                                                                                                                     ]Scanning processes... [                                                                                                                                     ]Scanning processes... [                                                                                                                                     ]Scanning processes... [=                                                                                                                                    ]Scanning processes... [=                                                                                                                                    ]Scanning processes... [==                                                                                                                                   ]Scanning processes... [==                                                                                                                                   ]Scanning processes... [===                                                                                                                                  ]Scanning processes... [===                                                                                                                                  ]Scanning processes... [====                                                                                                                                 ]Scanning processes... [====                                                                                                                                 ]Scanning processes... [=====                                                                                                                                ]Scanning processes... [=====                                                                                                                                ]Scanning processes... [======                                                                                                                               ]Scanning processes... [======                                                                                                                               ]Scanning processes... [=======                                                                                                                              ]Scanning processes... [=======                                                                                                                              ]Scanning processes... [=======                                                                                                                              ]Scanning processes... [========                                                                                                                             ]Scanning processes... [========                                                                                                                             ]Scanning processes... [=========                                                                                                                            ]Scanning processes... [=========                                                                                                                            ]Scanning processes... [==========                                                                                                                           ]Scanning processes... [==========                                                                                                                           ]Scanning processes... [===========                                                                                                                          ]Scanning processes... [===========                                                                                                                          ]Scanning processes... [============                                                                                                                         ]Scanning processes... [============                                                                                                                         ]Scanning processes... [=============                                                                                                                        ]Scanning processes... [=============                                                                                                                        ]Scanning processes... [==============                                                                                                                       ]Scanning processes... [==============                                                                                                                       ]Scanning processes... [===============                                                                                                                      ]Scanning processes... [===============                                                                                                                      ]Scanning processes... [===============                                                                                                                      ]Scanning processes... [================                                                                                                                     ]Scanning processes... [================                                                                                                                     ]Scanning processes... [=================                                                                                                                    ]Scanning processes... [=================                                                                                                                    ]Scanning processes... [==================                                                                                                                   ]Scanning processes... [==================                                                                                                                   ]Scanning processes... [===================                                                                                                                  ]Scanning processes... [===================                                                                                                                  ]Scanning processes... [====================                                                                                                                 ]Scanning processes... [====================                                                                                                                 ]Scanning processes... [=====================                                                                                                                ]Scanning processes... [=====================                                                                                                                ]Scanning processes... [======================                                                                                                               ]Scanning processes... [======================                                                                                                               ]Scanning processes... [=======================                                                                                                              ]Scanning processes... [=======================                                                                                                              ]Scanning processes... [=======================                                                                                                              ]Scanning processes... [========================                                                                                                             ]Scanning processes... [========================                                                                                                             ]Scanning processes... [=========================                                                                                                            ]Scanning processes... [=========================                                                                                                            ]Scanning processes... [==========================                                                                                                           ]Scanning processes... [==========================                                                                                                           ]Scanning processes... [===========================                                                                                                          ]Scanning processes... [===========================                                                                                                          ]Scanning processes... [============================                                                                                                         ]Scanning processes... [============================                                                                                                         ]Scanning processes... [=============================                                                                                                        ]Scanning processes... [=============================                                                                                                        ]Scanning processes... [==============================                                                                                                       ]Scanning processes... [==============================                                                                                                       ]Scanning processes... [===============================                                                                                                      ]Scanning processes... [===============================                                                                                                      ]Scanning processes... [===============================                                                                                                      ]Scanning processes... [================================                                                                                                     ]Scanning processes... [================================                                                                                                     ]Scanning processes... [=================================                                                                                                    ]Scanning processes... [=================================                                                                                                    ]Scanning processes... [==================================                                                                                                   ]Scanning processes... [==================================                                                                                                   ]Scanning processes... [===================================                                                                                                  ]Scanning processes... [===================================                                                                                                  ]Scanning processes... [====================================                                                                                                 ]Scanning processes... [====================================                                                                                                 ]Scanning processes... [=====================================                                                                                                ]Scanning processes... [=====================================                                                                                                ]Scanning processes... [======================================                                                                                               ]Scanning processes... [======================================                                                                                               ]Scanning processes... [=======================================                                                                                              ]Scanning processes... [=======================================                                                                                              ]Scanning processes... [=======================================                                                                                              ]Scanning processes... [========================================                                                                                             ]Scanning processes... [========================================                                                                                             ]Scanning processes... [=========================================                                                                                            ]Scanning processes... [=========================================                                                                                            ]Scanning processes... [==========================================                                                                                           ]Scanning processes... [==========================================                                                                                           ]Scanning processes... [===========================================                                                                                          ]Scanning processes... [===========================================                                                                                          ]Scanning processes... [============================================                                                                                         ]Scanning processes... [============================================                                                                                         ]Scanning processes... [=============================================                                                                                        ]Scanning processes... [=============================================                                                                                        ]Scanning processes... [==============================================                                                                                       ]Scanning processes... [==============================================                                                                                       ]Scanning processes... [==============================================                                                                                       ]Scanning processes... [===============================================                                                                                      ]Scanning processes... [===============================================                                                                                      ]Scanning processes... [================================================                                                                                     ]Scanning processes... [================================================                                                                                     ]Scanning processes... [=================================================                                                                                    ]Scanning processes... [=================================================                                                                                    ]Scanning processes... [==================================================                                                                                   ]Scanning processes... [==================================================                                                                                   ]Scanning processes... [===================================================                                                                                  ]Scanning processes... [===================================================                                                                                  ]Scanning processes... [====================================================                                                                                 ]Scanning processes... [====================================================                                                                                 ]Scanning processes... [=====================================================                                                                                ]Scanning processes... [=====================================================                                                                                ]Scanning processes... [======================================================                                                                               ]Scanning processes... [======================================================                                                                               ]Scanning processes... [======================================================                                                                               ]Scanning processes... [=======================================================                                                                              ]Scanning processes... [=======================================================                                                                              ]Scanning processes... [========================================================                                                                             ]Scanning processes... [========================================================                                                                             ]Scanning processes... [=========================================================                                                                            ]Scanning processes... [=========================================================                                                                            ]Scanning processes... [==========================================================                                                                           ]Scanning processes... [==========================================================                                                                           ]Scanning processes... [===========================================================                                                                          ]Scanning processes... [===========================================================                                                                          ]Scanning processes... [============================================================                                                                         ]Scanning processes... [============================================================                                                                         ]Scanning processes... [=============================================================                                                                        ]Scanning processes... [=============================================================                                                                        ]Scanning processes... [==============================================================                                                                       ]Scanning processes... [==============================================================                                                                       ]Scanning processes... [==============================================================                                                                       ]Scanning processes... [===============================================================                                                                      ]Scanning processes... [===============================================================                                                                      ]Scanning processes... [================================================================                                                                     ]Scanning processes... [================================================================                                                                     ]Scanning processes... [=================================================================                                                                    ]Scanning processes... [=================================================================                                                                    ]Scanning processes... [==================================================================                                                                   ]Scanning processes... [==================================================================                                                                   ]Scanning processes... [===================================================================                                                                  ]Scanning processes... [===================================================================                                                                  ]Scanning processes... [====================================================================                                                                 ]Scanning processes... [====================================================================                                                                 ]Scanning processes... [=====================================================================                                                                ]Scanning processes... [=====================================================================                                                                ]Scanning processes... [======================================================================                                                               ]Scanning processes... [======================================================================                                                               ]Scanning processes... [======================================================================                                                               ]Scanning processes... [=======================================================================                                                              ]Scanning processes... [=======================================================================                                                              ]Scanning processes... [========================================================================                                                             ]Scanning processes... [========================================================================                                                             ]Scanning processes... [=========================================================================                                                            ]Scanning processes... [=========================================================================                                                            ]Scanning processes... [==========================================================================                                                           ]Scanning processes... [==========================================================================                                                           ]Scanning processes... [===========================================================================                                                          ]Scanning processes... [===========================================================================                                                          ]Scanning processes... [============================================================================                                                         ]Scanning processes... [============================================================================                                                         ]Scanning processes... [=============================================================================                                                        ]Scanning processes... [=============================================================================                                                        ]Scanning processes... [==============================================================================                                                       ]Scanning processes... [==============================================================================                                                       ]Scanning processes... [==============================================================================                                                       ]Scanning processes... [===============================================================================                                                      ]Scanning processes... [===============================================================================                                                      ]Scanning processes... [================================================================================                                                     ]Scanning processes... [================================================================================                                                     ]Scanning processes... [=================================================================================                                                    ]Scanning processes... [=================================================================================                                                    ]Scanning processes... [==================================================================================                                                   ]Scanning processes... [==================================================================================                                                   ]Scanning processes... [===================================================================================                                                  ]Scanning processes... [===================================================================================                                                  ]Scanning processes... [====================================================================================                                                 ]Scanning processes... [====================================================================================                                                 ]Scanning processes... [=====================================================================================                                                ]Scanning processes... [=====================================================================================                                                ]Scanning processes... [======================================================================================                                               ]Scanning processes... [======================================================================================                                               ]Scanning processes... [======================================================================================                                               ]Scanning processes... [=======================================================================================                                              ]Scanning processes... [=======================================================================================                                              ]Scanning processes... [========================================================================================                                             ]Scanning processes... [========================================================================================                                             ]Scanning processes... [=========================================================================================                                            ]Scanning processes... [=========================================================================================                                            ]Scanning processes... [==========================================================================================                                           ]Scanning processes... [==========================================================================================                                           ]Scanning processes... [===========================================================================================                                          ]Scanning processes... [===========================================================================================                                          ]Scanning processes... [============================================================================================                                         ]Scanning processes... [============================================================================================                                         ]Scanning processes... [=============================================================================================                                        ]Scanning processes... [=============================================================================================                                        ]Scanning processes... [=============================================================================================                                        ]Scanning processes... [==============================================================================================                                       ]Scanning processes... [==============================================================================================                                       ]Scanning processes... [===============================================================================================                                      ]Scanning processes... [===============================================================================================                                      ]Scanning processes... [================================================================================================                                     ]Scanning processes... [================================================================================================                                     ]Scanning processes... [=================================================================================================                                    ]Scanning processes... [=================================================================================================                                    ]Scanning processes... [==================================================================================================                                   ]Scanning processes... [==================================================================================================                                   ]Scanning processes... [===================================================================================================                                  ]Scanning processes... [===================================================================================================                                  ]Scanning processes... [====================================================================================================                                 ]Scanning processes... [====================================================================================================                                 ]Scanning processes... [=====================================================================================================                                ]Scanning processes... [=====================================================================================================                                ]Scanning processes... [=====================================================================================================                                ]Scanning processes... [======================================================================================================                               ]Scanning processes... [======================================================================================================                               ]Scanning processes... [=======================================================================================================                              ]Scanning processes... [=======================================================================================================                              ]Scanning processes... [========================================================================================================                             ]Scanning processes... [========================================================================================================                             ]Scanning processes... [=========================================================================================================                            ]Scanning processes... [=========================================================================================================                            ]Scanning processes... [==========================================================================================================                           ]Scanning processes... [==========================================================================================================                           ]Scanning processes... [===========================================================================================================                          ]Scanning processes... [===========================================================================================================                          ]Scanning processes... [============================================================================================================                         ]Scanning processes... [============================================================================================================                         ]Scanning processes... [=============================================================================================================                        ]Scanning processes... [=============================================================================================================                        ]Scanning processes... [=============================================================================================================                        ]Scanning processes... [==============================================================================================================                       ]Scanning processes... [==============================================================================================================                       ]Scanning processes... [===============================================================================================================                      ]Scanning processes... [===============================================================================================================                      ]Scanning processes... [================================================================================================================                     ]Scanning processes... [================================================================================================================                     ]Scanning processes... [=================================================================================================================                    ]Scanning processes... [=================================================================================================================                    ]Scanning processes... [==================================================================================================================                   ]Scanning processes... [==================================================================================================================                   ]Scanning processes... [===================================================================================================================                  ]Scanning processes... [===================================================================================================================                  ]Scanning processes... [====================================================================================================================                 ]Scanning processes... [====================================================================================================================                 ]Scanning processes... [=====================================================================================================================                ]Scanning processes... [=====================================================================================================================                ]Scanning processes... [=====================================================================================================================                ]Scanning processes... [======================================================================================================================               ]Scanning processes... [======================================================================================================================               ]Scanning processes... [=======================================================================================================================              ]Scanning processes... [=======================================================================================================================              ]Scanning processes... [========================================================================================================================             ]Scanning processes... [========================================================================================================================             ]Scanning processes... [=========================================================================================================================            ]Scanning processes... [=========================================================================================================================            ]Scanning processes... [==========================================================================================================================           ]Scanning processes... [==========================================================================================================================           ]Scanning processes... [===========================================================================================================================          ]Scanning processes... [===========================================================================================================================          ]Scanning processes... [============================================================================================================================         ]Scanning processes... [============================================================================================================================         ]Scanning processes... [=============================================================================================================================        ]Scanning processes... [=============================================================================================================================        ]Scanning processes... [=============================================================================================================================        ]Scanning processes... [==============================================================================================================================       ]Scanning processes... [==============================================================================================================================       ]Scanning processes... [===============================================================================================================================      ]Scanning processes... [===============================================================================================================================      ]Scanning processes... [================================================================================================================================     ]Scanning processes... [================================================================================================================================     ]Scanning processes... [=================================================================================================================================    ]Scanning processes... [=================================================================================================================================    ]Scanning processes... [==================================================================================================================================   ]Scanning processes... [==================================================================================================================================   ]Scanning processes... [===================================================================================================================================  ]Scanning processes... [===================================================================================================================================  ]Scanning processes... [==================================================================================================================================== ]Scanning processes... [==================================================================================================================================== ]Scanning processes... [=====================================================================================================================================]Scanning processes...                                                                                                                                         
+Scanning linux images... [                                                                                                                                  ]Scanning linux images... [===========================================                                                                                       ]Scanning linux images... [======================================================================================                                            ]Scanning linux images... [==================================================================================================================================]Scanning linux images...                                                                                                                                      
+[?1049h[1;21r[4l[?25l(B[m[37m[40m[1;21r[H[2J[1;1H[97m[44m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;1H[37mPackage configuration[6;19H[30m[47m┌───────────────────────────────────────────────┤ [31mPending kernel upgrade[30m ├───────────────────────────────────────────────┐[7;19H│                                                                                                                        │[97m[40m [8;19H[30m[47m│ Newer kernel available                                                                                                 │[97m[40m [9;19H[30m[47m│                                                                                                                        │[97m[40m [10;19H[30m[47m│ The currently running kernel version is 4.8.0-kali2-amd64 which is not the expected kernel version 4.9.0-kali1-amd64.  │[97m[40m [11;19H[30m[47m│                                                                                                                        │[97m[40m [12;19H[30m[47m│ Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.      │[97m[40m [13;19H[30m[47m│                                                                                                                        │[97m[40m [14;19H[30m[47m│                                                         [37m[41m<Ok>[30m[47m                                                           │[97m[40m [15;19H[30m[47m│                                                                                                                        │[97m[40m [16;19H[30m[47m└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘[97m[40m [17;20H                                                                                                                          [14;78H[1;1H[37m[K[44mPackage configuration[97m[K
+[37m[40m[K[97m[44m[K
+[37m[40m[K[97m[44m[K
+[37m[40m[K[97m[44m[K
+[37m[40m[K[97m[44m[K
+[37m[40m[K[97m[44m                  [30m[47m┌───────────────────────────────────────────────┤ [31mPending kernel upgrade[30m ├───────────────────────────────────────────────┐[97m[44m[K
+[37m[40m[K[97m[44m                  [30m[47m│                                                                                                                        │[97m[40m [44m[K
+[37m[40m[K[97m[44m                  [30m[47m│ Newer kernel available                                                                                                 │[97m[40m [44m[K
+[37m[40m[K[97m[44m                  [30m[47m│                                                                                                                        │[97m[40m [44m[K
+[37m[40m[K[97m[44m                  [30m[47m│ The currently running kernel version is 4.8.0-kali2-amd64 which is not the expected kernel version 4.9.0-kali1-amd64.  │[97m[40m [44m[K
+[37m[40m[K[97m[44m                  [30m[47m│                                                                                                                        │[97m[40m [44m[K
+[37m[40m[K[97m[44m                  [30m[47m│ Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.      │[97m[40m [44m[K
+[37m[40m[K[97m[44m                  [30m[47m│                                                                 
