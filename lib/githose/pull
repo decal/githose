@@ -63,7 +63,7 @@ for auser in $(find $GITAA_PATH_CLONE -maxdepth 1 -type d -print -not -name '.*'
   for arepo in $(find "${GITAA_PATH_CLONE}/$(basename $auser)" -maxdepth 1 -type d -not -name '.*' -print)
     do cd -- $(realpath $arepo)
 
-    nice git pull &
+    git pull &
 
     cd ..
 

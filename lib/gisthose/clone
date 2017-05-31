@@ -52,7 +52,7 @@ if [ ! -d $GIST_PATH_COPY ]
   [ $? -ne 0 ] && errx_show 'mkdir' "$?" $GIST_PATH_COPY
 fi
 
-chmod -- $GIST_MODE_DIRS $GIST_PATH_COPY |&> /dev/null
+chmod $GIST_MODE_DIRS -- $GIST_PATH_COPY |&> /dev/null
 
 [ $? -ne 0 ] && errx_show 'chmod' "$?"
 
@@ -129,6 +129,8 @@ while true
       [ $DEBUG ] && echo -e "\n${whitef}DEBUG${boldon}:${reset} ${inverse}$(basename $one)${reset}\n"
 
       wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} ${one} |&> /dev/null & 
+
+      chmod $GIST_MODE_FILE -- $(basename $one)
     done
 
     for two in `seq 1 $acnt`
@@ -138,6 +140,8 @@ while true
 
   break
 done
+
+find ${GIST_PATH_COPY}/${gistUser} -type f -exec chmod $GIST_MODE_FILE {} \; |&> /dev/null
 
 echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
 
