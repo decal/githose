@@ -8,9 +8,14 @@
 #
 
 if [ ! $initLoaded ] 
+  then declare -r -i initLoaded=1
+  declare -r -i -x verboseFlag=1
+  declare -r -x githosePath='githose'
+
   # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
-  then export GITHOSE_NUM_JOBS=$( grep 'cpu cores' /proc/cpuinfo | cut -d ':' -f2 | head -1 | sed 's/[ ]*$//;s/^[ ]*//' )
-  declare -i initLoaded=1 
-  declare -i verboseFlag=1 
-  declare githosePath='githose'
+  export GITHOSE_NUM_JOBS=0
+  
+  for proc_core_cnt in $(egrep -i '^cpu cores' /proc/cpuinfo | awk -F: '{print($2);}')
+    do export GITHOSE_NUM_JOBS=$(( GITHOSE_NUM_JOBS + proc_core_cnt ))
+  done
 fi

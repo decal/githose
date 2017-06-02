@@ -14,7 +14,7 @@
 
 * Write a `parallel` command for fetching the text of gists 
 
-* Fix `inc/inits` to declare the `GITHOSE_CPU_CORES` environment variable properly..
+* _X_ Fix `inc/inits` to declare the `GITHOSE_CPU_CORES` environment variable properly.. 
 
 * Command-line arguments..
   1. Pass global `getopt` flags to `bin/githose`

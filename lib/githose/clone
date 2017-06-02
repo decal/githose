@@ -59,7 +59,7 @@ if [ $singleRepo -ne 0 ]
 
   echo -ne "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Handling URI Style Input as Single Git Repository${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
 
-  git clone $gitUser
+  git clone -j2 $gitUser
 
   if [ $? ]
     then readonly declare -i errCode=$? 
@@ -168,7 +168,7 @@ while true
     for one in $GITHUB_REPO_URLS
       do countChocula=$(( $countChocula + 1 ))
 
-      [ ! -d "$one" ] && git clone $one &
+      [ ! -d "$one" ] && git clone -j2 $one &
     done
 
     for two in `seq 1 $countChocula`
