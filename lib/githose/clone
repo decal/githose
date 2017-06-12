@@ -59,10 +59,10 @@ if [ $singleRepo -ne 0 ]
 
   echo -ne "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Handling URI Style Input as Single Git Repository${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
 
-  git clone -j2 $gitUser
+  git clone $gitUser
 
   if [ $? ]
-    then readonly declare -i errCode=$? 
+    then declare -i -r errCode=$? 
     
     echo -e "\a\n${reset}"
 

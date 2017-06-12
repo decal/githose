@@ -10,7 +10,7 @@
 if [ ! $initLoaded ] 
   then declare -r -i initLoaded=1
   declare -r -i -x verboseFlag=1
-  declare -r -x githosePath='githose'
+  declare -x githosePath='githose'
 
   # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
   export GITHOSE_NUM_JOBS=0
