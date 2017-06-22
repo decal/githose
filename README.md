@@ -3,6 +3,28 @@
 
 _`githose` concurrently archives GitHub users' code repositories and gist text!_
 
+This is similar to `github_cloner` by `anantshri` on GitHub which is written in
+Python.  However, that project does not support gists or implement any form of 
+concurrent programming.  `githose` utilizes GNU `parallel` for a significant 
+speedup in multi-tasking, especially when a user's account hosts many hundreds 
+of repositories (and some which are rather large.) 
+
+### Features
+
+The table below is a feature comparison between `githose` and `github_cloner`:
+
+***
+
+| Software Tool | Colors | Threads | Gists | One-to-many | GUI |
+|:-------------:|:------:|:-------:|:-----:|:-----------:|:---:|
+| web interface |  yes   |   no    |  yes  |     no      | yes |
+| git(1) CLI    |  yes   |   no    |   no  |     no      |  no |
+| github_cloner |   no   |   no    |   no  |    yes      |  no |
+| githose       |  yes   |  yes    |  yes  |    yes      |  no |
+|---------------|--------|---------|-------|-------------|-----|
+
+***
+
 ### Documentation
 
 * Refer to the `doc` directory which has the files/directories outlined below:

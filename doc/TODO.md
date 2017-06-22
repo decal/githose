@@ -4,6 +4,9 @@
 * Parse updated_at JSON member from GitHub API to check for modified gists
   - will be code for `lib/gisthose/pull`
 
+* Support downloads based on searches using topic operator like:
+  - [GitHub search for 'topic:security'](https://github.com/search?q=topic%3Asecurity&type=Repositories "GitHub search for 'topic:security'")
+
 * Make `exit $BASH_LINENO` into `function codeError` or something..
 
 * Fix usage condition by replacing with function in `lib/githose/pull`
