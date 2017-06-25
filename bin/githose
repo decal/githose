@@ -30,21 +30,21 @@ if [[ $? -ne 0 ]]
   exit $?
 fi
 
-if [[ "$0" =~ grist ]]
+if [[ "$0" =~ ^gristhose$ ]]
   then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
     then gristhoseUsage
 
   exit -1
   fi
 else
-  if [[ "$0" =~ gist ]]
+  if [[ "$0" =~ ^gisthose$ ]]
     then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
       then gisthoseUsage
 
       exit -1
     fi
   else
-    if [[ "$0" =~ git ]]
+    if [[ "$0" =~ ^githose$ ]]
       then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
         then githoseUsage 
 

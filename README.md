@@ -1,17 +1,18 @@
-**githose v0.8.94a**
-================
+**githose v0.9.4a**
+===============
 
 _`githose` concurrently archives GitHub users' code repositories and gist text!_
 
-This is similar to `github_cloner` by `anantshri` on GitHub which is written in
+`githose` is similar to `github_cloner` by `anantshri` on GitHub which is written in
 Python.  However, that project does not support gists or implement any form of 
 concurrent programming.  `githose` utilizes GNU `parallel` for a significant 
 speedup in multi-tasking, especially when a user's account hosts many hundreds 
 of repositories (and some which are rather large.) 
 
+
 ### Features
 
-The table below is a feature comparison between `githose` and `github_cloner`:
+The table below is a feature comparison between `githose` and similar tools:
 
 ***
 
@@ -24,6 +25,7 @@ The table below is a feature comparison between `githose` and `github_cloner`:
 |---------------|--------|---------|-------|-------------|-----|
 
 ***
+
 
 ### Documentation
 
@@ -41,6 +43,7 @@ The table below is a feature comparison between `githose` and `github_cloner`:
     2. githose-clone-decal.scr
     3. gristhose-clone-klacke.scr
 
+
 ### Feature List
 
 * Multi-Threaded Anonymous Access to [GitHub API v3](https://developer.github.com/v3/) 
@@ -56,13 +59,15 @@ The table below is a feature comparison between `githose` and `github_cloner`:
 
 * Support for [ANSI escape code colors](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
 
+
 ### DevOps Info
 
 Coded by*:*    _Derek Callaway_ [<decal {AT} sdf {D0T} org>](mailto:decal@sdf.org)
                `@decalresponds` on [Twitter](https://github.com/decalresponds)
 
-Tested on*:*   `Linux Version 4.8.0-kali2-amd64, Compiled #1 SMP Debian 4.8.15-1kali1 (2016-12-23)`
-               `Eight 3.37GHz Intel i7 Processors, 128TB RAM, 39913 Bogomips Total`
+Tested in*:*   `Linux Version 4.8.0-kali2-amd64, Compiled #1 SMP Debian 4.8.15-1kali1 (2016-12-23)`
+               `Linux 4.4.0-43-Microsoft #1-Microsoft Wed Dec 31 14:42:53 PST 2014 x86_64`
 
 Released at*:* `Thu Feb 16 02:01:31 EST 2017`
 
+Updated on*:*  `Sun Jun 25 07:58:55 PDT 2017`

@@ -63,12 +63,16 @@ else
       lib/${githosePath}/clone $2 
     fi
   else 
-    if [[ $1 =~ ^pull ]]
+    if [[ $1 =~ ^pull ]] && ! ( [[ $2 =~ ^-a$ ]] || [[ $2 =~ ^--all$ ]] )
       then lib/${githosePath}/pull $2 
     else
-      [[ $GITHOSE_ARGV0 =~ gist ]] && gisthoseUsage || gisthoseUsage
+      if ( [[ $2 =~ ^-a$ ]] || [[ $2 =~ ^--all$ ]] )
+        then lib/${githosePath}/pull 
+      else
+        [[ $GITHOSE_ARGV0 =~ gist ]] && gisthoseUsage || gisthoseUsage
 
-      exit -1
+        exit -1
+      fi
     fi
   fi
 fi

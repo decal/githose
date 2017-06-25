@@ -1,5 +1,5 @@
-githose v0.8.94a
-================
+githose v0.9.4a
+===============
 
 1. Install or update Bourne Again Shell
   * `apt-get -y install bash || apt-get -y upgrade bash`
@@ -10,8 +10,8 @@ githose v0.8.94a
 3. Add the repository bin directory to your PATH
   * `export PATH=$PATH:$HOME/GIT/decal/githose/bin`
 
-4. Read the command-line usage
+4. Read command-line usage info
+  * `githose-usage`
   * `githose -h`
   * `gisthose -h`
   * `gristhose -h`
-

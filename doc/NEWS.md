@@ -1,3 +1,13 @@
+### Changes in githose 20170625
+  * Wrote code for pulling per-user and all local users' repositories, ex.
+    - `githose pull decal`
+    - `githose pull --all` *or* `githose pull -a`
+  * Refined URI style input feature to parse username, ex.
+    - `githose clone https://github.com/user`
+  * Implemented `githose-usage` to show generic usage for all commands
+  * Edited usages text to be more informative
+  * Created `etc/githose.issue` and related symlinks for current version banner
+
 ### Changes in githose 20170216
   * Created `gristhose` command
     - combines functionality of `githose` and `gisthose`

@@ -28,7 +28,13 @@ fi
 
 declare gitUser="$1"
 
-( [[ $gitUser =~ .git$ ]] || [[ $gitUser =~ ^(http|git)[s]:[/]+ ]] ) && declare -i singleRepo=1
+if [[ $gitUser =~ ^(http|git)[s]:[/]+ ]]
+  then if ( [[ $gitUser =~ .git$ ]] || [[ $gitUser =~ ^(http|git)[s]:[/]+[^/]+/[^/]+/[^/]+ ]] ) 
+    then declare -i singleRepo=1
+  else
+    gitUser=$(echo $gitUser | awk 'BEGIN { FS="/" } { print $4 }')
+  fi
+fi
 
 function errx_show() {
   echo -n "${yellowb}$1${whitef}${boldon}:${boldoff}${reset}${yellowb} " 

@@ -1,6 +1,10 @@
 **Things To Do**
 ============
 
+* Write the User's Guide in `GUIDE.md` 
+
+* Mention other GitHub-based [OSINT](https://wikipedia.org/wiki/Open-source_intelligence "Open-source Intelligence") tools in user guide..
+
 * Parse updated_at JSON member from GitHub API to check for modified gists
   - will be code for `lib/gisthose/pull`
 
@@ -29,7 +33,7 @@
  
 * Implement `githose conf_(ig)?_` for managing config variables in `etc/githose.conf`
 
-* Continue testing `pull` scripts
+* Make `pull` work with gists?
 
 * Design new sub-command `githose list` to use the GitHub API in order to view a user's:
   - repositories

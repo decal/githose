@@ -9,23 +9,26 @@ Frequently Asked Questions
 
   * both pronounciations are acceptable and very self-explanatory as well
   * whenever you want to 'get those' repositories from a user without manually typing `git clone` for each just use `githose`
-  * metaphorically speaking, `githose` acts as a "hose" by spraying the repositories/gists via [GitHub API](https://api.github.com/)
+  * metaphorically speaking, `githose` acts as a "hose" by spraying the repositories/gists with [GitHub API](https://api.github.com/)
   * `gisthose` is pronounced exactly as it reads: "jist" "hoes"
-  * `gristhose` also has a straightforward pronunciation: "g-wrist" "ho's"
+  * `gristhose` also has a straightforward pronunciation: "guh-wrist" "ho's"
 
-2. What type of computing environment was `githose` developed in?
+2. What type of computing environment was `githose` initially developed in?
 
   * `githose` was developed in the [Kali](https://kali.org/) Linux distribution which is a fork of [Debian](https://debian.org/)
   * MSI GT72 2QE Dominator Pro laptop with an Intel Core i7 running at ~5K BogoMIPS
   * GNU bash, version 4.4.11(1)-release (x86_64-pc-linux-gnu)
   * GNU parallel 20161222
+  * Currently maintained in WSL ([Windows Subsystem for Linux](https://msdn.microsoft.com/commandline/wsl/about "Bash on Ubuntu on Windows - About")) 
 
 3. Which platforms should `githose` properly operate under?
 
   * Just about any Linux distribution with the Bourne Again Shell..
 
 4. How do I report bugs?
-  * Send an e-mail to: [decal (AT) sdf {D0T} org]
+  * Send an e-mail message to: **[decal (AT) sdf {D0T} org]** with Subject line:
+    - `GITHOSE BUG REPORT` 
+  * Alternatively (if you've written a patch), submit a pull request to the GitHub repository!
 
 5. What if I want to troubleshoot a bug by myself?
 
@@ -49,7 +52,7 @@ Frequently Asked Questions
 
 8. What if I can't install the GNU Bourne Again Shell, i.e. `bash`?
 
-  * Sorry, but in this case you're SOL!
+  * Sorry, but in this case you're just [SOL](http://www.urbandictionary.com/define.php?term=SOL "Urban Dictionary definition of SOL")!
 
 9. How come I'm seeing escape characters instead of ANSI colors?!
 
