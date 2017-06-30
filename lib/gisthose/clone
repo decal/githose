@@ -70,6 +70,7 @@ fi
 
 cd -- $gistUser
 
+declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
 declare -xi waresDaWarez=0
 
 while true
@@ -117,20 +118,21 @@ while true
   
   echo -e "\n$reset" 
 
-  # if [ $? -eq 0 ]
   if [ $? -ne 0 ]
-    then parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} {1} ::: ${gist_code_urls[*]} |&> /dev/null
+    then parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} {1} ::: ${gist_code_urls[*]} |&> /dev/null
   else
     declare -i acnt=0
 
     for one in ${gist_code_urls[*]}
-      do acnt=$(( $acnt + 1 ))
+      do declare -xl bone="`basename $one`"
 
-      [ $DEBUG ] && echo -e "\n${whitef}DEBUG${boldon}:${reset} ${inverse}$(basename $one)${reset}\n"
+      [ $DEBUG ] && echo -e "\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
-      wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --random-wait --timeout=${GIST_WGET_WAIT} ${one} |&> /dev/null & 
-
-      chmod $GIST_MODE_FILE -- $(basename $one)
+      if [ ! -f "${usersGistsPath}/${bone}" ] 
+        then acnt=$(( 1 + $acnt ))
+        
+        wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" |&> /dev/null & 
+      fi
     done
 
     for two in `seq 1 $acnt`
@@ -141,8 +143,10 @@ while true
   break
 done
 
-find ${GIST_PATH_COPY}/${gistUser} -type f -exec chmod $GIST_MODE_FILE {} \; |&> /dev/null
+find $usersGistsPath -type f -exec chmod -v "$GIST_MODE_FILE" -- {} \; 
 
 echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+
+sleep 1.64
 
 exit 0

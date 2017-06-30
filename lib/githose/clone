@@ -30,7 +30,7 @@ declare gitUser="$1"
 
 if [[ $gitUser =~ ^(http|git)[s]:[/]+ ]]
   then if ( [[ $gitUser =~ .git$ ]] || [[ $gitUser =~ ^(http|git)[s]:[/]+[^/]+/[^/]+/[^/]+ ]] ) 
-    then declare -i singleRepo=1
+    then singleRepo=1
   else
     gitUser=$(echo $gitUser | awk 'BEGIN { FS="/" } { print $4 }')
   fi
@@ -172,9 +172,13 @@ while true
     echo -n "${whitef}${italicson}"
 
     for one in $GITHUB_REPO_URLS
-      do countChocula=$(( $countChocula + 1 ))
-
-      [ ! -d "$one" ] && git clone -j2 $one &
+      do #
+      
+      if [ ! -d "`basename $one`" ] 
+        then countChocula=$(( 1 + $countChocula ))
+        
+        git clone "$one" &
+      fi
     done
 
     for two in `seq 1 $countChocula`
@@ -186,5 +190,7 @@ while true
 done
 
 echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+
+sleep 1.6
 
 exit 0
