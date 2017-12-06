@@ -7,9 +7,9 @@
 # Sat Jan  7 15:44:55 EST 2017
 #
 
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+[ $GITHOSE_DEBUG ] && set -x || set +x
 
-[ -d '../inc' ] && cd ..
+[ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
 source inc/colors && source inc/regexes
 
@@ -22,3 +22,4 @@ while [[ $k -ne 0 ]]
 
   [ $? ] && exit $?
 done
+

@@ -8,9 +8,11 @@
 # Wed Oct 12 07:12:00 EDT 2016
 #
 
-( [ "$GITHOSE_DEBUG" ] && [ $GITHOSE_DEBUG -ne 0 ] ) && set -x || set +x
+[ $GITHOSE_DEBUG ] && set -x || set +x
 
-(source etc/githose.conf && source inc/inits && source inc/colors) || exit -- $BASH_LINENO
+[ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
+
+(source etc/githose.conf && source inc/inits && source inc/colors && source inc/funcs) || exit -- $BASH_LINENO
 
 ### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
 
@@ -120,7 +122,7 @@ declare -xi waresDaWarez=0
 
 while true
   do waresDaWarez=$(( 1 + waresDaWarez ))
-  declare errorFile=$(tempfile)
+  declare errorFile=$(mktemp /tmp/fileXXXXXX)
   declare outputStr=$( curl -vs "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>$errorFile )
 
   if [ ! "$outputStr" ] 
@@ -170,7 +172,7 @@ while true
 
   which parallel |&>/dev/null 
 
-  if [ $? -eq 0 ]
+  if [ ! $? ]
     then echo -n "${whitef}${italicson}" 
 
     parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
@@ -188,8 +190,10 @@ while true
       
       if [ ! -d "`basename $one`" ] 
         then countChocula=$(( 1 + $countChocula ))
+
+echo $one
         
-        git clone "$one" &
+        git clone -- "https://github.com/${gitUser}/${one}" &
       fi
     done
 

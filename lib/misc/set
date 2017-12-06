@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+[ $GITHOSE_DEBUG ] && set -x || set +x
 
 readonly settingField="$1" settingValue="$2"
 

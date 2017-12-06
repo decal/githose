@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#
+# Define various utility functions
+#
+# Derek Callaway <decal {AT} sdf {D0T} org>
+#
+# Wed Dec  6 13:51:48 PST 2017
+#
+
+[ $GITHOSE_DEBUG ] && set -x || set +x
+
+which realpath |&>/dev/null
+
+if [ $? ]
+  then function realpath() {
+    declare -a rdir="$(dirname $1)/$(basename $1)"
+
+    mkdir -- $rdir
+
+    return 0
+  }
+fi
+
+function configError {
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}There was a syntax error in the configuration file${boldon}!${reset}"
+
+  return 0
+}
+

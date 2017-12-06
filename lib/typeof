@@ -7,11 +7,11 @@
 # Sat Jan  7 16:31:19 EST 2017
 #
 
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+[ $GITHOSE_DEBUG ] && set -x || set +x
 
-[ -d '../inc' ] && cd ..
+[ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
-source inc/inits && source inc/regexes && source inc/usages
+source inc/inits && source inc/usages
 
 if ( ! [ $1 ] && [ $2 ] )
   then [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage

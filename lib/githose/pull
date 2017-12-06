@@ -9,7 +9,10 @@
 
 ### <== (o) dONUT MOD STUFFZ UNDER HERe (o) ==> ###
 
+[ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
+
 source inc/colors
+source inc/funcs
 
 [ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK 
 
@@ -19,7 +22,7 @@ if [ ! $0 ]
   exit 1
 fi
 
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+[ $GITHOSE_DEBUG ] && set -x || set +x
 
 readonly gitUser="$1"
 
@@ -67,7 +70,9 @@ if [ "$gitUser" ]
     if [ -d "$foldr" ] 
       then count=$(( 1 + count ))
       
-      cd -- "$foldr"
+      cd -- "$foldr" 2>/dev/null
+
+      [ $? ] && continue
       
       git pull &
     fi

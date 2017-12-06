@@ -3,8 +3,10 @@
   * Added ability to loop over multiple usernames passed on the command line 
   * Various modularization improvements to `githose clone` 
   * Moved `README.md` to doc and created a symbolic link to it in the root directory
-  * Slightly modified the color scheme of the command usage output line in `inc/usages`
-  * Made a GITHUB_API_TOKEN assignment in `etc/githose.conf` for non-anonymous requests
+  * Slightly modified the color scheme of the command usage output line
+  * Made a `$GITHUB_API_TOKEN` assignment in `etc/githose.conf` for non-anonymous requests
+  * Fixed a bug in creation of a non-existent `$GITAA_PATH_CLONE`
+  * Created a new include source file for user-defined functions at `inc/funcs`
 
 ### Changes in githose 20170625
   * Wrote code for pulling per-user and all local users' repositories, ex.

@@ -4,10 +4,10 @@
 #
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
-# Sat Jan  7 15:44:55 EST 2017
+# Wed Dec  6 13:54:16 PST 2017
 #
 
-[[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
+[ $GITHOSE_DEBUG ] && set -x || set +x
 
 function _term() {
   echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Caught SIGTERM${boldon}!${boldoff} Ignoring...${reset}"
@@ -17,26 +17,15 @@ function _term() {
 
 trap _term SIGTERM
 
-[ -d '../inc' ] && cd ..
-[ -d '../../inc' ] && cd ../..
-
-function configError {
-  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}There was a syntax error in the configuration file${boldon}!${reset}"
-
-  return
-}
+[ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
 # Load shared scripts
-source inc/colors && source inc/regexes && source inc/usages
+source inc/colors && source inc/regexes && source inc/usages && source inc/funcs
 
 # Load the configuration file
 source etc/githose.conf 
 
-if [[ $? -ne 0 ]]
-  then configError 
-  
-  exit $?
-fi
+[ $? -ne 0 ] && configError && exit $?
 
 if [[ "$0" =~ gristhose$ ]]
   then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )

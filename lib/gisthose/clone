@@ -9,7 +9,10 @@
 
 ### [!] DONT EDIT ANYTHING BELOW HERE [!] ###
 
+[ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
+
 source inc/colors 
+source inc/funcs
 
 [ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
