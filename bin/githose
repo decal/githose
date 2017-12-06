@@ -9,6 +9,14 @@
 
 [[ $GITHOSE_DEBUG -ne 0 ]] && set -x || set +x
 
+function _term() {
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Caught SIGTERM${boldon}!${boldoff} Ignoring...${reset}"
+
+  sleep 0.22
+}
+
+trap _term SIGTERM
+
 [ -d '../inc' ] && cd ..
 [ -d '../../inc' ] && cd ../..
 
@@ -60,9 +68,21 @@ fi
 
 export GITHOSE_ARGV0="`basename $0`"
 
-lib/driver $1 ${BASH_ARGV[@]:0:$(( ${#BASH_ARGV[*]} - 1 ))}
+declare -a GITHOSE_ARGSL=("${BASH_ARGV[@]}")
 
-echo -n " ${reset}"
+while [[ ${#GITHOSE_ARGSL} -gt 2 ]]
+  do lib/driver $1 ${GITHOSE_ARGSL[@]:0:$(( ${#GITHOSE_ARGSL[*]} - 1 ))}
+
+  declare -a GITHOSE_ARGSL_TEMP=("${GITHOSE_ARGSL[@]:1}")
+
+  declare -a GITHOSE_ARGSL=("${GITHOSE_ARGSL_TEMP[@]}")
+
+  echo
+done
+
+echo -n "${reset}"
+
+sleep 1.64
 
 # ♉ tw0 fingerz up, yup peas out  ♉#
 exit 0

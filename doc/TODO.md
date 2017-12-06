@@ -1,6 +1,31 @@
 **Things To Do**
 ============
 
+* Why isn't `gristhose clone postmodern` getting {https://github.com/postmodern/robots} repo?
+
+* Add support for [BitBucket](http://www.bitbucket.org "bitbucket.org")
+
+* Translate github.com URL's into this format:
+  - `https://raw.githubusercontent.com/jasonish/snort/master/doc/README.http_inspect`
+
+* Gristhose flag that writes both repos and gists to same parent directory 
+  - i.e. `user/{repos,gists}/` __or__...
+  - `user/{repos/,gists.* }`
+
+* Commands to easily view repos or gists (or both) of a given GitHub user
+
+* Support independent GitLab, git-web, etc. sites
+
+* Make asciinema's out of use-cases..
+
+* Make it work on non-GitHub repositories
+  - i.e. [](https://git.zx2c4.com "") __and__...
+  - [](https://bitbucket.org "")
+
+* Write `gristhose pull` 
+
+* Don't maintain repos under `~/github` that are `chmod 0`
+
 * Write the User's Guide in `GUIDE.md` 
 
 * Mention other GitHub-based [OSINT](https://wikipedia.org/wiki/Open-source_intelligence "Open-source Intelligence") tools in user guide..

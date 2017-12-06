@@ -14,4 +14,3 @@ declare gristUsers="${BASH_ARGV[*]}"
 
 parallel -j${GIST_TASK_JOBS} ./githose  clone {1} ::: $gristUsers
 parallel -j${GIST_TASK_JOBS} ./gisthose clone {1} ::: $gristUsers 
-

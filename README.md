@@ -1,4 +1,4 @@
-**githose v0.9.4a**
+**githose v0.9.5a**
 ===============
 
 _`githose` concurrently archives GitHub users' code repositories and gist text!_
@@ -32,16 +32,31 @@ The table below is a feature comparison between `githose` and similar tools:
 * Refer to the `doc` directory which has the files/directories outlined below:
 
   1. `AUTHORS.md`
+
   2. `NEWS.md`
+
   3. `FAQ.md`
+
   4. `INSTALL.md`
+
   5. `LICENSE.md`
+
   6. `GUIDE.md`
+
   7. `TODO.md`
+
   8. `use-cases` 
-    1. gisthose-clone-decal.scr
-    2. githose-clone-decal.scr
-    3. gristhose-clone-klacke.scr
+    * `gisthose-clone-decal.scr`
+      - typescript of command downloading all gists for GitHub user decal
+      - i.e. those that can be viewed on the web at: [https://gists.github.com/decal](https://gists.github.com/decal "https://gists.github.com/decal")
+
+    * `githose-clone-decal.scr`
+      - typescript of command downloading all repos for GitHub user decal
+      - i.e. those that can be viewed on the web at: [https://github.com/decal?tab=repositories](https://github.com/decal?tab=repositories "https://github.com/decal?tab=repositories")
+
+    * `gristhose-clone-decal.scr`
+      - typescript of command downloading all gists + repos of GitHub user decal
+      - i.e. those that can be viewed on the web at the hyperlinks referenced in the two bullet points above
 
 
 ### Feature List

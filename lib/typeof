@@ -39,7 +39,7 @@ else
   if [[ $GITHOSE_ARGV0 =~ git ]]
     then export githosePath='githose'
   else 
-    [[ $GITHOSE_ARGV0 =~ grist ]] && export githosePath='gristhose'
+   [[ $GITHOSE_ARGV0 =~ grist ]] && export githosePath='gristhose'
   fi
 fi
 
@@ -73,6 +73,18 @@ else
 
         exit -1
       fi
+    fi
+  fi
+
+  if [[ $1 =~ ^view ]] && ! ( [[ $2 =~ ^-a$ ]] || [[ $2 =~ ^--all$ ]] )
+    then lib/${githosePath}/pull $2
+  else
+    if ( [[ $2 =~ ^-a$ ]] || [[ $2 =~ ^--all$ ]] )
+      then lib/${githosePath}/pull
+    else
+      [[ $GITHOSE_ARGV0 =~ gist ]] && gisthoseUsage || gisthoseUsage
+
+      exit 1
     fi
   fi
 fi

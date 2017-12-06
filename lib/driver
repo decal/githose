@@ -18,7 +18,7 @@ declare -i k=$(( ${#BASH_ARGV[*]} - 1 ))
 while [[ $k -ne 0 ]]
   do k=$(( k - 1 ))
 
-  lib/typeof $1 ${BASH_ARGV[$k]}
+  lib/typeof $1 ${BASH_ARGV[$k]} # 2>/dev/null
 
   [ $? ] && exit $?
 done

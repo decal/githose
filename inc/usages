@@ -18,7 +18,7 @@ function gristhoseUsage() {
   cat etc/gristhose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${blueb}${cyanf}${italicson}[...]${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}get all user's repositories and gists simultaneously${reset}"
@@ -39,7 +39,7 @@ function gisthoseUsage() {
   cat etc/gisthose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${blueb}${cyanf}${italicson}[...]${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}store all of user's gists in a new directory named after them${reset}"
@@ -60,7 +60,7 @@ function githoseUsage() {
   cat etc/githose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${blueb}${cyanf}${italicson}[...]${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}download all user's code repositories${reset}"
@@ -82,18 +82,18 @@ function genericUsage() {
   cat etc/githose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${cyanf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}ARGUMENTS${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}ARGUMENTS${reset}"
   echo
-  echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
-  echo "    ${greenf}githose${reset}  ${italicon}${yellowf}download all user's code repositories under \$HOME ${reset}"
-  echo "    ${greenf}gisthose${reset}   ${italicon}${yellowf}download all user's gists code texts${reset}"
+  echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one of the commands as explained below:${reset}"
+  echo "    ${greenf}githose${reset}     ${italicon}${yellowf}download all user's code repositories under \$HOME ${reset}"
+  echo "    ${greenf}gisthose${reset}    ${italicon}${yellowf}download all user's gists code texts${reset}"
   echo "    ${greenf}gristhose${reset}   ${italicon}${yellowf}download all user's repositories and gists${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}ARGUMENTS${reset}  ${italicon}${yellowf}similar to ${reset}${whitef}${bold}git(1)${reset} ${italicon}${yellowf}command usage:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}get all user's repositories and/or gists${reset}"
   echo "    ${greenf}pull${reset}   ${italicon}${yellowf}fetch updates on all user's repositories and/or gists${reset}"
   echo
-  echo "${invon}Note: if possible, command arguments (clone and pull) run in parallel..${reset}"
+  echo "${invon}Note: if possible command arguments (clone and pull) run in parallel..${reset}"
   echo
 
   return

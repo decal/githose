@@ -1,10 +1,18 @@
+### Changes in githose 20171206
+  * Renamed `githose-usage` symbolic link to `githose-help`
+  * Added ability to loop over multiple usernames passed on the command line 
+  * Various modularization improvements to `githose clone` 
+  * Moved `README.md` to doc and created a symbolic link to it in the root directory
+  * Slightly modified the color scheme of the command usage output line in `inc/usages`
+  * Made a GITHUB_API_TOKEN assignment in `etc/githose.conf` for non-anonymous requests
+
 ### Changes in githose 20170625
   * Wrote code for pulling per-user and all local users' repositories, ex.
     - `githose pull decal`
     - `githose pull --all` *or* `githose pull -a`
   * Refined URI style input feature to parse username, ex.
     - `githose clone https://github.com/user`
-  * Implemented `githose-usage` to show generic usage for all commands
+  * Implemented `githose-usage` (now `githose-help`) to show generic usage for all commands
   * Edited usages text to be more informative
   * Created `etc/githose.issue` and related symlinks for current version banner
 

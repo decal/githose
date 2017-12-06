@@ -6,6 +6,7 @@
 # Derek Callaway <decal {AT} sdf {D0T} org>
 #
 # Wed Oct 12 07:12:00 EDT 2016
+#
 
 ( [ "$GITHOSE_DEBUG" ] && [ $GITHOSE_DEBUG -ne 0 ] ) && set -x || set +x
 
@@ -16,6 +17,7 @@
 [ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
 declare -i singleRepo=0
+declare -i successVal=0
 
 if [ ! $1 ]
   then 
@@ -39,7 +41,7 @@ fi
 function errx_show() {
   echo -n "${yellowb}$1${whitef}${boldon}:${boldoff}${reset}${yellowb} " 
 
-  perror -v -- $2
+  perror -s -- $2
 
   echo "$reset"
 
@@ -118,15 +120,21 @@ declare -xi waresDaWarez=0
 
 while true
   do waresDaWarez=$(( 1 + waresDaWarez ))
-  declare outputStr=$( curl -s "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>&1 )
+  declare errorFile=$(tempfile)
+  declare outputStr=$( curl -vs "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>$errorFile )
 
   if [ ! "$outputStr" ] 
-    then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
+    then 
+    echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
+    echo -n "${purplef}$0${reset}${whitef}${boldon}:${boldoff} " 
+    echo "${redf}$(cat $errorFile | tr '*' '#' | tr '\n' ' ' | sed -r 's![#]!..!g')${reset}"
+
+    rm -f -- "$errorFile"
 
     exit 2
   fi
 
-  if [ "`echo "$outputStr" | grep 'ate limit'`" ]
+  if [ "`echo "$outputStr" | grep 'API rate limit '`" ]
     then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}GitHub API key's rate limit exceeded (try again later)${reset}"
 
     exit 3 
@@ -160,12 +168,16 @@ while true
     fi
   fi
 
-  which parallel |&> /dev/null 
+  which parallel |&>/dev/null 
 
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
 
-    parallel -j${GITHOSE_NUM_JOBS} "[ ! -d '{1}' ] && git clone 'https://github.com/${gitUser}/{1}'" ::: $GITHUB_REPO_URLS 
+    parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
+
+    wait -n ${GITHOSE_NUM_JOBS} 
+
+    [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
   else
     declare -i countChocula=0
 
@@ -183,13 +195,20 @@ while true
 
     for two in `seq 1 $countChocula`
       do wait $two
+
+      [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
     done
   fi
 
   break
 done
 
-echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+if [ $successVal -ne 0 ]
+  then echo -e "\n${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+else
+  echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Could Not Clone Any Repositories From ${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
+  echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
+fi
 
 sleep 1.6
 
