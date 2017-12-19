@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+declare -i EX_OK=0           # successful termination 
+
+declare -i EX__BASE=64       # base value for error messages 
+
+declare -i EX_USAGE=64       # command line usage error 
+declare -i EX_DATAERR=65     # data format error 
+declare -i EX_NOINPUT=66     # cannot open input 
+declare -i EX_NOUSER=67      # addressee unknown 
+declare -i EX_NOHOST=68      # host name unknown 
+declare -i EX_UNAVAILABLE=69 # service unavailable 
+declare -i EX_SOFTWARE=70    # internal software error 
+declare -i EX_OSERR=71       # error (e.g., can't fork) 
+declare -i EX_OSFILE=72      # critical OS file missing 
+declare -i EX_CANTCREAT=73   # can't create (user) output file 
+declare -i EX_IOERR=74       # output error 
+declare -i EX_TEMPFAIL=75    # temp failure; user is invited to retry 
+declare -i EX_PROTOCOL=76    # remote error in protocol 
+declare -i EX_NOPERM=77      # permission denied 
+declare -i EX_CONFIG=78      # configuration error 
+
+declare -i EX__MAX=78        # maximum listed value 
+

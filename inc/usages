@@ -10,7 +10,7 @@
 [ $GITHOSE_DEBUG ] && set -x || set +x
 [ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
-source -- inc/colors
+source inc/colors && source inc/sysexits
 
 function gristhoseUsage() {
   cat etc/gristhose.motd 2>/dev/null
@@ -30,7 +30,7 @@ function gristhoseUsage() {
   echo "${invon}ex.${invoff} ${greenf}${italicon}${0} clone decal${reset}"
   echo
 
-  return
+  exit $EX_USAGE
 }
 
 function gisthoseUsage() {
@@ -51,7 +51,7 @@ function gisthoseUsage() {
   echo "${invon}ex.${invoff} ${greenf}${italicon}${0} clone imakewebthings${reset}"
   echo
 
-  return
+  exit $EX_USAGE
 }
 
 function githoseUsage() {
@@ -73,7 +73,7 @@ function githoseUsage() {
   echo "${invon}ex.${invoff} ${greenf}${italicon}${0} clone juliangruber vagg${reset}"
   echo
 
-  return
+  exit $EX_USAGE
 }
 
 function genericUsage() {
@@ -96,5 +96,5 @@ function genericUsage() {
   echo "${invon}Note: if possible command arguments (clone and pull) run in parallel..${reset}"
   echo
 
-  return
+  exit $EX_USAGE
 }

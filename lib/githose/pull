@@ -72,7 +72,7 @@ if [ "$gitUser" ]
       
       cd -- "$foldr" 2>/dev/null
 
-      [ $? ] && continue
+      [ $? -ne 0 ] && continue
       
       git pull &
     fi

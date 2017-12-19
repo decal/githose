@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export PATH=".:$PATH"
+
+parallel -j8 gristhose clone {} ::: Harvey-OS 9fans Earnestly hackndev lattera thlorenz igorbarinov libbitcoin ddeveloperr c0nrad jvehent
+
+exit 0

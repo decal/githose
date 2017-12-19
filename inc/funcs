@@ -11,7 +11,7 @@
 
 which realpath |&>/dev/null
 
-if [ $? ]
+if [ $? -ne 0 ]
   then function realpath() {
     declare -a rdir="$(dirname $1)/$(basename $1)"
 

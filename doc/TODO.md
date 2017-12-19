@@ -1,6 +1,8 @@
 **Things To Do**
 ============
 
+* Replace exit codes with `EX_` constants from `inc/sysexits`
+
 * Why isn't `gristhose clone postmodern` getting {https://github.com/postmodern/robots} repo?
 
 * Add support for [BitBucket](http://www.bitbucket.org "bitbucket.org")

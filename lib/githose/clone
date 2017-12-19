@@ -175,9 +175,7 @@ while true
   if [ ! $? ]
     then echo -n "${whitef}${italicson}" 
 
-    parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
-
-    wait -n ${GITHOSE_NUM_JOBS} 
+    parallel --fg -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS
 
     [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
   else
@@ -191,14 +189,14 @@ while true
       if [ ! -d "`basename $one`" ] 
         then countChocula=$(( 1 + $countChocula ))
 
-echo $one
+        echo $one
         
         git clone -- "https://github.com/${gitUser}/${one}" &
       fi
     done
 
     for two in `seq 1 $countChocula`
-      do wait $two
+      do wait %${two} |&> /dev/null
 
       [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
     done

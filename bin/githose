@@ -27,35 +27,27 @@ source etc/githose.conf
 
 [ $? -ne 0 ] && configError && exit $?
 
-if [[ "$0" =~ gristhose$ ]]
+export GITHOSE_ARGV0="`basename $0`"
+
+if [[ "$GITHOSE_ARGV0" =~ gristhose$ ]]
   then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
     then gristhoseUsage
-
-  exit -1
   fi
 else
-  if [[ "$0" =~ gisthose$ ]]
+  if [[ "$GITHOSE_ARGV0" =~ gisthose$ ]]
     then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
       then gisthoseUsage
-
-      exit -1
     fi
   else
-    if [[ "$0" =~ githose$ ]]
+    if [[ "$GITHOSE_ARGV0" =~ githose$ ]]
       then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
         then githoseUsage 
-
-        exit -1
       fi
     else
       genericUsage
-
-      exit -1
     fi
   fi
 fi
-
-export GITHOSE_ARGV0="`basename $0`"
 
 declare -a GITHOSE_ARGSL=("${BASH_ARGV[@]}")
 
@@ -65,13 +57,11 @@ while [[ ${#GITHOSE_ARGSL} -gt 2 ]]
   declare -a GITHOSE_ARGSL_TEMP=("${GITHOSE_ARGSL[@]:1}")
 
   declare -a GITHOSE_ARGSL=("${GITHOSE_ARGSL_TEMP[@]}")
-
-  echo
 done
 
-echo -n "${reset}"
+echo "${reset}"
 
-sleep 1.64
+sleep 1.32
 
 # ♉ tw0 fingerz up, yup peas out  ♉#
 exit 0
