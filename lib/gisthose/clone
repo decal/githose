@@ -117,7 +117,7 @@ while true
     do echo -n "${ulon}$(basename $afile)${uloff} "
   done
   
-  echo -e "\n${reset}" 
+  echo -e "${reset}" 
 
   which parallel |&> /dev/null 
 
@@ -152,4 +152,4 @@ done
 
 find $usersGistsPath -type f -exec chmod -v "$GIST_MODE_FILE" -- {} \; 
 
-echo -e "\n${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
