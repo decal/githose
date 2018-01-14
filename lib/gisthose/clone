@@ -49,6 +49,20 @@ function errx_exit() {
   exit $2
 }
 
+function rmdir_exit() {
+  readonly workdPath=$(pwd)
+
+  if [[ $workdPath =~ $gistUser ]]
+    then cd ..
+
+    declare -i alis=$(ls -1 $gistUser)
+
+    [ $alis -eq 0 ] && rmdir $gistUser
+  fi
+
+  exit $1
+}
+
 if [ ! -d $GIST_PATH_COPY ] 
   then mkdir -- "$(realpath $GIST_PATH_COPY)" 2>/dev/null
 
@@ -83,19 +97,19 @@ while true
   if [ ! "$outputStr" ] 
     then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
 
-    exit 2
+    rmdir_exit 2
   fi
 
   if [ "`echo "$outputStr" | grep 'ate limit'`" ]
     then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}GitHub API key's rate limit exceeded (${italicson}try again later${italicsoff})${reset}"
 
-    exit 3 
+    rmdir_exit 3 
   fi
 
   if [[ ${#outputStr} -eq 4 ]]
     then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${greenf}GitHub username ${invon}${gistUser}${invoff} doesn't have any ${italicon}publicized${italicoff} gists!${reset}"
 
-    exit 0
+    rmdir_exit 0
   fi
 
   declare -a gist_code_urls=$( echo "$outputStr" | grep '"raw_url": "' | grep "/${gistUser}/" | cut -d \" -f4 )
@@ -107,7 +121,7 @@ while true
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${redf}Are you sure you entered the correct username ${whitef}${boldon}?${reset}"
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${redf}There must be gists at ${ulon}${cyanf}https://api.github.com/users/${gistUser}/gists${uloff} ${whitef}${boldon}!${reset}"
 
-    exit 4
+    rmdir_exit 4
   fi
  
   echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching Text of All Gists for${whitef}${boldon}:${boldoff} ${reset}${invon}${gistUser}${reset}\n${whitef}${italicson}" 
