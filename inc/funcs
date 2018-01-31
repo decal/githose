@@ -9,13 +9,13 @@
 
 [ $GITHOSE_DEBUG ] && set -x || set +x
 
-which realpath 2>/dev/null
+which realpath > /dev/null 2>&1
 
 if [ $? -ne 0 ]
-  then function realpath() {
+  then function realpath {
     declare -a rdir="$(dirname $1)/$(basename $1)"
 
-    mkdir -- $rdir
+    mkdir -- "$rdir"
 
     return 0
   }

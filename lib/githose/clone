@@ -181,12 +181,16 @@ while true
     fi
   fi
 
-  which parallel |&>/dev/null 
+  which parallel |&> /dev/null 
 
-  if [ ! $? ]
+  if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
 
+<<<<<<< HEAD
     parallel --fg -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" > /dev/null 2>&1 ::: $GITHUB_REPO_URLS
+=======
+    parallel --fg -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS |&> /dev/null
+>>>>>>> c505df4904592a31500c3465ae3bd55f9218b766
 
     [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
   else
@@ -202,7 +206,11 @@ while true
 
         echo $one
         
+<<<<<<< HEAD
         nice git clone -- "https://github.com/${gitUser}/${one}" > /dev/null 2>&1 &
+=======
+        git clone -- "https://github.com/${gitUser}/${one}" |&> /dev/null
+>>>>>>> c505df4904592a31500c3465ae3bd55f9218b766
       fi
     done
 
@@ -217,7 +225,7 @@ while true
 done
 
 if [ $successVal -ne 0 ]
-  then echo -e "\n${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+  then echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
 else
   echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Could Not Clone Any Repositories From ${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
   echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
