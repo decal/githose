@@ -9,7 +9,7 @@
 
 [ $GITHOSE_DEBUG ] && set -x || set +x
 
-which realpath |&>/dev/null
+which realpath 2>/dev/null
 
 if [ $? -ne 0 ]
   then function realpath() {

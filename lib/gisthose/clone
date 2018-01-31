@@ -11,6 +11,7 @@
 
 [ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
+source etc/gisthose.conf
 source inc/colors 
 source inc/funcs
 
@@ -55,7 +56,7 @@ if [ ! -d $GIST_PATH_COPY ]
   [ $? -ne 0 ] && errx_show 'mkdir' "$?" $GIST_PATH_COPY
 fi
 
-chmod $GIST_MODE_DIRS -- $GIST_PATH_COPY |&> /dev/null
+chmod $GIST_MODE_DIRS $GIST_PATH_COPY |&> /dev/null
 
 [ $? -ne 0 ] && errx_show 'chmod' "$?"
 
@@ -66,7 +67,7 @@ if [ ! -d $gistUser ]
 
   [ $? -ne 0 ] && errx_exit 'mkdir' "$?" $gistUser
 
-  chmod $GIST_MODE_DIRS -- $gistUser |&> /dev/null
+  chmod $GIST_MODE_DIRS $gistUser |&> /dev/null
 
   [ $? -ne 0 ] && errx_show 'chmod' "$?"
 fi
@@ -121,35 +122,35 @@ while true
 
   which parallel |&> /dev/null 
 
-  if [ $? -eq 0 ]
+  if [ $? -ne 0 ]
     then echo -n "${whitef}${italicson}"
     
-    parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- '{1}' ::: ${gist_code_urls[*]} |&> /dev/null
+    parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=$GIST_WGET_WAIT '{1}' ::: ${gist_code_urls[*]} > /dev/null 2>&1
 
-    wait -n ${GIST_TASK_JOBS}
+    wait -n $GIST_TASK_JOBS
   else
     declare -i acnt=0
 
     for one in ${gist_code_urls[*]}
-      do declare -xl bone="`basename $one`"
+      do declare bone="`basename $one`"
 
       [ $DEBUG ] && echo -e "\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
       if [ ! -f "${usersGistsPath}/${bone}" ] 
         then acnt=$(( 1 + $acnt ))
         
-        wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" |&> /dev/null & 
+        nice wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
       fi
     done
 
     for two in `seq 1 $acnt`
-      do wait $two |&> /dev/null
+      do wait %$two > /dev/null 2>&1
     done
   fi
 
   break
 done
 
-find $usersGistsPath -type f -exec chmod -v "$GIST_MODE_FILE" -- {} \; 
+find $usersGistsPath -type f -exec chmod $GIST_MODE_FILE {} \; 
 
 echo -e "\n${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"

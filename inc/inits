@@ -14,8 +14,12 @@ if [ ! $initLoaded ]
 
   # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
   export GITHOSE_NUM_JOBS=0
-  
-  for proc_core_cnt in $(egrep -i '^cpu cores' /proc/cpuinfo | awk -F: '{print($2);}')
-    do export GITHOSE_NUM_JOBS=$(( GITHOSE_NUM_JOBS + proc_core_cnt ))
-  done
+ 
+  if [ -f /proc/cpuinfo ] 
+    then for proc_core_cnt in $(egrep -i '^cpu cores' /proc/cpuinfo | awk -F: '{print($2);}')
+      do export GITHOSE_NUM_JOBS=$(( GITHOSE_NUM_JOBS + proc_core_cnt ))
+    done
+  else
+    [ $GITHOSE_NUM_JOBS -eq 0 ] && export GITHOSE_NUM_JOBS=$( sysctl -n hw.ncpu )
+  fi
 fi

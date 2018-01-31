@@ -22,8 +22,9 @@ trap _term SIGTERM
 # Load shared scripts
 source inc/colors && source inc/regexes && source inc/usages && source inc/funcs
 
-# Load the configuration file
+# Load the configuration files
 source etc/githose.conf 
+source etc/gisthose.conf
 
 [ $? -ne 0 ] && configError && exit $?
 
