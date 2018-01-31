@@ -11,7 +11,7 @@
 
 [ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
-source etc/gisthose.conf
+source etc/githose.conf
 source inc/colors 
 source inc/funcs
 

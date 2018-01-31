@@ -10,6 +10,8 @@
 
 ( [ "$GITHOSE_DEBUG" ] && [ $GITHOSE_DEBUG -ne 0 ] ) && set -x || set +x
 
+source etc/gristhose.conf
+
 declare gristUsers="${BASH_ARGV[*]}"
 
 parallel -j${GIST_TASK_JOBS} ./githose  clone {1} ::: $gristUsers

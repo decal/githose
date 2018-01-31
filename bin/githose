@@ -24,7 +24,6 @@ source inc/colors && source inc/regexes && source inc/usages && source inc/funcs
 
 # Load the configuration files
 source etc/githose.conf 
-source etc/gisthose.conf
 
 [ $? -ne 0 ] && configError && exit $?
 
@@ -49,6 +48,8 @@ else
     fi
   fi
 fi
+
+parallel --citation > /dev/null 2>&1 < (echo 'will cite')
 
 declare -a GITHOSE_ARGSL=("${BASH_ARGV[@]}")
 
