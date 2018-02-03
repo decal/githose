@@ -186,7 +186,7 @@ while true
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
 
-    parallel --fg -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS |&> /dev/null
+    parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS |&> /dev/null
 
     [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
   else
