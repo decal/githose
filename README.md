@@ -47,7 +47,7 @@ The table below is a feature comparison between `githose` and similar tools:
 
   8. `use-cases` 
     * `gisthose-clone-decal.scr`
-      - typescript of command downloading all gists for GitHub user decal
+      - typescript of command downloading all gists for GitHub user decal created by [`script(1)`](http://www.manpagez.com/man/1/script/ "make typescript of terminal session")
       - i.e. those that can be viewed on the web at: [https://gists.github.com/decal](https://gists.github.com/decal "https://gists.github.com/decal")
 
     * `githose-clone-decal.scr`

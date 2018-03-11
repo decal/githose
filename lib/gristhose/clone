@@ -14,5 +14,6 @@ source etc/gristhose.conf
 
 declare gristUsers="${BASH_ARGV[*]}"
 
-parallel -j${GIST_TASK_JOBS} ./githose  clone {1} ::: $gristUsers
-parallel -j${GIST_TASK_JOBS} ./gisthose clone {1} ::: $gristUsers 
+parallel -j${GITHOSE_JOBS_COUNT} ./githose  clone {1} ::: $gristUsers
+parallel -j${GITHOSE_JOBS_COUNT} ./gisthose clone {1} ::: $gristUsers 
+

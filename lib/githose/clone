@@ -186,7 +186,7 @@ while true
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}" 
 
-    parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{1}" ::: $GITHUB_REPO_URLS |&> /dev/null
+    parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{}" ::: $GITHUB_REPO_URLS 2>/dev/null
 
     [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
   else
@@ -202,12 +202,12 @@ while true
 
         echo $one
         
-        git clone -- "https://github.com/${gitUser}/${one}" |&> /dev/null
+        git clone -- "https://github.com/${gitUser}/${one}" 2>/dev/null
       fi
     done
 
     for two in `seq 1 $countChocula`
-      do wait %${two} 2> /dev/null
+      do wait %${two} 2>/dev/null
 
       [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
     done
@@ -216,6 +216,8 @@ while true
   break
 done
 
+echo
+
 if [ $successVal -ne 0 ]
   then echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
 else
@@ -223,6 +225,6 @@ else
   echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
 fi
 
-sleep 1.6
+sleep 0.8
 
 exit 0

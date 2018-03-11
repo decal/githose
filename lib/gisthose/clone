@@ -17,7 +17,7 @@ source inc/funcs
 
 [ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
-if [ ! $1 ]
+if [ ! "$1" ]
   then echo
   echo "usage: $0 USER"
   echo '  USER  case-sensitive GitHub user name string'
@@ -74,22 +74,24 @@ chmod $GIST_MODE_DIRS $GIST_PATH_COPY |&> /dev/null
 
 [ $? -ne 0 ] && errx_show 'chmod' "$?"
 
-cd -- ${GIST_PATH_COPY}
+cd -- "${GIST_PATH_COPY}"
 
-if [ ! -d $gistUser ]
-  then mkdir -- $gistUser
+if [ ! -d "$gistUser" ]
+  then mkdir -- "$gistUser"
 
-  [ $? -ne 0 ] && errx_exit 'mkdir' "$?" $gistUser
+  [ $? -ne 0 ] && errx_exit 'mkdir' "$?" "$gistUser"
 
-  chmod $GIST_MODE_DIRS $gistUser |&> /dev/null
+  chmod $GIST_MODE_DIRS "$gistUser" |&> /dev/null
 
   [ $? -ne 0 ] && errx_show 'chmod' "$?"
 fi
 
-cd -- $gistUser
+cd -- "$gistUser"
 
 declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
 declare -xi waresDaWarez=0
+
+echo
 
 while true
   do waresDaWarez=$(( 1 + waresDaWarez ))
@@ -124,31 +126,31 @@ while true
 
     rmdir_exit 4
   fi
- 
+
   echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching Text of All Gists for${whitef}${boldon}:${boldoff} ${reset}${invon}${gistUser}${reset}\n${whitef}${italicson}" 
   echo -ne "${greenf}"
   
   for afile in ${gist_code_urls[*]}
-    do echo -n "${ulon}$(basename $afile)${uloff} "
+    do echo -ne "${ulon}$(basename $afile)${uloff} "
   done
   
   echo -e "${reset}" 
 
-  which parallel |&> /dev/null 
+  which parallel > /dev/null 2>&1
 
-  if [ $? -ne 0 ]
+  if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}"
     
-    parallel -j${GIST_TASK_JOBS} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=$GIST_WGET_WAIT '{1}' ::: ${gist_code_urls[*]} > /dev/null 2>&1
+    parallel -j${GITHOSE_JOBS_COUNT} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=$GIST_WGET_WAIT '{}' ::: ${gist_code_urls[*]} > /dev/null 2>&1
 
-    wait -n $GIST_TASK_JOBS
+#     wait -n $GITHOSE_JOBS_COUNT
   else
     declare -i acnt=0
 
     for one in ${gist_code_urls[*]}
       do declare bone="`basename $one`"
 
-      [ $DEBUG ] && echo -e "\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
+      [ $DEBUG ] && echo -e "${reset}\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
       if [ ! -f "${usersGistsPath}/${bone}" ] 
         then acnt=$(( 1 + $acnt ))
@@ -158,7 +160,7 @@ while true
     done
 
     for two in `seq 1 $acnt`
-      do wait %$two > /dev/null 2>&1
+      do wait %${two} > /dev/null 2>&1
     done
   fi
 
@@ -167,4 +169,4 @@ done
 
 find $usersGistsPath -type f -exec chmod $GIST_MODE_FILE {} \; 
 
-echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"

@@ -1,6 +1,8 @@
 **Things To Do**
 ============
 
+* Clone someone's stars
+
 * Fix `githose clone yarn`
 
 * Replace exit codes with `EX_` constants from `inc/sysexits`
