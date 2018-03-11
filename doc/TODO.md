@@ -46,7 +46,7 @@
 
 * Fix usage condition by replacing with function in `lib/githose/pull`
 
-* Test FreeBSD for FAQ question #3
+* Test FreeBSD for <abbr title="Frequently Asked Questions">FAQ</abbr> question #3
 
 * Write `man` page using `nroff`: `githose(1)`
 
@@ -90,4 +90,3 @@
 
 * Make a Gist spider known as `spidigister` that checks a given user's followers gists as well
 
-*[FAQ]: Frequently Asked Questions
