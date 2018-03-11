@@ -89,3 +89,5 @@
  - should also be used like: `-vv`
 
 * Make a Gist spider known as `spidigister` that checks a given user's followers gists as well
+
+*[FAQ]: Frequently Asked Questions
