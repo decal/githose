@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+<body>
 
 **Things To Do**
 ============
@@ -94,3 +96,4 @@
 
 * Make a Gist spider known as `spidigister` that checks a given user's followers gists as well
 
+</body></html>
