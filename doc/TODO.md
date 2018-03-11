@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 **Things To Do**
 ============
 
