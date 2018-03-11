@@ -46,14 +46,7 @@
 
 * Fix usage condition by replacing with function in `lib/githose/pull`
 
-* Test FreeBSD for 
-
-<abbr title="Frequently Asked Questions">FAQ</abbr> question #3
-<span title="Frequently Asked Questions">FAQ</span> question #3
-<div title="Frequently Asked Questions">FAQ</div> question #3
-<p title="Frequently Asked Questions">FAQ</p> question #3
-<cite title="Frequently Asked Questions">FAQ</cite> question #3
-<del title="Frequently Asked Questions">FAQ</del> question #3
+* Test FreeBSD for <div title="Frequently Asked Questions">FAQ</div> question #3
 
 * Write `man` page using `nroff`: `githose(1)`
 
