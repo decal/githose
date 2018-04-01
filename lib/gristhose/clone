@@ -13,7 +13,15 @@
 source etc/gristhose.conf
 
 declare gristUsers="${BASH_ARGV[*]}"
+declare -i gristCount=0
 
-parallel -j${GITHOSE_JOBS_COUNT} ./githose  clone {1} ::: $gristUsers
-parallel -j${GITHOSE_JOBS_COUNT} ./gisthose clone {1} ::: $gristUsers 
+for auser in $gristUsers
+  do gristCount+=2
+  ./githose clone $auser &
+  ./gisthose clone $auser &
+done
+
+for i in $(seq 1 $gristCount)
+  do wait %${i}
+done
 

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# git-today
+#
+# Usage:
+# * Name it `git-today` and put somewhere inside a `$PATH` directory
+# * Invoke as $ git today
+
+LAST_BEFORE_TODAY=$(git log --oneline --until='yesterday 23:59:59' | head -1 | cut -d' ' -f 1)
+git diff ${LAST_BEFORE_TODAY}..HEAD --stat

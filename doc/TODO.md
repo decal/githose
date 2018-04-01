@@ -1,6 +1,33 @@
 **Things To Do**
 ============
 
+* write contrib script to clone all wikis from users whose repo's have been cloned 
+  - also include an index.html file to surf them in the browser
+
+* write contrib script to clone all gists from users who repo's have been cloned
+
+* support for user's starred repos.. then d/l mubix's
+
+* script that gets descriptions for repos under ~/github and ~/repos
+
+* fix gristhose
+
+* -w also clone wiki, -lw list wikis
+
+* -l list repos, -lf list following, -lF list followers
+
+* -f clone following, -F clone followers
+
+* update users with new repos, ie. `githose clone chrislee35`
+
+* don't ask for password when there aren't any gists, i.e. `gisthose clone d30sa1`
+
+* Exclude certain repo names
+
+* Fix `./{gist,git}hose clone lukemorton`
+
+* Do not overwrite gists with the same file name
+
 * Clone someone's stars
 
 * Fix `githose clone yarn`

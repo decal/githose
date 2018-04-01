@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# Retrieve the GitHub URL's for repositories that a given user has starred
+#
+# Written by: Derek Callaway [decal (AT) sdf {D0T} org]
+# Created on: Fri Mar 30 01:11:35 DST 2018
+# Tested via: GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu) Ubuntu 16.04.4 LTS
+#
+
+curl -k 'https://api.github.com/user/679319/starred?page=[1-5]' | grep 'html_url' | cut -d ':' -f2-3 | tr -d '",' | sort -u
+
+exit 0
