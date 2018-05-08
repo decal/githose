@@ -87,9 +87,10 @@ if [ ! -d "$gistUser" ]
 fi
 
 cd -- "$gistUser" > /dev/null
+rm -f -- ./*
 
 declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
-declare -xi waresDaWarez=0
+declare -i waresDaWarez=0
 
 echo
 
@@ -141,7 +142,7 @@ while true
   if [ $? -eq 0 ]
     then echo -n "${whitef}${italicson}"
     
-    parallel -j${GITHOSE_JOBS_COUNT} wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=$GIST_WGET_WAIT '{}' ::: ${gist_code_urls[*]} > /dev/null 2>&1
+    parallel -j${GITHOSE_JOBS_COUNT} wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=$GIST_WGET_WAIT '{}' ::: ${gist_code_urls[*]} > /dev/null 2>&1
 
 #     wait -n $GITHOSE_JOBS_COUNT
   else
@@ -152,11 +153,9 @@ while true
 
       [ $DEBUG ] && echo -e "${reset}\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
-      if [ ! -f "${usersGistsPath}/${bone}" ] 
-        then acnt+=1
+      acnt+=1
         
-        nice wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
-      fi
+      nice wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
     done
 
     for two in `seq 1 $acnt`
