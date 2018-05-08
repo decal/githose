@@ -95,7 +95,7 @@ declare -i waresDaWarez=0
 echo
 
 while true
-  do waresDaWarez=$(( 1 + waresDaWarez ))
+  do waresDaWarez+=1
   declare outputStr="$( curl -s "https://api.github.com/users/${gistUser}/gists" 2>&1 )"
 
   if [ ! "$outputStr" ] 
@@ -155,7 +155,7 @@ while true
 
       acnt+=1
         
-      nice wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
+      wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
     done
 
     for two in `seq 1 $acnt`
