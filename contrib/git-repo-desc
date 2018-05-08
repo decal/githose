@@ -16,7 +16,7 @@ if [ ! "$2" ]
   exit 1
 fi
 
-curl "https://api.github.com/repos/${1}/${2}" 2>/dev/null | \ 
-  grep '"description":'  | head -n 1 | cut -d ' :' -f2 | awk -F\" '{print$2}'
+curl "https://api.github.com/repos/${1}/${2}" 2>/dev/null | grep '"description":' \
+  | head -n 1 | awk -F\" '{print$4}'
 
 exit 0

@@ -1,3 +1,8 @@
+### Changes in githose 20180508
+  * Gists with identical filenames are no longer clobbered by `wget -nc`
+  * `$GITHOSE_NUM_JOBS` is being set in `inc/inits` to optimize speedup
+  * `contrib/get-repo-desc` gets the description of a particular user/repo pair
+
 ### Changes in githose 20171206
   * Renamed `githose-usage` symbolic link to `githose-help`
   * Added ability to loop over multiple usernames passed on the command line 

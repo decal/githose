@@ -8,18 +8,19 @@
 #
 
 if [ ! $initLoaded ] 
-  then declare -r -i initLoaded=1
-  declare -r -i -x verboseFlag=1
+  then readonly initLoaded=1
   declare -x githosePath='githose'
 
   # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
-  export GITHOSE_NUM_JOBS=0
- 
-  if [ -f /proc/cpuinfo ] 
-    then for proc_core_cnt in $(egrep -i '^cpu cores' /proc/cpuinfo | awk -F: '{print($2);}')
-      do export GITHOSE_NUM_JOBS=$(( GITHOSE_NUM_JOBS + proc_core_cnt ))
-    done
-  else
-    [ $GITHOSE_NUM_JOBS -eq 0 ] && export GITHOSE_NUM_JOBS=$( sysctl -n hw.ncpu )
+  declare -ix GITHOSE_NUM_JOBS=`ncpus`
+
+  if [ $GITHOSE_NUM_JOBS -eq 0 ]
+    then if [ -f /proc/cpuinfo ] 
+      then for proc_core_cnt in $(egrep -i '^cpu cores' /proc/cpuinfo | awk -F: '{print($2);}')
+        do GITHOSE_NUM_JOBS+=$(( GITHOSE_NUM_JOBS + proc_core_cnt ))
+      done
+    else # tellme da number of prox on mackOS!
+      [ $GITHOSE_NUM_JOBS -eq 0 ] && GITHOSE_NUM_JOBS=$( sysctl -n hw.ncpu )
+    fi
   fi
 fi

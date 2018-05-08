@@ -12,8 +12,6 @@
 
 * script that gets descriptions for repos under ~/github and ~/repos
 
-* fix gristhose
-
 * -w also clone wiki, -lw list wikis
 
 * -l list repos, -lf list following, -lF list followers
@@ -27,8 +25,6 @@
 * Exclude certain repo names
 
 * Fix `./{gist,git}hose clone lukemorton`
-
-* Do not overwrite gists with the same file name
 
 * Clone someone's stars
 
@@ -80,8 +76,6 @@
 * Write `man` page using `nroff`: `githose(1)`
 
 * Write a `parallel` command for fetching the text of gists 
-
-* _X_ Fix `inc/inits` to declare the `GITHOSE_CPU_CORES` environment variable properly.. 
 
 * Command-line arguments..
   1. Pass global `getopt` flags to `bin/githose`
