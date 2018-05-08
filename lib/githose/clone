@@ -13,18 +13,16 @@
 [ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
 source etc/githose.conf
-source inc/inits
-source inc/colors
-source inc/funcs
+source inc/{inits,colors,funcs}
 
 ### (o) DONUT ED IT ANYFING BLOW THIS (o) ###
 
 [ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
-declare -i singleRepo=0
-declare -i successVal=0
+declare -i singleRepo=0 successVal=0 noUser=0 waresDaWarez=0
+declare -g gitUser="$1"
 
-if [ ! $1 ]
+if [ ! "$gitUser" ]
   then 
   echo "${yellowf}usage${whitef}${boldon}:${boldoff} ${purplef}$0${reset} ${cyanf}${italicson}USER${reset}"
   echo -e "  ${cyanf}USER  ${invon}case-sensitive string for GitHub user name${reset}\n"
@@ -61,7 +59,7 @@ function errx_exit() {
   which perror 2>/dev/null
 
   if [ $? -ne 0 ]
-    then readonly reposPath=$(realpath $3)
+    then readonly reposPath=$(realpath "$3")
 
     echo -n "${redb}$1${whitef}${boldon}:${boldoff}${reset}${redb} " 
 
@@ -76,11 +74,11 @@ function errx_exit() {
 }
 
 if [ $singleRepo -ne 0 ]
-  then cd -- $GITAA_PATH_REPOS
+  then cd -- "$GITAA_PATH_REPOS" > /dev/null
 
   echo -ne "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Handling URI Style Input as Single Git Repository${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
 
-  git clone $gitUser > /dev/null 2>&1
+  git clone -- "$gitUser" > /dev/null 2>&1
 
   if [ $? ]
     then declare -i -r errCode=$? 
@@ -98,125 +96,118 @@ else
 fi
 
 if [ ! -d $GITAA_PATH_CLONE ] 
-  then mkdir -- "$(realpath $GITAA_PATH_CLONE)" 2>/dev/null
+  then mkdir -- `realpath "$GITAA_PATH_CLONE"` 2>/dev/null
 
-  [ $? -ne 0 ] && errx_show 'mkdir' "$?" $GITAA_PATH_CLONE
+  [ $? -ne 0 ] && errx_show 'mkdir' "$?" "$GITAA_PATH_CLONE"
 fi
 
-chmod $GITAA_MODE_DIRS $GITAA_PATH_CLONE |&> /dev/null
+chmod $GITAA_MODE_DIRS "$GITAA_PATH_CLONE" |&> /dev/null
 
 [ $? -ne 0 ] && errx_show 'chmod' "$?"
 
-cd -- $GITAA_PATH_CLONE
-
-declare -i noUser=0
+cd -- "$GITAA_PATH_CLONE" > /dev/null
 
 if [ ! -d $gitUser ]
-  then noUser=1 mkdir -- $gitUser 2>/dev/null
+  then noUser=1 
+  
+  mkdir -- "$gitUser" 2> /dev/null
 
-  [ $? -ne 0 ] && errx_exit 'mkdir' $? $gitUser
+  [ $? -ne 0 ] && errx_exit 'mkdir' $? "$gitUser"
 
   chmod $GITAA_MODE_DIRS $gitUser |&> /dev/null
 
   [ $? -ne 0 ] && errx_show 'chmod' "$?"
 fi
 
-#if [ -d $gitUser ]
-#  then declare -i dircnt=$(ls -a1 $gitUser | egrep -v '^[.]' | wc -l)
-#
-#  if [ ! $dircnt ] 
-#fi
+cd -- "$gitUser" > /dev/null
 
-cd -- $gitUser
+waresDaWarez=$(( 1 + waresDaWarez ))
+errorFile=$(mktemp /tmp/fileXXXXXX)
+outputStr=$( curl -vs "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2> "$errorFile" )
 
-declare -xi waresDaWarez=0
+if [ ! "$outputStr" ] 
+  then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
+  echo -n "${purplef}$0${reset}${whitef}${boldon}:${boldoff} " 
+  echo "${redf}$(cat $errorFile | tr '*' '#' | tr '\n' ' ' | sed 's![#]!..!g')${reset}"
 
-while true
-  do waresDaWarez=$(( 1 + waresDaWarez ))
-  declare errorFile=$(mktemp /tmp/fileXXXXXX)
-  declare outputStr=$( curl -vs "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2>$errorFile )
+  rm -f -- "$errorFile" 2> /dev/null
 
-  if [ ! "$outputStr" ] 
-    then 
-    echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
-    echo -n "${purplef}$0${reset}${whitef}${boldon}:${boldoff} " 
-    echo "${redf}$(cat $errorFile | tr '*' '#' | tr '\n' ' ' | sed 's![#]!..!g')${reset}"
+  exit 2
+fi
 
-    rm -f -- "$errorFile"
+if [ "`echo "$outputStr" | grep 'API rate limit '`" ]
+  then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}GitHub API key's rate limit exceeded (try again later)${reset}"
 
-    exit 2
-  fi
+  exit 3 
+fi
 
-  if [ "`echo "$outputStr" | grep 'API rate limit '`" ]
-    then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}GitHub API key's rate limit exceeded (try again later)${reset}"
+export GITHUB_REPO_URLS=$(echo "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed 's![/]+!!g' | tr '\012' ' ' | sed 's![ ]*$!!')
 
-    exit 3 
-  fi
+if [ ! "$GITHUB_REPO_URLS" ] 
+  then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Received output from GitHub API, but no repository references?${reset}"
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure the correct username was entered?${reset}"
+  echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}https://github.com/${gitUser}/repositories should be a non-empty list of repos!${reset}"
 
-  export GITHUB_REPO_URLS=$(echo "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed 's![/]+!!g' | tr '\012' ' ' | sed 's![ ]*$!!')
+  exit 4
+else
+  echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n" | sed "s! !${reset} ${greenf}${ulon}!g"
+fi
 
-  if [ ! "$GITHUB_REPO_URLS" ] 
-    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Received output from GitHub API, but no repository references?${reset}"
-    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure the correct username was entered?${reset}"
-    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}https://github.com/${gitUser}/repositories should be a non-empty list of repos!${reset}"
+declare -i aflag=0
 
-    exit 4
-  else
-    echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n" | sed "s! !${reset} ${greenf}${ulon}!g"
-  fi
+if [ $noUser -eq 0 ]
+  then for d in $GITHUB_REPO_URLS
+    do if [ ! -d "$d" ] 
+      then aflag=1
 
-  declare -i aflag=$false
-
-  if [ ! $noUser ]
-    then for d in $GITHUB_REPO_URLS
-      do [ -d "$d" ] || aflag=$true
-    done
-  
-    if [ $aflag -eq 0 ] 
-      then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
-      echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure ${italicon}clone${italicoff} was intended as opposed to ${italicon}pull${italicoff}?${reset}"
-      echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}If so, first remove local directories under path: $(pwd)${reset}"
-
-      exit 5
+      break
     fi
+  done
+  
+  if [ $aflag -eq 0 ] 
+    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure ${italicon}clone${italicoff} was intended as opposed to ${italicon}pull${italicoff}?${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}If so, first remove local directories under path: $(pwd)${reset}"
+
+    exit 5
   fi
+fi
 
-  which parallel |&> /dev/null 
+which parallel 2> /dev/null
 
-  if [ $? -eq 0 ]
-    then echo -n "${whitef}${italicson}" 
+if [ $? -eq 0 ]
+  then echo -n "${whitef}${italicson}" 
 
-    parallel -j${GITHOSE_NUM_JOBS} git clone "https://github.com/${gitUser}/{}" ::: $GITHUB_REPO_URLS 2>/dev/null
+  parallel -j${GITHOSE_NUM_JOBS} git clone -- "https://github.com/${gitUser}/{}" ::: $GITHUB_REPO_URLS 2>/dev/null
 
-    [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
-  else
-    declare -i countChocula=0
+  [ $successVal -eq 0 -a $? -eq 0 ] && successVal=1
+else
+  declare -i countChocula=0
 
-    echo -n "${whitef}${italicson}"
+  echo -n "${whitef}${italicson}"
 
-    for one in $GITHUB_REPO_URLS
-      do #
-      
-      if [ ! -d "`basename $one`" ] 
-        then countChocula=$(( 1 + $countChocula ))
+  for one in $GITHUB_REPO_URLS
+    do if [ ! -d "`basename $one`" ] 
+      then countChocula=$(( 1 + $countChocula ))
 
-        echo $one
-        
-        git clone -- "https://github.com/${gitUser}/${one}" 2>/dev/null
+      git clone -- "https://github.com/${gitUser}/${one}" 2> /dev/null &
+
+      if [ "$GITHOSE_WIKI" ] 
+        then git clone -- "https://github.com/${gitUser}/${one}.wiki" 2> /dev/null &
       fi
-    done
+    fi
+  done
 
-    for two in `seq 1 $countChocula`
-      do wait %${two} 2>/dev/null
-
-      [ $successVal -eq 0 ] && [ $? -eq 0 ] && successVal=1
-    done
+  if [ "$GITHOSE_WIKI" ] 
+    then countChocula+=$countChocula
   fi
 
-  break
-done
+  for two in `seq 1 $countChocula`
+    do wait %${two} 2> /dev/null
 
-echo
+    [ $successVal -eq 0 -a $? -eq 0 ] && successVal=1
+  done
+fi
 
 if [ $successVal -ne 0 ]
   then echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
@@ -225,6 +216,5 @@ else
   echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
 fi
 
-sleep 0.8
+sleep 0.0${RANDOM}
 
-exit 0

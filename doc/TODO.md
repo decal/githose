@@ -1,6 +1,8 @@
 **Things To Do**
 ============
 
+* document that usernames are case-sensitive.. i.e. Virustotal vs. VirusTotal
+
 * write contrib script to clone all wikis from users whose repo's have been cloned 
   - also include an index.html file to surf them in the browser
 

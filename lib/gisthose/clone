@@ -74,7 +74,7 @@ chmod $GIST_MODE_DIRS $GIST_PATH_COPY |&> /dev/null
 
 [ $? -ne 0 ] && errx_show 'chmod' "$?"
 
-cd -- "${GIST_PATH_COPY}"
+cd -- "${GIST_PATH_COPY}" > /dev/null
 
 if [ ! -d "$gistUser" ]
   then mkdir -- "$gistUser"
@@ -86,7 +86,7 @@ if [ ! -d "$gistUser" ]
   [ $? -ne 0 ] && errx_show 'chmod' "$?"
 fi
 
-cd -- "$gistUser"
+cd -- "$gistUser" > /dev/null
 
 declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
 declare -xi waresDaWarez=0
@@ -153,7 +153,7 @@ while true
       [ $DEBUG ] && echo -e "${reset}\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
       if [ ! -f "${usersGistsPath}/${bone}" ] 
-        then acnt=$(( 1 + $acnt ))
+        then acnt+=1
         
         nice wget -nv -nd -nc --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
       fi
@@ -170,3 +170,4 @@ done
 find $usersGistsPath -type f -exec chmod $GIST_MODE_FILE {} \; 
 
 echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+
