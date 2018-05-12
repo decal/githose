@@ -101,3 +101,16 @@ function genericUsage() {
 
   exit $EX_USAGE
 }
+
+function setUsage() {
+  cat etc/githose.motd 2>/dev/null
+  echo -n "${boldon}${italicon}${whitef}"
+  cat etc/githose.issue 2>/dev/null
+
+  echo
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}ARGUMENTS${reset}"
+
+  echo 'BLAH BLAH BLAH'
+
+  exit $EX_USAGE
+}

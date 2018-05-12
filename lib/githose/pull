@@ -41,9 +41,9 @@ function errx_exit() {
 
   echo -n -- "$1: " 
 
-  [ "$reposPath" ] && echo -n "${reposPath} "
+  [ "$reposPath" ] && echo -n "$reposPath "
 
-  perror -v -- $2
+  perror -v $2
 
   exit $2
 }
@@ -57,12 +57,12 @@ if [ ! -d $GITAA_PATH_CLONE ]
 fi
 
 # current werk
-cd -- $GITAA_PATH_CLONE
+cd -- "$GITAA_PATH_CLONE" > /dev/null
 
 if [ "$gitUser" ] 
   then declare -i count=0
   
-  cd -- $gitUser
+  cd -- "$gitUser" > /dev/null
 
   for arepo in $(find "${GITAA_PATH_CLONE}/$gitUser" -maxdepth 1 -type d -not -name '.*' -and -not -name "$gitUser" -print)
     do declare foldr="$(realpath $arepo)"
@@ -70,7 +70,7 @@ if [ "$gitUser" ]
     if [ -d "$foldr" ] 
       then count=$(( 1 + count ))
       
-      cd -- "$foldr" 2>/dev/null
+      cd -- "$foldr" > /dev/null
 
       [ $? -ne 0 ] && continue
       
@@ -87,7 +87,7 @@ else
     do declare -i t00tsieRollPop=0
 
     for arepo in $(find "${GITAA_PATH_CLONE}/$(basename $auser)" -maxdepth 1 -type d -not -name '.*' -print)
-      do cd -- $(realpath $arepo)
+      do cd -- "$(realpath $arepo)" > /dev/null
 
       git pull 2>/dev/null &
 

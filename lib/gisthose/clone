@@ -15,7 +15,7 @@ source etc/githose.conf
 source inc/colors 
 source inc/funcs
 
-[ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
+[ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK 
 
 if [ ! "$1" ]
   then echo
@@ -35,7 +35,7 @@ declare gistUser="$1"
 function errx_show() {
   echo -n -- "$1: " 
 
-  errno -- $2 
+  # errno -- $2 
 }
 
 function errx_exit() {
@@ -43,9 +43,9 @@ function errx_exit() {
 
   echo -n -- "$1: " 
 
-  [ "$reposPath" ] && echo -n "${reposPath} "
+  [ "$reposPath" ] && echo -n "$reposPath "
 
-  errno -- $2 
+  # errno $2 
 
   exit $2
 }
@@ -87,7 +87,7 @@ if [ ! -d "$gistUser" ]
 fi
 
 cd -- "$gistUser" > /dev/null
-rm -f -- ./*
+rm -f -- ./* 2 > /dev/null
 
 declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
 declare -i waresDaWarez=0
@@ -137,36 +137,26 @@ while true
   
   echo -e "${reset}" 
 
-  which parallel > /dev/null 2>&1
+  declare -i acnt=0
 
-  if [ $? -eq 0 ]
-    then echo -n "${whitef}${italicson}"
-    
-    parallel -j${GITHOSE_JOBS_COUNT} wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=$GIST_WGET_WAIT '{}' ::: ${gist_code_urls[*]} > /dev/null 2>&1
+  for one in ${gist_code_urls[*]}
+    do declare bone="`basename $one`"
 
-#     wait -n $GITHOSE_JOBS_COUNT
-  else
-    declare -i acnt=0
+    [ $GITHOSE_DEBUG ] && echo -e "${reset}\n${whitef}GITHOSE_DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
-    for one in ${gist_code_urls[*]}
-      do declare bone="`basename $one`"
+    acnt+=1
+      
+    wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
+  done
 
-      [ $DEBUG ] && echo -e "${reset}\n${whitef}DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
-
-      acnt+=1
-        
-      wget -nv -nd --restrict-file-names=ascii --retry-connrefused --timeout=${GIST_WGET_WAIT} -- "$one" > /dev/null 2>&1 & 
-    done
-
-    for two in `seq 1 $acnt`
-      do wait %${two} > /dev/null 2>&1
-    done
-  fi
+  for two in `seq 1 $acnt`
+    do wait %${two} > /dev/null 2>&1
+  done
 
   break
 done
 
 find $usersGistsPath -type f -exec chmod $GIST_MODE_FILE {} \; 
 
-echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
 

@@ -30,7 +30,7 @@
 
 * Fix `githose clone yarn`
 
-* Replace exit codes with `EX_` constants from `inc/sysexits`
+* Replace all exit codes with `EX_` constants from `inc/sysexits`
 
 * Why isn't `gristhose clone postmodern` getting {https://github.com/postmodern/robots} repo?
 
@@ -74,8 +74,6 @@
 * Test FreeBSD for <div title="Frequently Asked Questions">FAQ</div> question #3
 
 * Write `man` page using `nroff`: `githose(1)`
-
-* Write a `parallel` command for fetching the text of gists 
 
 * Command-line arguments..
   1. Pass global `getopt` flags to `bin/githose`

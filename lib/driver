@@ -20,6 +20,6 @@ while [[ $k -ne 0 ]]
 
   lib/typeof $1 ${BASH_ARGV[$k]} # 2>/dev/null
 
-  [ $? ] && exit $?
+  [ $? ] && exit
 done
 

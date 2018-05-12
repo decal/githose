@@ -11,7 +11,7 @@ if [ ! $initLoaded ]
   then readonly initLoaded=1
   declare -x githosePath='githose'
 
-  # GNU parallel GOT's dis many Shakezpeer typewriter monkeys
+  # m0b0 Arch GOT's dis many Shakezpeer typewriter monkeys
   declare -ix GITHOSE_NUM_JOBS=`ncpus`
 
   if [ $GITHOSE_NUM_JOBS -eq 0 ]

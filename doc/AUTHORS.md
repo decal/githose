@@ -10,6 +10,8 @@ Perl
 ====
 * [Larry Wall](https://twitter.com/TimToady)
 
-parallel
-========
-* [Ole Tange](https://twitter.com/oletange)
+git
+===
+* [Linus Torvalds](https://twitter.com/linus__torvalds)
+* [Junio C. Hamano](https://twitter.com/jch2355)
+* [Contributors](https://openhub.net/p/git/contributors/summary "Git Open Source Project on Open Hub: Contributors")

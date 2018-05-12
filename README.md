@@ -1,11 +1,11 @@
-**githose v0.9.5a**
+**githose v0.9.8a**
 ===============
 
 _`githose` concurrently archives GitHub users' code repositories and gist text!_
 
 `githose` is similar to `github_cloner` by `anantshri` on GitHub which is written in
 Python.  However, that project does not support gists or implement any form of 
-concurrent programming.  `githose` utilizes GNU `parallel` for a significant 
+concurrent programming.  `githose` utilizes background processing for a significant 
 speedup in multi-tasking, especially when a user's account hosts many hundreds 
 of repositories (and some which are rather large.) 
 
@@ -62,7 +62,7 @@ The table below is a feature comparison between `githose` and similar tools:
 ### Feature List
 
 * Multi-Threaded Anonymous Access to [GitHub API v3](https://developer.github.com/v3/) 
-  - Git commands parallelized via GNU `parallel` if found in `PATH` by `which`
+  - Git commands parallelized with `bash` (Bourne Again Shell) background processing 
   - Application-level anonymity due to lack of uniquely identifying API key
   - Responsibility for transport layer anonymity falls squarely on the user 
   - Low-level network function wrapper like `torify` needed to conceal source IP
@@ -75,7 +75,7 @@ The table below is a feature comparison between `githose` and similar tools:
 * Support for [ANSI escape code colors](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
 
 
-### DevOps Info
+### Developer and Test Environment Info
 
 Coded by*:*    _Derek Callaway_ [<decal {AT} sdf {D0T} org>](mailto:decal@sdf.org)
                `@decalresponds` on [Twitter](https://github.com/decalresponds)

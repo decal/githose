@@ -13,9 +13,11 @@
 
 source inc/inits && source inc/usages && source inc/sysexits
 
-if ( ! [ $1 ] && [ $2 ] )
-  then [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage
-fi
+#if ! [[ $1 =~ ^set ]]
+#  then if ( ! [ $1 ] && [ $2 ] )
+#    then [[ $GITHOSE_ARGV0 =~ git ]] && githoseUsage || gisthoseUsage
+#  fi
+#fi
 
 if [[ $1 =~ ^help ]] 
   then genericUsage 

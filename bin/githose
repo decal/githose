@@ -25,31 +25,29 @@ source inc/colors && source inc/regexes && source inc/usages && source inc/funcs
 # Load the configuration files
 source etc/githose.conf 
 
-[ $? -ne 0 ] && configError && exit $?
+[ $? -ne 0 ] && configError && exit
 
 export GITHOSE_ARGV0="`basename $0`"
 
 if [[ "$GITHOSE_ARGV0" =~ gristhose$ ]]
-  then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+  then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]]  || [ $1 =~ ^set ]] ) )
     then gristhoseUsage
   fi
 else
   if [[ "$GITHOSE_ARGV0" =~ gisthose$ ]]
-    then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+    then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] || [ $1 =~ ^set ]] ) )
       then gisthoseUsage
     fi
   else
     if [[ "$GITHOSE_ARGV0" =~ githose$ ]]
-      then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] ) )
+      then if ( ! ( [ "$1" ] && [ "$2" ] ) || ! ( [[ $1 =~ ^clone ]] || [[ $1 =~ ^pull ]] || [ $1 =~ ^set ]] ) )
         then githoseUsage 
       fi
     else
-      genericUsage
+      ( ! [[ $1 =~ ^set ]] ) && echo "1: ${1} 2: ${2}" && genericUsage
     fi
   fi
 fi
-
-echo 'will cite' | parallel --citation > /dev/null 2>&1 
 
 declare -a GITHOSE_ARGSL=("${BASH_ARGV[@]}")
 
@@ -61,7 +59,7 @@ while [[ ${#GITHOSE_ARGSL} -gt 2 ]]
   declare -a GITHOSE_ARGSL=("${GITHOSE_ARGSL_TEMP[@]}")
 done
 
-echo "${reset}" 
+echo -e "${reset}" 
 
 sleep 0.${RANDOM}
 

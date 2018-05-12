@@ -17,11 +17,8 @@ declare -i gristCount=0
 
 for auser in $gristUsers
   do gristCount+=2
-  ./githose clone $auser &
-  ./gisthose clone $auser &
-done
 
-for i in $(seq 1 $gristCount)
-  do wait %${i}
+  ./githose clone -- "$auser"
+  ./gisthose clone -- "$auser"
 done
 

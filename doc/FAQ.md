@@ -18,12 +18,12 @@ Frequently Asked Questions
   * `githose` was developed in the [Kali](https://kali.org/) Linux distribution which is a fork of [Debian](https://debian.org/)
   * MSI GT72 2QE Dominator Pro laptop with an Intel Core i7 running at ~5K BogoMIPS
   * GNU bash, version 4.4.11(1)-release (x86_64-pc-linux-gnu)
-  * GNU parallel 20161222
+  * git version 2.7.4
   * Currently maintained in WSL ([Windows Subsystem for Linux](https://msdn.microsoft.com/commandline/wsl/about "Bash on Ubuntu on Windows - About")) 
 
 3. Which platforms should `githose` properly operate under?
 
-  * Just about any Linux distribution with the Bourne Again Shell..
+  * Just about any Linux distribution with the Bourne Again Shell and git installed
 
 4. How do I report bugs?
   * Send an e-mail message to: **[decal (AT) sdf {D0T} org]** with Subject line:
@@ -45,23 +45,13 @@ Frequently Asked Questions
     1. I may commit your script to the contrib folder as a plug-in..
     2. If it defines a robust new feature, I might include your code as part of the master repository..
 
-7. What if I can't install GNU `parallel`?
-
-  * No problem--`githose`, `gisthose` and `gristhose` will all still run just fine.
-  * Without access to GNU `parallel` the scripts execute sequentially which makes multiple downloads slower.
-
-8. What if I can't install the GNU Bourne Again Shell, i.e. `bash`?
+7. What if I can't install the GNU Bourne Again Shell, i.e. `bash`?
 
   * Sorry, but in this case you're just [SOL](http://www.urbandictionary.com/define.php?term=SOL "Urban Dictionary definition of SOL")!
 
-9. How come I'm seeing escape characters instead of ANSI colors?!
+8. How come I'm seeing escape characters instead of ANSI colors?!
 
   * This can be caused by one or more software/configuration issues..
     - Ensure that your `TERM` environment variable is set correctly
     - For example: `export TERM=xterm-256color`
     - Add setting to: `~/.bashrc` or `~/.bash_profile` or `/etc/bash.bashrc`
-
-10. Why am I getting Perl-related errors from [GNU parallel](https://www.gnu.org/software/parallel/)
-
-  * Check for bad permissions or uninstalled [CPAN](http://www.cpan.org) modules
-  * Don't forget `parallel` isn't a required dependency, so try uninstalling it

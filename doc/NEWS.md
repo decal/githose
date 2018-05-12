@@ -2,6 +2,7 @@
   * Gists with identical filenames are no longer clobbered by `wget -nc`
   * `$GITHOSE_NUM_JOBS` is being set in `inc/inits` to optimize speedup
   * `contrib/get-repo-desc` gets the description of a particular user/repo pair
+  * GNU `parallel` was removed in favor of the more portable `bash` background processing
 
 ### Changes in githose 20171206
   * Renamed `githose-usage` symbolic link to `githose-help`
