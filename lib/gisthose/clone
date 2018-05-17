@@ -61,6 +61,8 @@ function rmdir_exit() {
     [ $alis -eq 0 ] && rmdir $gistUser
   fi
 
+  echo
+
   exit $1
 }
 
@@ -128,8 +130,8 @@ while true
     rmdir_exit 4
   fi
 
-  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching Text of All Gists for${whitef}${boldon}:${boldoff} ${reset}${invon}${gistUser}${reset}\n${whitef}${italicson}" 
-  echo -ne "${greenf}"
+  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${blueb}Fetching Text of All Gists for${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\n"
+  echo -ne "${greenf}${italicson}"
   
   for afile in ${gist_code_urls[*]}
     do echo -ne "${ulon}$(basename $afile)${uloff} "
@@ -158,5 +160,5 @@ done
 
 find $usersGistsPath -type f -exec chmod $GIST_MODE_FILE {} \; 
 
-echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
+echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Gists From${whitef}${boldon}:${reset} ${invon}${gistUser}${reset}\a"
 

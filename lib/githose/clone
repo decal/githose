@@ -92,8 +92,7 @@ if [ $singleRepo -ne 0 ]
     exit 0
   fi
 else
-  echo
-  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${bluef}Fetching All GitHub Repositories for${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n"
+  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${blueb}Fetching All GitHub Repositories for${whitef}${boldon}:${reset} ${invon}${gitUser}${reset}\n"
 fi
 
 if [ ! -d $GITAA_PATH_CLONE ] 
@@ -151,7 +150,7 @@ if [ ! "$GITHUB_REPO_URLS" ]
 
   exit 4
 else
-  echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}\n" | sed "s! !${reset} ${greenf}${ulon}!g"
+  echo -e "${greenf}${ulon}${GITHUB_REPO_URLS}${reset}" | sed "s! !${reset} ${greenf}${ulon}!g"
 fi
 
 declare -i aflag=0
@@ -197,11 +196,9 @@ for two in `seq 1 $countChocula`
 done
 
 if [ $successVal -ne 0 ]
-  then echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+  then echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
 else
   echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Could Not Clone Any Repositories From ${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
   echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
 fi
-
-sleep 0.0${RANDOM}
 

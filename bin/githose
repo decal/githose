@@ -59,9 +59,7 @@ while [[ ${#GITHOSE_ARGSL} -gt 2 ]]
   declare -a GITHOSE_ARGSL=("${GITHOSE_ARGSL_TEMP[@]}")
 done
 
-echo -e "${reset}" 
-
-sleep 0.${RANDOM}
+echo -ne "${reset}" 
 
 # ♉ tw0 fingerz up, yup peas out  ♉#
 exit 0
