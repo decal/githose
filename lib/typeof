@@ -52,7 +52,11 @@ else
     then if [[ $2 =~ ^help ]] 
       then [[ $GITHOSE_ARGV0 =~ git ]] && githoseCloneUsage || gisthoseCloneUsage
     else 
-      lib/${githosePath}/clone $2 
+      if ( [[ $2 =~ ^-w$ ]] || [[ $2 =~ ^--wiki$ ]] )
+        then GITHOSE_WIKI=1 lib/${githosePath}/clone $2 
+      else
+        lib/${githosePath}/clone $2
+      fi
     fi
   else 
     if [[ $1 =~ ^pull ]] && ! ( [[ $2 =~ ^-a$ ]] || [[ $2 =~ ^--all$ ]] )

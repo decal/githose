@@ -19,12 +19,12 @@ source inc/{inits,colors,funcs}
 
 [ "$GITHOSE_MODE_UMASK" ] && umask -- $GITHOSE_MODE_UMASK
 
-declare -i singleRepo=0 successVal=0 noUser=0 waresDaWarez=0
-declare -g gitUser="$1"
+declare -i singleRepo=0 successVal=0 noUser=0 
+declare -x gitUser="$1"
 
 if [ ! "$gitUser" ]
   then 
-  echo "${yellowf}usage${whitef}${boldon}:${boldoff} ${purplef}$0${reset} ${cyanf}${italicson}USER${reset}"
+  echo "${yellowf}usage${whitef}${boldon}:${boldoff} ${purplef}$0${reset} ${cyanf}${italicon}USER${reset}"
   echo -e "  ${cyanf}USER  ${invon}case-sensitive string for GitHub user name${reset}\n"
   echo "${bluef}ex. ${purplef}$0${reset} ${bluef}decal${reset}"
 
@@ -76,23 +76,23 @@ function errx_exit() {
 if [ $singleRepo -ne 0 ]
   then cd -- "$GITAA_PATH_REPOS" > /dev/null
 
-  echo -ne "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Handling URI Style Input as Single Git Repository${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicson}" 
+  echo -ne "${purplef}$0${whitef}${boldon}:${boldoff} ${cyanf}Handling URI Style Input as Single Git Repository${whitef}${boldon}:${boldoff} ${reset}${invon}${gitUser}${reset}\n${whitef}${italicon}" 
 
   git clone -- "$gitUser" > /dev/null 2>&1
 
   if [ $? ]
     then declare -i -r errCode=$? 
     
-    echo -e "\a\n${reset}"
+    echo -e "${reset}\a\n"
 
     exit -- $errCode
   else
-    echo -e "\a\n${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Done Cloning Given Git Repository${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
+    echo -e "${reset}\a\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Done Cloning Given Git Repository${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
 
     exit 0
   fi
 else
-  echo -e "${purplef}$0${whitef}${boldon}:${boldoff} ${blueb}Fetching All GitHub Repositories for${whitef}${boldon}:${reset} ${invon}${gitUser}${reset}\n"
+  echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${blueb}Fetching All GitHub Repositories for${whitef}${boldon}:${reset} ${invon}${gitUser}${reset}\n"
 fi
 
 if [ ! -d $GITAA_PATH_CLONE ] 
@@ -121,9 +121,8 @@ fi
 
 cd -- "$gitUser" > /dev/null
 
-waresDaWarez=$(( 1 + waresDaWarez ))
 errorFile=$(mktemp /tmp/fileXXXXXX)
-outputStr=$( curl -vs "https://api.github.com/users/${gitUser}/repos?page=${waresDaWarez}&per_page=100" 2> "$errorFile" )
+outputStr=$( curl -vs "https://api.github.com/users/${gitUser}/repos?page=1&per_page=100" 2> "$errorFile" )
 
 if [ ! "$outputStr" ] 
   then echo "${purplef}$0${reset}${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"
@@ -142,6 +141,23 @@ if [ "`echo "$outputStr" | grep 'API rate limit '`" ]
 fi
 
 export GITHUB_REPO_URLS=$(echo "$outputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed 's![/]+!!g' | tr '\012' ' ' | sed 's![ ]*$!!')
+
+declare lastLink=$(egrep '^[<] Link: ' $errorFile | cut -d ' ' -f2-  | awk -F\< '{print$NF;}' | awk -F\> '{print$1}')
+declare -i lastNum=$(echo "$lastLink" | cut -d\= -f2 | cut -d\& -f1)
+
+[ $lastNum -eq 0 ] && lastNum=1
+
+for i in `seq 1 $lastNum`
+  do anerrorFile=$(mktemp /tmp/fileXXXXXX)
+  anoutputStr=$(curl -vs "https://api.github.com/users/${gitUser}/repos?page=${i}&per_page=100" 2> "$anerrorFile")
+  moreRepoUrls=$(echo "$anoutputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed 's![/]+!!g' | tr '\012' ' ' | sed 's![ ]*$!!')
+  GITHUB_REPO_URLS+=" $moreRepoUrls"
+done
+
+## TODO: Parse all repos API output pages from first to last
+# Link: <https://api.github.com/user/773264/repos?page=2>; rel="next", <https://api.github.com/user/773264/repos?page=2>; rel="last"
+# egrep '^[<] Link: ' /tmp/githose-decal.out | cut -d ' ' -f2-  | awk -F\< '{print$NF;}' | awk -F\> '{print$1}'
+# https://api.github.com/user/773264/repos?page=2
 
 if [ ! "$GITHUB_REPO_URLS" ] 
   then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Received output from GitHub API, but no repository references?${reset}"
@@ -165,7 +181,8 @@ if [ $noUser -eq 0 ]
   done
   
   if [ $aflag -eq 0 ] 
-    then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
+    then echo "${reset}"
+    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure ${italicon}clone${italicoff} was intended as opposed to ${italicon}pull${italicoff}?${reset}"
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}If so, first remove local directories under path: $(pwd)${reset}"
 
@@ -175,10 +192,10 @@ fi
 
 declare -i countChocula=0
 
-echo -n "${whitef}${italicson}"
+echo -n "${whitef}${italicon}"
 
 for one in $GITHUB_REPO_URLS
-  do if [ ! -d "`basename $one`" ] 
+  do if [ ! -d $(basename "$one") ] 
     then countChocula+=1
 
     git clone -- "https://github.com/${gitUser}/${one}" 2> /dev/null &
@@ -189,16 +206,16 @@ done
 
 [ "$GITHOSE_WIKI" ] && countChocula+=$countChocula
 
-for two in `seq 1 $countChocula`
-  do wait %${two} 2> /dev/null
+for two in $(seq 1 $countChocula)
+  do wait -- "%${two}" 2> /dev/null
 
   [ $successVal -eq 0 -a $? -eq 0 ] && successVal=1
 done
 
 if [ $successVal -ne 0 ]
-  then echo -e "${reset}\n${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
+  then echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${greenb}Finished Cloning All Repositories From${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}\a"
 else
-  echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Could Not Clone Any Repositories From ${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
-  echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${orangeb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
+  echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${yellowb}Could Not Clone Any Repositories From ${whitef}${boldon}:${boldoff}${reset} ${invon}${gitUser}${reset}"
+  echo -e "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${yellowb}Perhaps All The Repositories Already Exist Locally? ${greenb}Considering Trying ${blueb}pull${reset}${greenb} Next Time..${reset}"
 fi
 

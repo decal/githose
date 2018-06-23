@@ -1,6 +1,8 @@
 **Things To Do**
 ============
 
+* make interactive rm -fr'ing user's github/gists directories for overwriting with clone command
+
 * document that usernames are case-sensitive.. i.e. Virustotal vs. VirusTotal
 
 * write contrib script to clone all wikis from users whose repo's have been cloned 

@@ -45,7 +45,7 @@ function errx_exit() {
 
   [ "$reposPath" ] && echo -n "$reposPath "
 
-  # errno $2 
+  # errno -- $2 
 
   exit $2
 }
@@ -60,8 +60,6 @@ function rmdir_exit() {
 
     [ $alis -eq 0 ] && rmdir $gistUser
   fi
-
-  echo
 
   exit $1
 }
@@ -93,8 +91,6 @@ rm -f -- ./* 2 > /dev/null
 
 declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
 declare -i waresDaWarez=0
-
-echo
 
 while true
   do waresDaWarez+=1
