@@ -12,7 +12,7 @@ if [ ! $initLoaded ]
   declare -x githosePath='githose'
 
   # m0b0 Arch GOT's dis many Shakezpeer typewriter monkeys
-  declare -ix GITHOSE_NUM_JOBS=`ncpus`
+  declare -ix GITHOSE_NUM_JOBS=$(ncpus 2>/dev/null)
 
   if [ $GITHOSE_NUM_JOBS -eq 0 ]
     then if [ -f /proc/cpuinfo ] 
