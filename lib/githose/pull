@@ -86,7 +86,7 @@ else
   for auser in $(ls -1 $GITAA_PATH_CLONE)
     do declare -i t00tsieRollPop=0
 
-    for arepo in $(find "${GITAA_PATH_CLONE}/$(basename $-- auser)" -maxdepth 1 -type d -not -name '.*' -print)
+    for arepo in $(find "${GITAA_PATH_CLONE}"/`basename -- "$auser"` -maxdepth 1 -type d -not -name '.*' -print)
       do cd -- "$(realpath $arepo)" > /dev/null
 
       git pull 2>/dev/null &

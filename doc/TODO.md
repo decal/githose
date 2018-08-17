@@ -12,6 +12,8 @@
 
 * support for user's starred repos.. then d/l mubix's
 
+* change all `echo -e` invocations to `builtin echo` statements with `$" ... "`
+
 * script that gets descriptions for repos under ~/github and ~/repos
 
 * -w also clone wiki, -lw list wikis

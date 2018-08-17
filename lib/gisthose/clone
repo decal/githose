@@ -130,7 +130,7 @@ while true
   echo -ne "${greenf}${italicson}"
   
   for afile in ${gist_code_urls[*]}
-    do echo -ne "${ulon}$(basename -- "$afile")${uloff} "
+    do echo -ne "${ulon}`basename -- "$afile"`${uloff} "
   done
   
   echo -e "${reset}" 
@@ -138,7 +138,7 @@ while true
   declare -i acnt=0
 
   for one in ${gist_code_urls[*]}
-    do declare bone="`basename -- $one`"
+    do declare bone=`basename -- "$one"`
 
     [ $GITHOSE_DEBUG ] && echo -e "${reset}\n${whitef}GITHOSE_DEBUG${boldon}:${reset} ${inverse}${bone}${reset}\n"
 
