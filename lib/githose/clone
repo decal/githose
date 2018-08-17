@@ -171,6 +171,8 @@ fi
 
 declare -i aflag=0
 
+echo
+
 if [ $noUser -eq 0 ]
   then for d in $GITHUB_REPO_URLS
     do if [ ! -d "$d" ] 
@@ -181,8 +183,7 @@ if [ $noUser -eq 0 ]
   done
   
   if [ $aflag -eq 0 ] 
-    then echo "${reset}"
-    echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
+    then echo "${reset}${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}All repositories already have local directories!${reset}"
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}Are you sure ${italicon}clone${italicoff} was intended as opposed to ${italicon}pull${italicoff}?${reset}"
     echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}If so, first remove local directories under path: $(pwd)${reset}"
 
