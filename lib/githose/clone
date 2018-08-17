@@ -195,7 +195,7 @@ declare -i countChocula=0
 echo -n "${whitef}${italicon}"
 
 for one in $GITHUB_REPO_URLS
-  do if [ ! -d $(basename "$one") ] 
+  do if [ ! -d $(basename -- "$one") ] 
     then countChocula+=1
 
     git clone -- "https://github.com/${gitUser}/${one}" 2> /dev/null &
