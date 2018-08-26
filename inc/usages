@@ -19,7 +19,7 @@ function gristhoseUsage() {
   cat etc/gristhose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${blueb}${cyanf}${italicson}[...]${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${purpleb}${blackf}[${italicson}...${italicsoff}]${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}get all user's repositories and gists simultaneously${reset}"
@@ -41,7 +41,7 @@ function gisthoseUsage() {
   cat etc/gisthose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${blueb}${cyanf}${italicson}[...]${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${purpleb}${blackf}[${italicson}...${italicsoff}]${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}store all of user's gists in a new directory named after them${reset}"
@@ -63,7 +63,7 @@ function githoseUsage() {
   cat etc/githose.issue 2>/dev/null
 
   echo
-  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${blueb}${cyanf}${italicson}[...]${reset}"
+  echo -e "${reset}${yellowf}${invon}usage${invoff}${boldon}${whitef}:${boldoff} ${greenf}${0} ${blueb}${blackf}${boldon}COMMAND${reset} ${blueb}${blackf}${boldon}USERNAME${reset} ${purpleb}${blackf}[${italicson}...${italicsoff}]${reset}"
   echo
   echo "  ${blueb}${blackf}${boldon}COMMAND${reset}  ${italicon}${yellowf}one command strings explained below:${reset}"
   echo "    ${greenf}clone${reset}  ${italicon}${yellowf}download all user's code repositories${reset}"
