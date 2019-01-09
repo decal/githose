@@ -93,8 +93,10 @@ declare -x usersGistsPath="${GIST_PATH_COPY}/${gistUser}"
 declare -i waresDaWarez=0
 
 while true
-  do waresDaWarez+=1
+  do sleep 1.$(( $[ RANDOM % 10 ] ))
+  
   declare outputStr="$( curl -s "https://api.github.com/users/${gistUser}/gists" 2>&1 )"
+  waresDaWarez+=1
 
   if [ ! "$outputStr" ] 
     then echo "${purplef}$0${whitef}${boldon}:${boldoff} ${yellowf}No output received from GitHub API!${reset}"

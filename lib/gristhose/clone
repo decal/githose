@@ -16,7 +16,9 @@ declare gristUsers="${BASH_ARGV[*]}"
 declare -i gristCount=0
 
 for auser in $gristUsers
-  do gristCount+=2
+  do sleep 1.$(( $[ RANDOM % 10 ] )) 
+  
+  gristCount+=2
 
   ./githose clone -- "$auser"
   ./gisthose clone -- "$auser"

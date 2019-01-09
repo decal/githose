@@ -148,7 +148,9 @@ declare -i lastNum=$(echo "$lastLink" | cut -d\= -f2 | cut -d\& -f1)
 [ $lastNum -eq 0 ] && lastNum=1
 
 for i in `seq 1 $lastNum`
-  do anerrorFile=$(mktemp /tmp/fileXXXXXX)
+  do sleep 1.$(( $[ RANDOM % 10 ] )) 
+  
+  anerrorFile=$(mktemp /tmp/fileXXXXXX)
   anoutputStr=$(curl -vs "https://api.github.com/users/${gitUser}/repos?page=${i}&per_page=100" 2> "$anerrorFile")
   moreRepoUrls=$(echo "$anoutputStr" | grep '"html_url": "' | grep -- "/${gitUser}/" | cut -d \" -f4 | sed 's!^git://!https://!g' | sed "s!https://github.com/${gitUser}/!!g" | sed 's![/]+!!g' | tr '\012' ' ' | sed 's![ ]*$!!')
   GITHUB_REPO_URLS+=" $moreRepoUrls"

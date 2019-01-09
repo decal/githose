@@ -57,6 +57,8 @@ while [[ ${#GITHOSE_ARGSL} -gt 2 ]]
   declare -a GITHOSE_ARGSL_TEMP=("${GITHOSE_ARGSL[@]:1}")
 
   declare -a GITHOSE_ARGSL=("${GITHOSE_ARGSL_TEMP[@]}")
+
+  sleep 2.$(( $[ $RANDOM % 4 ] ))
 done
 
 echo -e "${reset}" 

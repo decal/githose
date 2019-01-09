@@ -12,7 +12,7 @@
 [ -d '../inc' ] && cd .. || ( [ -d '../../inc' ] && cd ../.. )
 
 # If anyone has crazy grep flags in their environment apt to interfere (i.e. me)
-unalias GREP_OPTIONS
+unset GREP_OPTIONS
 
 source inc/colors && source inc/regexes
 
